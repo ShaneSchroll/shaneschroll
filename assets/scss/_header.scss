@@ -1,4 +1,3 @@
-// notice banner section
 .notice-banner {
     position: relative;
     background: $light-black;
@@ -12,20 +11,18 @@
         text-align: center;
     }
 
-    // close button wrapper
     #close-notice {
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;
+        &:hover { cursor: pointer; }
 
         @include mq(md) {
             top: 50%;
             transform: translateY(-52%);
         }
 
-        &:hover { cursor: pointer; }
-
-        // unicode times symbol
+        // unicode times symbol - &times;
         .close-icon {
             font-size: 1.5rem;
             line-height: 0.75;
@@ -34,4 +31,9 @@
             color: $dark-blue;
         }
     }
+}
+
+// header, primary nav, title
+.main-site-header {
+
 }
