@@ -1,0 +1,37 @@
+// notice banner section
+.notice-banner {
+    position: relative;
+    background: $light-black;
+    border: 1px solid $light-black;
+    border-radius: $radius-small;
+    padding: 0.35rem;
+
+    &__text {
+        max-width: 85%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    // close button wrapper
+    #close-notice {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+
+        @include mq(md) {
+            top: 50%;
+            transform: translateY(-52%);
+        }
+
+        &:hover { cursor: pointer; }
+
+        // unicode times symbol
+        .close-icon {
+            font-size: 1.5rem;
+            line-height: 0.75;
+            font-family: $secondary-font;
+            font-weight: 500;
+            color: $dark-blue;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+// core font setup
+a, p, span, address, table, td, th, tr,
+small, time, ol, ul, li, button {
+	font-family: $primary-font;
+	font-size: 1rem;
+	font-weight: 400;
+	color: $dark-blue;
+}
+
+small, time { font-size: 0.875rem; }
+
+a {
+	text-decoration: none;
+	transition: 0.2s ease-in;
+	&:hover { transition: 0.2s ease-out; }
+}
+
+p {
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+}
+
+// default browser button style reset
+button {
+	appearance: none;
+	background: unset;
+	border: unset;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 1.25rem;
+	font-family: $secondary-font;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h1 { font-size: fluid-text(480px, 48px, 1200px, 64px); }
+h2 { font-size: fluid-text(480px, 30px, 1200px, 38px); }
+h3 { font-size: fluid-text(480px, 26px, 1200px, 32px); }
+h4 { font-size: 24px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }

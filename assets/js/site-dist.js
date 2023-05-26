@@ -1,0 +1,2 @@
+var o;(o=jQuery)(window).on("load",(function(){AOS.init({offset:150,duration:1200}),o((function(){window.localStorage.getItem("close_banner_cookie")&&o(".notice-banner").hide(),o("#close-notice").on("click",(function(){window.localStorage.setItem("close_banner_cookie",!0,10080),o(".notice-banner").fadeToggle(350)}))}))}));
+//# sourceMappingURL=site-dist.js.map

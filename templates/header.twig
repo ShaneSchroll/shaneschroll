@@ -1,0 +1,40 @@
+<header class="main-site-header">
+    {% if options.enable_notice_banner %}
+        <div class="notice-banner" role="alert" aria-label="Announcement">
+            <p class="notice-banner__text">{{ options.notice_banner_text }}</p>
+            <button id="close-notice" aria-label="Close notice banner" title="Close">
+                <span class="close-icon">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+
+    <nav class="site-nav">
+        <a class="site-nav--logo" {% if not is_front_page %}href="/"{% endif %}>
+            {% include '/assets/media/resourcer-logo-text.svg' %}
+        </a>
+
+        <div class="site-nav--menu-wrapper" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/about-resourcer">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/features">Features</a></li>
+            </ul>
+        </div>
+
+        <a class="main-button-wrapper" href="/account/login"><span class="fa-solid fa-lock"></span> Sign In</a>
+    </nav>
+
+    <section class="title-container" data-aos="fade-down">
+        {% if not is_front_page %}
+            <h1>{{ post.title }}</h1>
+        {% else %}
+            <h1>A minimal management system</h1>
+
+            <div class="title-container__button-group">
+                <a class="main-button-wrapper" href="/get-started">Get Started</a>
+                <a class="main-button-wrapper" href="/about">Learn More</a>
+            </div>
+        {% endif %}
+    </section>
+</header>

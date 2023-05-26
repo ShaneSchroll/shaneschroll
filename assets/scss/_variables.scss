@@ -1,0 +1,58 @@
+// Base Colors
+$white: #fff;
+$black: #000;
+$light-black: #212327;
+
+// Primary colors
+$site-background: #FAF8F9;
+$card-background: #192036;
+
+// Primary Brand Colors
+$light-grey: #FAF8F9;
+$light-purple: #B6B0C9;
+$grey-blue: #88B0D0;
+$cyan: #22C8E8;
+$dark-blue: #27345B;
+
+// Accents
+$shadow: 0 10px 10px -7px rgba($dark-blue, 0.5);
+
+// Tag colors
+$success: #66AD73;
+$warning: #E39D3B;
+$danger: #F44336;
+$info: #B6B0C9;
+
+// Fonts
+$primary-font: 'Montserrat', sans-serif; // weights: 400(+i), 600(+i), 700
+$secondary-font: 'Inter', sans-serif; // weights: 300, 400, 500, 700
+
+// Consistency Utils
+$radius-small: 5px;
+$radius-medium: 10px;
+$radius-large: 15px;
+
+// breakpoint mixin
+@mixin mq($size) {
+	@if $size == xs {
+		@media (min-width: 414px) { @content; }
+	} @else if $size == sm {
+		@media (min-width: 768px) { @content; }
+	} @else if $size == md {
+		@media (min-width: 1024px) { @content; }
+	} @else if $size == lg {
+		@media (min-width: 1200px) { @content; }
+	} @else if $size == xl {
+		@media (min-width: 1600px) { @content; }
+	} @else {
+		@media (min-width: $size) { @content; }
+	}
+}
+
+// fluid text function and linear math
+@function fluid-text($min-screen-width, $min-font-size, $max-screen-width, $max-font-size) {
+	$slope: ($max-font-size - $min-font-size) / ($max-screen-width - $min-screen-width);
+	$y-intersect: -1 * $min-screen-width * $slope + $min-font-size;
+	$return: clamp(#{$min-font-size}, #{$y-intersect} + #{$slope} * 100vw, #{$max-font-size});
+	@return $return;
+}

@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+
+html, body {
+	text-rendering: optimizeLegibility;
+	font-size: 16px;
+	line-height: 1.5;
+	overflow-x: hidden;
+	font-variant-numeric: lining-nums;
+	font-feature-settings: "lnum" 1;
+	background-color: $site-background;
+}
+
+img {
+	display: block; // prevents text-wrap around images
+	max-width: 100%;
+	height: auto;
+}
+
+// post content body wrapper
+.main-post-wrapper {
+	position: relative;
+	max-width: 90rem;
+	width: 100%;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+// full width container
+#full-width {
+	position: relative;
+	width: 100vw;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
