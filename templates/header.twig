@@ -1,6 +1,6 @@
 <header class="main-site-header">
     {% if options.enable_notice_banner %}
-        <div class="notice-banner" role="alert" aria-label="Announcement" data-aos="fade-down">
+        <div class="notice-banner" role="alert" aria-label="Announcement" data-aos="fade-down" data-aos-delay="250">
             <p class="notice-banner__text">{{ options.notice_banner_text }}</p>
             <button id="close-notice" aria-label="Close notice banner" title="Close">
                 <span class="close-icon">&times;</span>
@@ -8,8 +8,8 @@
         </div>
     {% endif %}
 
-    <nav class="site-nav" data-aos="fade-down">
-        <a class="site-nav--text-logo" {% if not is_front_page %}href="/"{% endif %}>ShaneSchroll</a>
+    <nav class="site-nav" data-aos="fade-down" {% if options.enable_notice_banner %}data-aos-delay="750"{% else %}data-aos-delay="250"{% endif %}>
+        <a class="site-nav--text-logo" {% if not is_front_page %}href="/"{% endif %}><strong>ShaneSchroll</strong></a>
 
         <ul class="main-menu">
             <li><a href="/about">About</a></li>
@@ -19,5 +19,5 @@
         </ul>
     </nav>
 
-    <section class="title-container" data-aos="fade-down"></section>
+    <section class="title-container" data-aos="fade-down" data-aos-delay="1250"></section>
 </header>

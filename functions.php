@@ -17,6 +17,7 @@ class ShaneSchrollSite extends TimberSite {
 		// Filter Hooks //
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
+		add_filter( 'use_block_editor_for_post', '__return_false' );
 
 		parent::__construct();
 	}

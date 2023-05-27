@@ -1,40 +1,32 @@
-.notice-banner {
-    position: relative;
-    border: 1px solid $dark-blue;
-    border-radius: $radius-small;
-    padding: 0.35rem;
-
-    &__text {
-        max-width: 85%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    #close-notice {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        &:hover { cursor: pointer; }
-
-        @include mq(md) {
-            top: 50%;
-            transform: translateY(-52%);
-        }
-
-        // unicode times symbol - &times;
-        .close-icon {
-            font-size: 1.5rem;
-            line-height: 0.75;
-            font-family: $secondary-font;
-            font-weight: 500;
-            color: $dark-blue;
-        }
-    }
-}
-
 // header, primary nav, title
 .main-site-header {
     max-width: 100%;
-    margin: 0 auto;
-    padding: 0.65rem 1rem;
+    margin: 0 auto 3rem;
+    padding: 0.65rem 1rem 0;
+
+    // <nav> container
+    .site-nav {
+        display: flex;
+        justify-content: space-between;
+        max-width: 90rem;
+        padding: 0 1rem;
+        margin: 1rem auto 0;
+
+        &--text-logo { font-size: 1.25rem; }
+
+        // nav list reset
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-menu {
+            display: flex;
+            max-width: 30rem;
+            width: 100%;
+            justify-content: space-between;
+
+        }
+    }
 }

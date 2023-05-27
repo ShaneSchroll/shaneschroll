@@ -1,22 +1,39 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<div class="content-block">
-    {# <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-        </div>
+<h1>Skills & Abilities</h1>
+<section id="full-width" class="row-wrapper" data-aos="fade-down" data-aos-delay="1500">
+	<div class="row-wrapper__row">
+		{% for skill in post.get_field('skills') %}
+			<a class="row-wrapper__row--item" href="/">
+				<p class="row-icon"><span class="fa-solid {{ skill.icon }}"></span></p>
+				<p>{{ skill.name }}</p>
+				<p>{{ skill.snippet }}</p>
+			</a>
+		{% endfor %}
+	</div>
+</section>
 
-        <div class="swiper-pagination"></div>
-      
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      
-        <div class="swiper-scrollbar"></div>
-    </div> #}
-</div> 
+{# <section class="row-wrapper">
+	<h1>My Portfolio</h1>
+</section>
+
+<section class="row-wrapper">
+	<h1>Tech Stack</h1>
+</section> #}
+
+{# <div class="swiper">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">Slide 1</div>
+		<div class="swiper-slide">Slide 2</div>
+		<div class="swiper-slide">Slide 3</div>
+	</div>
+
+	<div class="swiper-pagination"></div>
+
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+
+	<div class="swiper-scrollbar"></div>
+</div> #}
 {% endblock %}
