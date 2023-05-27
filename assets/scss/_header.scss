@@ -1,7 +1,6 @@
 .notice-banner {
     position: relative;
-    background: $light-black;
-    border: 1px solid $light-black;
+    border: 1px solid $dark-blue;
     border-radius: $radius-small;
     padding: 0.35rem;
 
@@ -35,5 +34,7 @@
 
 // header, primary nav, title
 .main-site-header {
-
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.65rem 1rem;
 }
