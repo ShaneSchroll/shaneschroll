@@ -1,8 +1,9 @@
 // header, primary nav, title
 .main-site-header {
     max-width: 100%;
-    margin: 0 auto 3rem;
-    padding: 0.5rem 1rem 0;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    border-bottom: 2px solid $dark-blue;
 
     // <nav> container
     .site-nav {
@@ -11,7 +12,7 @@
         align-items: center;
         max-width: 90rem;
         padding: 0 1rem;
-        margin: 1rem auto 0;
+        margin: 0 auto;
 
         &--text-logo { font-size: 1.5rem; }
 
@@ -36,9 +37,4 @@
             justify-content: space-between;
         }
     }
-}
-
-// contains animated text cube "Kinetic Typography"
-.title-container {
-
 }

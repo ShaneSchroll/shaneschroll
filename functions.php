@@ -78,8 +78,8 @@ class ShaneSchrollSite extends TimberSite {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
 		wp_enqueue_style( 'rscr-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
 		wp_enqueue_script( 'aos', get_template_directory_uri() . '/assets/js/packages/aos.js', [], '2.3.4' );
-		wp_enqueue_script( 'swiper', get_template_directory_uri() . '/assets/js/packages/swiper.js', [], '9.2.3' );
-		wp_enqueue_script( 'rscr-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'aos', 'swiper'], $version );
+		wp_enqueue_script( 'scenejs', get_template_directory_uri() . '/assets/js/packages/scenejs.js', [], '1.10.0' );
+		wp_enqueue_script( 'rscr-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'aos', 'scenejs'], $version );
 	}
 
 	// custom context helper functions

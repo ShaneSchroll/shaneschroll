@@ -2,10 +2,10 @@
     $(window).on('load', function() {
 
         // initialize aos + defaults
-        // AOS.init({
-        //     offset: 150,
-        //     duration: 1200
-        // });
+        AOS.init({
+            offset: 150,
+            duration: 1200
+        });
 
         // notice banner functions and cookies
         $(function noticeBanner() {
@@ -23,26 +23,5 @@
                 $('.notice-banner').fadeToggle(350);
             });
         });
-
-        // setup our features swiper
-        // const swiper = new Swiper('.swiper', {
-        //     direction: 'horizontal',
-        //     loop: true, // same as 'autoplay: infinite'
-        //     speed: 3500,
-
-        //     // pagination: {
-        //     //     el: '.swiper-pagination',
-        //     // },
-
-        //     navigation: {
-        //         nextEl: '.swiper-button-next',
-        //         prevEl: '.swiper-button-prev',
-        //     },
-
-        //     // scrollbar: {
-        //     //     el: '.swiper-scrollbar',
-        //     // },
-        // });
-
 	}); // end window.load
 })(jQuery);

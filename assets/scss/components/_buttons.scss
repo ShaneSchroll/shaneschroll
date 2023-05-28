@@ -9,7 +9,9 @@
     font-weight: 700;
     font-family: $secondary-font;
 
-    span { margin-right: 0.25rem; }
+    // fa icons on spans
+    .icon-right { margin-left: 0.5rem; }
+    .icon-left { margin-right: 0.5rem; }
 
     &.light-purple { background-color: $light-purple; }
     &.grey-blue { background-color: $grey-blue; }
@@ -19,10 +21,16 @@
         border: 1px solid $light-purple;
         background-color: transparent;
         color: $light-purple;
+        span { transition: 0.2s ease-in; }
 
         &:hover {
             background-color: $light-purple;
             color: $white;
+
+            span {
+                color: $white;
+                transition: 0.2s ease-out;
+            }
         }
     }
 
@@ -30,10 +38,16 @@
         border: 1px solid $grey-blue;
         background-color: transparent;
         color: $grey-blue;
+        span { transition: 0.2s ease-in; }
 
         &:hover {
             background-color: $grey-blue;
             color: $white;
+
+            span {
+                color: $white;
+                transition: 0.2s ease-out;
+            }
         }
     }
 
@@ -41,10 +55,16 @@
         border: 1px solid $dark-blue;
         background-color: transparent;
         color: $dark-blue;
+        span { transition: 0.2s ease-in; }
 
         &:hover {
             background-color: $dark-blue;
             color: $white;
+
+            span {
+                color: $white;
+                transition: 0.2s ease-out;
+            }
         }
     }
 }

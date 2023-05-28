@@ -18,11 +18,14 @@
 	<body data-template="base.twig" class="{{ body_class }}">
 		{% include 'header.twig' %}
 
-		<section class="main-post-wrapper" role="main">
-			{% block content %}{% endblock %}
-		</section>
+		{% if not is_front_page %}
+			<section class="main-post-wrapper" role="main">
+				{% block content %}{% endblock %}
+			</section>
 
-		{% include 'footer.twig' %}
+			{% include 'footer.twig' %}
+		{% endif %}
+
 		{{ fn('wp_footer') }}
 	</body>
 </html>
