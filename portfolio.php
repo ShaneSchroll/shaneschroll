@@ -1,8 +1,8 @@
 <?php
-// Template Name: Past Work Template
+// Template Name: Portfolio Template
 $context = Timber::get_context();
 $post = Timber::get_post();
 $context['post'] = $post;
 
-$templates = ['past-work.twig'];
+$templates = ['portfolio.twig'];
 Timber::render( $templates, $context );

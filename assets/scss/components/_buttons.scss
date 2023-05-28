@@ -1,10 +1,13 @@
 // login button in the header
 .main-button {
-    padding: 0.4rem 1.25rem;
+    padding: 0.65rem 1.25rem;
     background-color: $grey-blue;
     border-radius: $radius-small;
     color: $white;
     text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: $secondary-font;
 
     span { margin-right: 0.25rem; }
 
@@ -15,18 +18,33 @@
     &.light-purple-border {
         border: 1px solid $light-purple;
         background-color: transparent;
-        &:hover { background-color: $light-purple; }
+        color: $light-purple;
+
+        &:hover {
+            background-color: $light-purple;
+            color: $white;
+        }
     }
 
     &.grey-blue-border {
         border: 1px solid $grey-blue;
         background-color: transparent;
-        &:hover { background-color: $grey-blue; }
+        color: $grey-blue;
+
+        &:hover {
+            background-color: $grey-blue;
+            color: $white;
+        }
     }
 
     &.dark-blue-border {
         border: 1px solid $dark-blue;
         background-color: transparent;
-        &:hover { background-color: $dark-blue; }
+        color: $dark-blue;
+
+        &:hover {
+            background-color: $dark-blue;
+            color: $white;
+        }
     }
 }

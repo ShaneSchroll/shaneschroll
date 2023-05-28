@@ -1,11 +1,11 @@
 (function($) {
     $(window).on('load', function() {
 
-        // initialize aos animations
-        AOS.init({
-            offset: 150,
-            duration: 1200
-        });
+        // initialize aos + defaults
+        // AOS.init({
+        //     offset: 150,
+        //     duration: 1200
+        // });
 
         // notice banner functions and cookies
         $(function noticeBanner() {
@@ -14,9 +14,12 @@
                 $('.notice-banner').hide();
             }
 
-            // close banner and set cookie
+            // close banner and set cookie (14 days)
             $('#close-notice').on('click', function() {
-                window.localStorage.setItem('close_banner_cookie', true, (60*24*7));
+                var now = (new Date()).getTime();
+                var day = 1000*60*60*24;
+                var expires = now + (day*14);
+                window.localStorage.setItem('close_banner_cookie', true, expires);
                 $('.notice-banner').fadeToggle(350);
             });
         });
