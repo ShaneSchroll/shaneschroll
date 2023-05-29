@@ -2,7 +2,6 @@
 .main-site-header {
     max-width: 100%;
     margin: 0 auto;
-    padding: 1rem 0;
 
     // nav container
     .site-nav {
@@ -10,7 +9,7 @@
         justify-content: space-between;
         align-items: center;
         max-width: 90rem;
-        padding: 0 1rem;
+        padding: 1rem;
         margin: 0 auto;
 
         &--text-logo {
@@ -25,11 +24,33 @@
             padding: 0;
 
             li a {
+                position: relative;
                 text-transform: uppercase;
                 font-size: 0.875rem;
                 font-weight: 700;
                 font-family: $secondary-font;
                 color: $white;
+                padding: 0.25rem;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 1.5rem;
+                    left: 50%;
+                    height: 3px;
+                    width: 0;
+                    background: transparent;
+                    transition: all 0.2s ease-out;
+                }
+
+                &:hover{
+                    &:after {
+                        transition: all 0.2s ease-out;
+                        width: 100%;
+                        left: 0;
+                        background: $green;
+                    }
+                }
             }
         }
 
@@ -43,6 +64,13 @@
 }
 
 .title-container {
+    padding: 7.25rem 0;
+    background-color: $secondary-background;
 
-    &__inner-wrap {}
+
+    &__inner-wrap {
+        max-width: 90rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
 }
