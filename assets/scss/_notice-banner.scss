@@ -1,6 +1,6 @@
 .notice-banner {
     position: relative;
-    border: 1px solid $alt-text-color;
+    border: 1px solid $dark-grey;
     border-radius: $radius-small;
     padding: 0.35rem;
 
@@ -34,7 +34,7 @@
             line-height: 0.75;
             font-family: $secondary-font;
             font-weight: 500;
-            color: $alt-text-color;
+            color: $dark-grey;
         }
     }
 }

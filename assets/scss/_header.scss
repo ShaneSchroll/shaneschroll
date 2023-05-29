@@ -37,7 +37,7 @@
                     position: absolute;
                     top: 1.5rem;
                     left: 50%;
-                    height: 3px;
+                    height: 2px;
                     width: 0;
                     background: transparent;
                     transition: all 0.2s ease-out;
@@ -64,9 +64,9 @@
 }
 
 .title-container {
-    padding: 7.25rem 0;
+    padding: 4.25rem 0;
     background-color: $secondary-background;
-
+    @include mq(md) { padding: 7.25rem 0; }
 
     &__inner-wrap {
         max-width: 90rem;
