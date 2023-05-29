@@ -1,0 +1,32 @@
+// primary button style
+.main-button {
+    padding: 0.65rem 1rem;
+    border-radius: $radius-small;
+    font-family: $secondary-font;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+
+    // FA icon right of text
+    .icon-right { margin-left: 0.5rem; }
+
+    // FA icon left of text
+    .icon-left { margin-right: 0.5rem; }
+
+    .icon-right,
+    .icon-left { color: $white; }
+
+    // green filled
+    &--filled {
+        background-color: $green;
+        &:hover { background-color: darken($green, 10%); }
+    }
+
+    // green outline
+    &--outlined {
+        background-color: transparent;
+        border: 2px solid $green;
+        &:hover { background-color: $green; }
+    }
+}

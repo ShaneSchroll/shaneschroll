@@ -4,7 +4,7 @@ small, time, ol, ul, li, button {
 	font-family: $primary-font;
 	font-size: 1rem;
 	font-weight: 400;
-	color: $dark-blue;
+	color: $alt-text-color;
 }
 
 small, time { font-size: 0.875rem; }
@@ -34,7 +34,7 @@ h4, h5, h6 {
 	font-family: $secondary-font;
 	font-weight: 500;
 	line-height: 1.2;
-	color: $dark-blue;
+	color: $white;
 }
 
 h1 { font-size: fluid-text(480px, 48px, 1200px, 64px); }
