@@ -1,5 +1,5 @@
 ### Hi, I'm Shane 👋 A Full-Stack Web Developer
-[//]: View my live portfolio: [shaneschroll.dev](https://shaneschroll.dev/)
+[](View my live portfolio: [shaneschroll.dev](https://shaneschroll.dev/))
 
 #### 🔥 I'm proficienct in
 - **Front-End**: HTML, SCSS, JS, jQuery, Twig
