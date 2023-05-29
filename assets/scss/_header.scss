@@ -8,7 +8,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 90rem;
+        max-width: 77rem;
         padding: 1rem;
         margin: 0 auto;
 
@@ -43,7 +43,7 @@
                     transition: all 0.2s ease-out;
                 }
 
-                &:hover{
+                &:hover {
                     &:after {
                         transition: all 0.2s ease-out;
                         width: 100%;
@@ -63,14 +63,48 @@
     }
 }
 
+// homepage
 .title-container {
     padding: 4.25rem 0;
     background-color: $secondary-background;
-    @include mq(md) { padding: 7.25rem 0; }
+    @include mq(md) { padding: 6.25rem 0; }
 
     &__inner-wrap {
-        max-width: 90rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 77rem;
         margin: 0 auto;
         padding: 0 1rem;
+
+        &--title {
+            max-width: 45rem;
+
+            p { margin-bottom: 2.3rem; }
+
+            .main-button--filled { margin-right: 1.25rem; }
+        }
+
+        .split-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1, h2 {
+                line-height: 1;
+                font-weight: 700;
+                margin-bottom: 0;
+            }
+
+            h1 {
+                font-size: fluid-text(480px, 30px, 1200px, 150px);
+                margin-right: 2rem;
+                color: $green;
+            }
+        }
+
+        img {
+            max-width: 30rem;
+        }
     }
 }

@@ -4,5 +4,5 @@ $context = Timber::get_context();
 $post = Timber::get_post();
 $context['post'] = $post;
 
-$templates = ['tech-stack.twig'];
+$templates = ['pages/tech-stack.twig'];
 Timber::render( $templates, $context );

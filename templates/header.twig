@@ -20,10 +20,20 @@
         <a class="main-button main-button--outlined" href="/contact">Get In Touch <span class="fa-solid fa-mug-hot icon-right"></span></a>
     </nav>
 
-    <section id="full-width" class="title-container">
-        <div class="title-container__inner-wrap">
-            <div class="title-container__inner-wrap--"></div>
-            <img src="" alt="" />
-        </div>
-    </section>
+    {% if is_front_page %}
+        <section id="full-width" class="title-container">
+            <div class="title-container__inner-wrap">
+                <div class="title-container__inner-wrap--title">
+                    <div class="split-title">
+                        <h1>{{ post.large_title }}</h1>
+                        <h2>{{ post.small_title }}</h2>
+                    </div>
+                    <p>{{ post.intro_text }}</p>
+                    <a class="main-button main-button--filled" href="{{ post.button_link_one }}">{{ post.button_text_one }}</a>
+                    <a class="main-button main-button--outlined" href="{{ post.button_link_two }}">{{ post.button_text_two }}</a>
+                </div>
+                <img src="{{ TimberImage( post.header_image ).src }}" alt="{{ TimberImage( post.header_image ).alt }}" />
+            </div>
+        </section>
+    {% endif %}
 </header>

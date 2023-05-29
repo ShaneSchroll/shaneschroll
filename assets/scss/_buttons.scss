@@ -21,7 +21,7 @@
     &--filled {
         background-color: $green;
         border: 2px solid transparent;
-        &:hover { background-color: darken($green, 10%); }
+        &:hover { background-color: $dark-green; }
     }
 
     // green outline
