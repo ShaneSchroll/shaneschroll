@@ -1,0 +1,33 @@
+.tech-section-head {
+    color: $green;
+	border-bottom: 2px solid $green;
+	padding-bottom: 1rem;
+	margin-bottom: 2.5rem;
+}
+
+// icons and custom tooltip on hover
+.icon-box {
+    position: relative;
+    max-width: 100px;
+
+    &--icon {
+        position: relative;
+
+        &:hover {
+            ~ .icon-box--tooltip {
+                opacity: 1;
+                transition: 0.2s ease-in;
+            }
+        }
+    }
+
+    &--tooltip {
+        position: absolute;
+        top: -2.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        color: $white;
+        transition: 0.2s ease-out;
+    }
+}
