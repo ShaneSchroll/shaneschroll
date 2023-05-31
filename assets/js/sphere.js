@@ -5,7 +5,7 @@ window.onload = function() {
             depth: 0.4,
             maxSpeed: 0.1,
             wheelZoom: true,
-            freezeActive: true,
+            freezeActive: false,
             shuffleTags: true,
             shape: 'sphere',
             clickToFront: 450,

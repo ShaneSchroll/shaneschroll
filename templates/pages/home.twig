@@ -3,32 +3,17 @@
 {% block content %}
 <section class="home-content">
     <section class="about-section">
-        <img src="" alt="" />
+        <img src="{{ TimberImage( post.about_image ).src }}" alt="{{ TimberImage( post.about_image ).alt }}" />
         <article class="about-section__text-content">
-            <h4 class="small-title"></h4>
-            <h2></h2>
-            <p></p>
+            <h4 class="small-title">About Me</h4>
+            <h2>{{ post.section_title }}</h2>
+            <p>{{ post.text_content }}</p>
         </article>
     </section>
 
     <section class="contact-section">
         <h2 id="contact">Get In Touch</h2>
-
-        <form class="contact-section__form" action="" method="">
-            <label for="name" class="hidden">Enter your name</label>
-            <input name="name" type="text" placeholder="Name*" required>
-
-            <label for="email" class="hidden">Enter your email</label>
-            <input name="email" type="text" placeholder="Email*" required>
-
-            <label for="company" class="hidden">Enter your company name (optional)</label>
-            <input name="company" type="text" placeholder="Company Name">
-
-            <label for="message" class="hidden">Enter your message</label>
-            <textarea name="message" rows="8" placeholder="Message*" required></textarea>
-
-            <button class="main-button main-button--outlined" type="submit">Send It <span class="fa-solid fa-paper-plane icon-right"></span></button>
-        </form>
+        {% include 'form.twig' %}
     </section>
 </section>
 {% endblock %}

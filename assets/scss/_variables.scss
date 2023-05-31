@@ -8,7 +8,7 @@ $secondary-background: #252829;
 $dark-grey: #ABAEB0;
 $light-grey: #FAF8F9;
 $green: #00E472;
-$dark-green: #1E4E38;
+$dark-green: #00B45A;
 
 // Fonts
 $primary-font: 'Montserrat', sans-serif; // weights: 400(+i), 600(+i), 700
@@ -21,8 +21,10 @@ $radius-large: 15px;
 
 // breakpoint mixin
 @mixin mq($size) {
-	@if $size == xs {
+	@if $size == xxs {
 		@media (min-width: 414px) { @content; }
+	} @else if $size == xs {
+		@media (min-width: 480px) { @content; }
 	} @else if $size == sm {
 		@media (min-width: 768px) { @content; }
 	} @else if $size == md {
@@ -36,7 +38,7 @@ $radius-large: 15px;
 	}
 }
 
-// fluid text function and linear math
+// fluid text function and linear math for font scaling
 @function fluid-text($min-screen-width, $min-font-size, $max-screen-width, $max-font-size) {
 	$slope: ($max-font-size - $min-font-size) / ($max-screen-width - $min-screen-width);
 	$y-intersect: -1 * $min-screen-width * $slope + $min-font-size;

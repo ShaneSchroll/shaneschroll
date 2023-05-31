@@ -1,0 +1,28 @@
+.main-site-footer {
+    max-width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: $secondary-background;
+
+    p {
+        margin: 0 auto;
+        font-size: 12px;
+
+        span {
+            margin-left: 2px;
+            margin-right: 2px;
+            font-size: 12px;
+            color: $green;
+        }
+
+        @include mq(440px) {
+            font-size: 1rem;
+
+            span {
+                font-size: 1rem;
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+        }
+    }
+}
