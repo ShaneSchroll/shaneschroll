@@ -15,7 +15,6 @@ if( is_singular() ) :
 endif;
 
 // attempt to render a corresponding view (.twig) file that matches any of the below patterns
-// if no matches are found, load the default single post view (single.twig)
 Timber::render([
 	'single-' . $post->ID . '.twig',
 	'single-' . $post->post_type . '.twig',
