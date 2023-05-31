@@ -12,7 +12,7 @@
     </section>
 
     <section class="contact-section">
-        <h2>Get In Touch</h2>
+        <h2 id="contact">Get In Touch</h2>
 
         <form class="contact-section__form" action="" method="">
             <label for="name" class="hidden">Enter your name</label>
@@ -21,16 +21,13 @@
             <label for="email" class="hidden">Enter your email</label>
             <input name="email" type="text" placeholder="Email*" required>
 
-            <label for="phone" class="hidden">Enter your phone number (optional)</label>
-            <input name="phone" type="text" placeholder="Phone Number">
-
             <label for="company" class="hidden">Enter your company name (optional)</label>
             <input name="company" type="text" placeholder="Company Name">
 
             <label for="message" class="hidden">Enter your message</label>
-            <input name="message" type="textarea" placeholder="Message*" required>
+            <textarea name="message" rows="8" placeholder="Message*" required></textarea>
 
-            <button type="submit">Send It</button>
+            <button class="main-button main-button--outlined" type="submit">Send It <span class="fa-solid fa-paper-plane icon-right"></span></button>
         </form>
     </section>
 </section>

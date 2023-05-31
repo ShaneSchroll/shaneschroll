@@ -23,12 +23,22 @@
 }
 
 form {
-    max-width: 60rem;
+    max-width: 40rem;
     margin: 0 auto;
+    text-align: center;
 
-    input {}
-
-    button {
-        
+    input, textarea {
+        display: block;
+        margin: 0 auto 1.5rem;
+        width: 100%;
+        background: unset;
+        border: 2px solid $green;
+        border-radius: $radius-medium;
+        font-family: $primary-font;
+        font-size: 1.125rem;
+        color: $white;
+        padding: 1rem;
     }
+
+    textarea { resize: none; }
 }
