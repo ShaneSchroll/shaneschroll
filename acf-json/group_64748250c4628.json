@@ -47,7 +47,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "preview_size": "medium",
+                    "preview_size": "thumbnail",
                     "parent_repeater": "field_647483f9336b2"
                 },
                 {
@@ -79,7 +79,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "tech-stack.php"
+                "value": "about.php"
             }
         ]
     ],
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685357645
+    "modified": 1685503022
 }

@@ -1,8 +1,10 @@
 .notice-banner {
     position: relative;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0.35rem;
     border: 1px solid $dark-grey;
     border-radius: $radius-small;
-    padding: 0.35rem;
 
     &__text {
         max-width: 85%;
@@ -23,10 +25,6 @@
         right: 0.5rem;
         transform: translateY(-52%);
         &:hover { cursor: pointer; }
-
-        @include mq(md) {
-            
-        }
 
         // unicode times symbol - &times;
         .close-icon {

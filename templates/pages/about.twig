@@ -1,6 +1,25 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<div class="content-block">
-</div> 
+<section class="content-block">
+
+    <div id="sphere-container">
+        <canvas id="sphere-canvas" width="550" height="550" style="width: 100%;"></canvas>
+
+        <div id="sphere-tags">
+            <ul>
+                {% for lang in post.get_field('language_icons') %}
+                    <li><a href="#">
+                        <img
+                            class="lang-icon"
+                            src="{{ TimberImage( lang.icon ).src }}"
+                            alt="{{ TimberImage( lang.icon ).alt }}"
+                            title="{{ lang.name }}"
+                        />
+                    </a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
 {% endblock %}

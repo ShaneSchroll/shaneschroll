@@ -1,5 +1,37 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<div class="home-content"></div>
+<section class="home-content">
+    <section class="about-section">
+        <img src="" alt="" />
+        <article class="about-section__text-content">
+            <h4 class="small-title"></h4>
+            <h2></h2>
+            <p></p>
+        </article>
+    </section>
+
+    <section class="contact-section">
+        <h2>Get In Touch</h2>
+
+        <form class="contact-section__form" action="" method="">
+            <label for="name" class="hidden">Enter your name</label>
+            <input name="name" type="text" placeholder="Name*" required>
+
+            <label for="email" class="hidden">Enter your email</label>
+            <input name="email" type="text" placeholder="Email*" required>
+
+            <label for="phone" class="hidden">Enter your phone number (optional)</label>
+            <input name="phone" type="text" placeholder="Phone Number">
+
+            <label for="company" class="hidden">Enter your company name (optional)</label>
+            <input name="company" type="text" placeholder="Company Name">
+
+            <label for="message" class="hidden">Enter your message</label>
+            <input name="message" type="textarea" placeholder="Message*" required>
+
+            <button type="submit">Send It</button>
+        </form>
+    </section>
+</section>
 {% endblock %}
