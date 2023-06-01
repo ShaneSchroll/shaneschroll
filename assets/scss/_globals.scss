@@ -55,5 +55,13 @@ img {
 }
 
 .error {
-	border-color: $error;
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: $error;
+}
+
+.success {
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: $green;
 }

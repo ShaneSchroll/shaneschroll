@@ -1,4 +1,4 @@
-<form id="contact-form" class="contact-section__form" action="" method="">
+<form id="contact-form" class="contact-section__form" method="POST" enctype="multipart/form-data" action="https://getform.io/f/0d48d2e2-fe31-4ddc-81b0-2db1796956a2">
     <label for="name" class="hidden">Enter your name</label>
     <input id="name" name="name" type="text" placeholder="Name*" required>
 
@@ -22,7 +22,7 @@
     <label for="message" class="hidden">Enter your message</label>
     <textarea id="message" name="message" rows="8" placeholder="Message*" required></textarea>
 
-    <input type="text" name="phone" style="display:none !important;" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="_phone" style="display:none !important;">
 
     <button class="main-button main-button--outlined" type="submit">Send It <span class="fa-solid fa-paper-plane icon-right"></span></button>
 </form>

@@ -24,25 +24,5 @@
                 $('.notice-banner').fadeToggle(350);
             });
         });
-
-        // form submit and validation
-        $(function submitForm() {
-            var contact_form = $('#contact-form');
-
-            contact_form.on('submit', (e) => {
-                e.preventDefault();
-
-                // collect form data
-                var name = $('#name').val();
-                var email = $('#email').val();
-                var company = $('#company').val();
-                var contact_reason = $('#contact-reason').val();
-                var message = $('#message').val();
-
-                // check form data
-                if(name == '' || email == '' || contact_reason == '' || message == '') {} else {}
-            });
-
-        });
 	}); // end window.load
 })(jQuery);
