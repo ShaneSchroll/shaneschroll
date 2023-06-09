@@ -11,23 +11,35 @@
             max-width: 30rem;
             margin-right: 2.5rem;
         }
-
-        &__text-content {
-            .small-title {
-                font-size: 1.125rem;
-                text-transform: uppercase;
-                letter-spacing: 4px;
-                color: $green;
-            }
-        }
     }
 
     .contact-section {
-        padding: 3rem 0;
+        padding: 5rem 0 3rem;
 
         h2 {
             text-align: center;
             margin-bottom: 2.5rem;
+        }
+    }
+
+    .tech-section {
+        padding: 5rem 0;
+        background-color: $secondary-background;
+        text-align: center;
+
+        .icon-wrapper {
+            padding: 0 1rem;
+        }
+
+        .tech-row {
+            display: flex;
+            max-width: 50rem;
+            margin: 3rem auto;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+            img { max-width: 150px; }
         }
     }
 }
@@ -39,15 +51,16 @@ form {
 
     input, textarea, select {
         display: block;
-        margin: 0 auto 1.5rem;
         width: 100%;
+        margin: 0 auto 1.5rem;
+        padding: 1rem;
         background: unset;
         border: 2px solid $green;
         border-radius: $radius-medium;
         font-family: $primary-font;
         font-size: 1rem;
         color: $white;
-        padding: 1rem;
+        outline: none;
         @include mq(xs) { font-size: 1.125rem; }
     }
 

@@ -1,11 +1,11 @@
 {
-    "key": "group_64748250c4628",
-    "title": "Tech Stack - Languages",
+    "key": "group_6482e18a2f99a",
+    "title": "Home - Tech Icons",
     "fields": [
         {
-            "key": "field_647483f9336b2",
-            "label": "Language Icons",
-            "name": "language_icons",
+            "key": "field_6482e18abe3bf",
+            "label": "Tech Icon Row",
+            "name": "tech_icon_row",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -25,9 +25,9 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_64748251a6334",
-                    "label": "Icon",
-                    "name": "icon",
+                    "key": "field_6482e1a4be3c0",
+                    "label": "Tech Icon",
+                    "name": "tech_icon",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -47,16 +47,16 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "preview_size": "thumbnail",
-                    "parent_repeater": "field_647483f9336b2"
+                    "preview_size": "medium",
+                    "parent_repeater": "field_6482e18abe3bf"
                 },
                 {
-                    "key": "field_6474826ea6335",
-                    "label": "Name",
-                    "name": "name",
+                    "key": "field_6482e1aebe3c1",
+                    "label": "Tech Name",
+                    "name": "tech_name",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "For tooltip.",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -69,7 +69,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_647483f9336b2"
+                    "parent_repeater": "field_6482e18abe3bf"
                 }
             ]
         }
@@ -79,11 +79,11 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "about.php"
+                "value": "front-page.php"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 2,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686300286
+    "modified": 1686299939
 }

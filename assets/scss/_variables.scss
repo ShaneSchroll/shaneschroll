@@ -20,7 +20,7 @@ $radius-small: 5px;
 $radius-medium: 10px;
 $radius-large: 15px;
 
-// breakpoint mixin
+// Breakpoint Mixin
 @mixin mq($size) {
 	@if $size == xxs {
 		@media (min-width: 414px) { @content; }
@@ -39,7 +39,7 @@ $radius-large: 15px;
 	}
 }
 
-// fluid text function and linear math for font scaling
+// Fluid text function and linear math for font scaling
 @function fluid-text($min-screen-width, $min-font-size, $max-screen-width, $max-font-size) {
 	$slope: ($max-font-size - $min-font-size) / ($max-screen-width - $min-screen-width);
 	$y-intersect: -1 * $min-screen-width * $slope + $min-font-size;

@@ -15,6 +15,14 @@ a {
 	&:hover { transition: 0.2s ease-out; }
 }
 
+.small-title {
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	margin-bottom: 0.5rem;
+	color: $green;
+}
+
 p {
 	margin-top: 1.25rem;
 	margin-bottom: 1.25rem;
@@ -44,8 +52,8 @@ h4, h5, h6 {
 }
 
 h1 { font-size: fluid-text(480px, 35px, 1200px, 65px); }
-h2 { font-size: fluid-text(480px, 35px, 1200px, 45px); }
+h2 { font-size: fluid-text(480px, 28px, 1200px, 45px); }
 h3 { font-size: fluid-text(480px, 20px, 1200px, 35px); }
-h4 { font-size: fluid-text(480px, 18px, 1200px, 25px);; }
+h4 { font-size: fluid-text(480px, 18px, 1200px, 25px); }
 h5 { font-size: 16px; }
 h6 { font-size: 14px; }

@@ -3,7 +3,7 @@ window.onload = function() {
         TagCanvas.Start('sphere-canvas', 'sphere-tags', {
             reverse: false,
             depth: 0.4,
-            maxSpeed: 0.1,
+            maxSpeed: 0.06,
             wheelZoom: true,
             freezeActive: false,
             shuffleTags: true,

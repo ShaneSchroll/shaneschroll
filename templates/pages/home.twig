@@ -8,7 +8,25 @@
             <h4 class="small-title">About Me</h4>
             <h2>{{ post.section_title }}</h2>
             <p>{{ post.text_content }}</p>
+            <a class="main-button main-button--outlined inline" href="/about">Learn More</a>
         </article>
+    </section>
+
+    <section id="full-width" class="tech-section">
+        <div class="icon-wrapper">
+            <h4 class="small-title">Tech Stack</h4>
+            <h2>Some of my favorite technologies to work with!</h2>
+            <div class="tech-row">
+                {% for icon in post.get_field('tech_icon_row') %}
+                    <img
+                        src="{{ TimberImage( icon.tech_icon ).src }}"
+                        alt="{{ TimberImage( icon.tech_icon ).alt }}"
+                        title="{{ icon.tech_name }}"
+                    />
+                {% endfor %}
+            </div>
+            <a class="main-button main-button--outlined inline" href="/about#tech-stack">See More <span class="fa-solid fa-glasses icon-right"></span></a>
+        </div>
     </section>
 
     <section class="contact-section">
