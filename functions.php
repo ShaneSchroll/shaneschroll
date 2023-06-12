@@ -62,11 +62,14 @@ class ShaneSchrollSite extends TimberSite {
 			}
 
 			#login h1 a, .login h1 a {
-				background-image: url('<?= get_stylesheet_directory_uri() . '/assets/media/logo.svg' ?>') !important;
+				background-image: url('<?= get_stylesheet_directory_uri() . '/ss-logo.webp' ?>') !important;
 				background-position: center;
-				width: 17rem;
+				width: 20rem;
+				height: 10rem;
 				background-size: cover;
 			}
+
+			#login-message.message { border-color: #F6BE00 !important; }
 
 			#backtoblog { display: none !important; }
 			.privacy-policy-page-link { display: none !important; }

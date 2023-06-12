@@ -2,68 +2,9 @@
 .main-site-header {
     max-width: 100%;
     margin: 0 auto;
-
-    // nav container
-    .site-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 77rem;
-        padding: 1rem;
-        margin: 0 auto;
-
-        &--text-logo {
-            font-size: 1.5rem;
-            color: $white;
-        }
-
-        // nav - list reset / setup
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            li a {
-                position: relative;
-                text-transform: uppercase;
-                font-size: 0.875rem;
-                font-weight: 700;
-                font-family: $secondary-font;
-                color: $white;
-                padding: 0.25rem;
-
-                &:after {
-                    content: '';
-                    position: absolute;
-                    top: 1.5rem;
-                    left: 50%;
-                    height: 2px;
-                    width: 0;
-                    background: transparent;
-                    transition: all 0.2s ease-out;
-                }
-
-                &:hover {
-                    &:after {
-                        transition: all 0.2s ease-out;
-                        width: 100%;
-                        left: 0;
-                        background: $green;
-                    }
-                }
-            }
-        }
-
-        &--main-menu {
-            display: flex;
-            max-width: 23rem;
-            width: 100%;
-            justify-content: space-between;
-        }
-    }
 }
 
-// homepage
+// homepage intro header
 .title-container {
     padding: 4.25rem 0;
     background-color: $secondary-background;

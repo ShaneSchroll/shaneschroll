@@ -22,7 +22,19 @@
 			{% block content %}{% endblock %}
 		</section>
 
-		{% include 'footer.twig' %}
+		<footer class="main-site-footer">
+			<p>Designed &amp; Developed with <span class="fa-solid fa-heart"></span> by Shane Schroll</p>
+		</footer>
+
+		<section class="site-nav-mobile">
+			<nav class="site-nav-mobile__nav">
+				<ul>
+					<li><a class="" href="/"><span class="fa-solid fa-house icon-top"></span>Home</a></li>
+					<li><a class="" href="/portfolio"><span class="fa-solid fa-book-atlas icon-top"></span>Portfolio</a></li>
+					<li><a class="" href="/about"><span class="fa-solid fa-user-ninja icon-top"></span>About</a></li>
+				</ul>
+			</nav>
+		</section>
 		{{ fn('wp_footer') }}
 	</body>
 </html>
