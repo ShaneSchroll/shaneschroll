@@ -1,6 +1,6 @@
 {
     "key": "group_64748250c4628",
-    "title": "Tech Stack - Languages",
+    "title": "About - Language Sphere",
     "fields": [
         {
             "key": "field_647483f9336b2",
@@ -34,7 +34,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686300286
+    "modified": 1686528645
 }
