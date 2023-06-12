@@ -1,2 +1,2 @@
-var e;(e=jQuery)(window).on("load",(function(){AOS.init({offset:150,duration:1200}),e((function(){window.localStorage.getItem("close_banner_cookie")&&e(".notice-banner").hide(),e("#close-notice").on("click",(function(){var o=(new Date).getTime()+12096e5;window.localStorage.setItem("close_banner_cookie",!0,o),e(".notice-banner").fadeToggle(350)}))}))}));
+jQuery(window).on("load",(function(){AOS.init({offset:150,duration:1200})}));
 //# sourceMappingURL=site-dist.js.map

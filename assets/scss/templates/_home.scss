@@ -1,5 +1,5 @@
 .home-content {
-    padding: 1rem 0;
+    padding: 1rem 0 0;
 
     .about-section {
         display: flex;
@@ -14,7 +14,7 @@
     }
 
     .contact-section {
-        padding: 5rem 0 3rem;
+        padding: 5rem 0;
 
         h2 {
             text-align: center;
@@ -40,63 +40,6 @@
             flex-wrap: wrap;
 
             img { max-width: 150px; }
-        }
-    }
-}
-
-form {
-    max-width: 45rem;
-    margin: 0 auto;
-    text-align: center;
-
-    input, textarea, select {
-        display: block;
-        width: 100%;
-        margin: 0 auto 1.5rem;
-        padding: 1rem;
-        background: unset;
-        border: 2px solid $green;
-        border-radius: $radius-medium;
-        font-family: $primary-font;
-        font-size: 1rem;
-        color: $white;
-        outline: none;
-        @include mq(xs) { font-size: 1.125rem; }
-    }
-
-    textarea { resize: none; }
-
-    .select-wrap {
-        position: relative;
-        background-color: transparent;
-
-        &:after {
-            content: '\f078';
-            position: absolute;
-            top: 1.6rem;
-            right: 1.25rem;
-            transform: translateY(-50%);
-            font-family: 'FontAwesome';
-            font-size: 1rem;
-            color: $dark-grey;
-            z-index: 1;
-            @include mq(xs) { font-size: 1.125rem; }
-        }
-
-        select {
-            position: relative;
-            appearance: none;
-            padding-right: 3rem;
-            background-color: transparent;
-            color: $dark-grey;
-            z-index: 5;
-
-            &:hover { cursor: pointer; }
-
-            option {
-                background-color: $secondary-background;
-                color: $green;
-            }
         }
     }
 }

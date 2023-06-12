@@ -93,7 +93,6 @@ class ShaneSchrollSite extends TimberSite {
 		$context['site']           	= $this;
 		$context['date'] 			= date('F j, Y');
 		$context['date_year']      	= date('Y');
-		$context['options'] 		= get_fields('option');
 		$context['is_front_page']	= is_front_page();
 		return $context;
 	}
@@ -103,17 +102,6 @@ class ShaneSchrollSite extends TimberSite {
 		add_theme_support( 'disable-custom-colors' );
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'style.css' );
-
-		if( function_exists( 'acf_add_options_page' ) ) {
-			acf_add_options_page([
-				'page_title'  => __('Notice Banner Settings'),
-				'menu_title'  => __('Notice Banner'),
-				'position' => 2,
-				'capability'  => 'edit_posts',
-				'redirect'    => false,
-				'icon_url' 	  => 'dashicons-database-add'
-			]);
-		}
 	}
 
 	// include registered post types

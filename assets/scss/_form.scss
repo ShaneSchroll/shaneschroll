@@ -1,0 +1,70 @@
+// Get in Touch form
+form {
+    max-width: 45rem;
+    margin: 0 auto;
+    text-align: center;
+
+    input, textarea, select {
+        display: block;
+        width: 100%;
+        margin: 0 auto 1.5rem;
+        padding: 1rem;
+        background: unset;
+        border: 2px solid $green;
+        border-radius: $radius-medium;
+        font-family: $primary-font;
+        font-size: 1rem;
+        color: $white;
+        outline: none;
+        @include mq(xs) { font-size: 1.125rem; }
+    }
+
+    textarea { resize: none; }
+
+    .select-wrap {
+        position: relative;
+        background-color: transparent;
+
+        &:after {
+            content: '\f078';
+            position: absolute;
+            top: 1.6rem;
+            right: 1.25rem;
+            transform: translateY(-50%);
+            font-family: 'FontAwesome';
+            font-size: 1rem;
+            color: $dark-grey;
+            z-index: 1;
+            @include mq(xs) { font-size: 1.125rem; }
+        }
+
+        select {
+            position: relative;
+            appearance: none;
+            padding-right: 3rem;
+            background-color: transparent;
+            color: $dark-grey;
+            z-index: 5;
+
+            &:hover { cursor: pointer; }
+
+            option {
+                background-color: $secondary-background;
+                color: $green;
+            }
+        }
+    }
+}
+
+// visually hidden but still available to ATs
+.hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0,0,0,0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}

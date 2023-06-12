@@ -6,23 +6,5 @@
             offset: 150,
             duration: 1200
         });
-
-        // notice banner functions and cookies
-        $(function noticeBanner() {
-            // hide banner if cookie is set
-            if(window.localStorage.getItem('close_banner_cookie')) {
-                $('.notice-banner').hide();
-            }
-
-            // close banner and set cookie (14 days)
-            $('#close-notice').on('click', function() {
-                var now = (new Date()).getTime();
-                var day = 1000*60*60*24;
-                var expires = now + (day*14);
-
-                window.localStorage.setItem('close_banner_cookie', true, expires);
-                $('.notice-banner').fadeToggle(350);
-            });
-        });
 	}); // end window.load
 })(jQuery);
