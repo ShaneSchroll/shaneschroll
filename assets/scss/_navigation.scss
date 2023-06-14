@@ -25,12 +25,10 @@
         top: 0;
         right: -100%;
         height: 100vh;
-        width: 15rem;
-        transition: 0.4s ease-in;
-        padding: 3rem 1.75rem 0 !important;
-        background-color: $secondary-background;
         overflow: hidden;
         z-index: 99;
+        padding: 5.5rem 1.75rem 0 !important;
+        transition: 0.4s ease-in;
 
         li a {
             color: $white;
@@ -48,6 +46,8 @@
 
         &.primary-menu-active {
             right: 0;
+            width: 20rem;
+            background-color: $secondary-background;
             transition: 0.4s ease-out;
         }
     }
@@ -58,9 +58,12 @@
     @include mq(820px) {
         &--main-menu {
             position: relative;
+            right: unset;
             display: flex;
             max-width: 23rem;
             width: 100%;
+            height: unset;
+            padding: 0 !important;
             justify-content: space-between;
 
             li a {
