@@ -1,2 +1,2 @@
-jQuery(window).on("load",(function(){AOS.init({offset:150,duration:1200})}));
+var n;(n=jQuery)(window).on("load",(function(){AOS.init({offset:150,duration:1200}),n("#menu-toggle").click((function(){n(".x-bar").toggleClass("x-bar-active"),n(".site-nav--main-menu").toggleClass("primary-menu-active")}))}));
 //# sourceMappingURL=site-dist.js.map

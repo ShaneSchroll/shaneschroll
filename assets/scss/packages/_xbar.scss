@@ -1,0 +1,48 @@
+// mobile menu toggle
+#menu-toggle {
+    display: block;
+    &:hover { cursor: pointer; }
+    @include mq(820px) { display: none; }
+
+    .x-bar {
+        display: block;
+        height: 3px;
+        margin-bottom: 6px;
+        background-color: $green;
+        transition: 0.3s ease-out;
+        border-radius: 2px;
+        margin-right: 0; // align bars right
+        margin-left: auto; // align bars right
+
+        // adjust the widths to make them staggered
+        &:nth-child(3n+1) { width: 1.8rem; }
+        &:nth-child(3n+2) { width: 1.4rem; }
+        &:nth-child(3n+3) { width: 1rem; }
+
+        // make them all the same so the X looks correct
+        &.x-bar-active { width: 1.6rem; }
+    }
+
+    .x-bar-active {
+        position: relative;
+        transition: 0.3s ease-out;
+        margin-bottom: 0;
+        height: 3px;
+        z-index: 999;
+
+        &:nth-child(3n+1) {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(3n+2) {
+            opacity: 0;
+        }
+
+        &:nth-child(3n+3) {
+            bottom: 6px;
+            transform: rotate(-45deg);
+            margin-bottom: 0;
+        }
+    }
+}
