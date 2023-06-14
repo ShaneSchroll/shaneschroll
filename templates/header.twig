@@ -1,13 +1,4 @@
 <header class="main-site-header">
-    {% if options.enable_notice_banner %}
-        <div class="notice-banner" role="alert" aria-label="Announcement">
-            <p class="notice-banner__text">{{ options.notice_banner_text }}</p>
-            <button id="close-notice" aria-label="Close notice banner" title="Close">
-                <span class="close-icon">&times;</span>
-            </button>
-        </div>
-    {% endif %}
-
     <nav class="site-nav">
         <a class="site-nav--text-logo" {% if not is_front_page %}href="/"{% endif %}><strong>Shane Schroll</strong></a>
 
@@ -17,23 +8,32 @@
             <li><a href="/about#tech-stack">Tech Stack</a></li>
         </ul>
 
-        <a class="main-button main-button--outlined" href="/#contact">Get In Touch <span class="fa-solid fa-mug-hot icon-right"></span></a>
+        <a class="main-button main-button--outlined" href="/#contact">
+            Get In Touch <span class="fa-solid fa-mug-hot icon-right" role="img" aria-label="Contact"></span>
+        </a>
     </nav>
 
-    {% if is_front_page %}
+    {% if not is_404 %}
         <section id="full-width" class="title-container">
-            <div class="title-container__inner-wrap">
-                <div class="title-container__inner-wrap--title">
-                    <div class="split-title">
-                        <h1>{{ post.large_title }}</h1>
-                        <h2>{{ post.small_title }}</h2>
+            {% if is_front_page %}
+                <div class="title-container__home-inner-wrap">
+                    <div class="title-container__home-inner-wrap--title">
+                        <div class="split-title">
+                            <h1>{{ post.large_title }}</h1>
+                            <h2>{{ post.small_title }}</h2>
+                        </div>
+                        <p>{{ post.intro_text }}</p>
+                        <a class="main-button main-button--filled" href="{{ post.button_link_one }}">{{ post.button_text_one }}</a>
+                        <a class="main-button main-button--outlined" href="{{ post.button_link_two }}">{{ post.button_text_two }}</a>
                     </div>
-                    <p>{{ post.intro_text }}</p>
-                    <a class="main-button main-button--filled" href="{{ post.button_link_one }}">{{ post.button_text_one }}</a>
-                    <a class="main-button main-button--outlined" href="{{ post.button_link_two }}">{{ post.button_text_two }}</a>
+                    <img src="{{ TimberImage( post.header_image ).src }}" alt="{{ TimberImage( post.header_image ).alt }}" />
                 </div>
-                <img src="{{ TimberImage( post.header_image ).src }}" alt="{{ TimberImage( post.header_image ).alt }}" />
-            </div>
+            {% else %}
+                <div class="title-container__default">
+                    <h1 class="small-title">{{ post.small_header }}</h1>
+                    <h2>{{ post.header }}</h2>
+                </div>
+            {% endif %}
         </section>
     {% endif %}
 </header>

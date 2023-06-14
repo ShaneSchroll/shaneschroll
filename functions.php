@@ -62,7 +62,7 @@ class ShaneSchrollSite extends TimberSite {
 			}
 
 			#login h1 a, .login h1 a {
-				background-image: url('<?= get_stylesheet_directory_uri() . '/ss-logo.webp' ?>') !important;
+				background-image: url('<?= get_stylesheet_directory_uri() . '/media/ss-logo.webp' ?>') !important;
 				background-position: center;
 				width: 20rem;
 				height: 10rem;
@@ -97,6 +97,7 @@ class ShaneSchrollSite extends TimberSite {
 		$context['date'] 			= date('F j, Y');
 		$context['date_year']      	= date('Y');
 		$context['is_front_page']	= is_front_page();
+		$context['is_404'] 	    	= is_404();
 		return $context;
 	}
 

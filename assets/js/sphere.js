@@ -2,16 +2,16 @@ window.onload = function() {
     try {
         TagCanvas.Start('sphere-canvas', 'sphere-tags', {
             reverse: false,
-            depth: 0.4,
+            depth: 0.85,
             maxSpeed: 0.06,
             wheelZoom: true,
             freezeActive: false,
+            dragControl: true,
             shuffleTags: true,
             shape: 'sphere',
             clickToFront: 450,
             outlineMethod: 'none',
-            initial: [0.03, -0.03],
-            dragControl: true
+            initial: [0.03, -0.03]
         });
     } catch(e) {
         document.getElementById('sphere-container').style.display = 'none';

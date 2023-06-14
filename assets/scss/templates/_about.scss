@@ -1,3 +1,26 @@
-.lang-icon {
-    max-width: 4.75rem;
+.about-content-block {
+    position: relative;
+    margin: -14rem auto 0;
+    z-index: 50;
+    text-align: center;
+
+    #sphere-container {
+        padding-bottom: 5rem;
+
+        .lang-icon {
+            max-width: 2.5rem;
+            @include mq(sm) { max-width: 4.75rem; }
+        }
+    }
+}
+
+.search-feature {
+    padding: 5rem 0;
+    background-color: $secondary-background;
+
+    &__inner-wrap {
+        max-width: 77rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
 }

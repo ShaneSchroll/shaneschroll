@@ -6,17 +6,16 @@
 
 // homepage intro header
 .title-container {
-    padding: 4.25rem 0;
     background-color: $secondary-background;
-    @include mq(md) { padding: 6.25rem 0; }
 
-    &__inner-wrap {
+    &__home-inner-wrap {
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: 77rem;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 4.25rem 1rem;
+        @include mq(md) { padding: 6.25rem 1rem; }
 
         &--title {
             max-width: 45rem;
@@ -47,5 +46,10 @@
         img {
             max-width: 30rem;
         }
+    }
+
+    &__default {
+        text-align: center;
+        padding: 4rem 1rem 15rem;
     }
 }
