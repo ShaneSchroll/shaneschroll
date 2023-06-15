@@ -103,6 +103,7 @@ class ShaneSchrollSite extends TimberSite {
 
 	// theme support and options page
 	function after_setup_theme() {
+		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'disable-custom-colors' );
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'style.css' );

@@ -20,11 +20,11 @@ $args = [
 	'hierarchical'        => true,
 	'description'         => '',
 	'taxonomies'          => [ 'department' ],
-	'public'              => true,
+	'public'              => false,
 	'show_ui'             => true,
 	'show_in_menu'        => true,
 	'show_in_admin_bar'   => true,
-	'show_in_rest'		  => true,
+	'show_in_rest'		  => false,
 	'menu_icon'           => 'dashicons-businessman',
 	'show_in_nav_menus'   => false,
 	'publicly_queryable'  => true,
@@ -38,16 +38,15 @@ $args = [
 ];
 register_post_type( 'employee', $args );
 
-// Department Tax
 $tax_labels = [
 	'name' 				=> _x( 'Departments', 'rscr' ),
-	'singular_name' 	=> _x( 'Departments', 'rscr' ),
+	'singular_name' 	=> _x( 'Department', 'rscr' ),
 	'search_items' 		=> __( 'Search Departments', 'rscr' ),
 	'all_items' 		=> __( 'All Departments', 'rscr' ),
-	'edit_item' 		=> __( 'Edit Departments', 'rscr' ),
-	'update_item' 		=> __( 'Update Departments', 'rscr' ),
-	'add_new_item' 		=> __( 'Add Departments', 'rscr' ),
-	'new_item_name' 	=> __( 'Create Departments', 'rscr' ),
+	'edit_item' 		=> __( 'Edit Department', 'rscr' ),
+	'update_item' 		=> __( 'Update Department', 'rscr' ),
+	'add_new_item' 		=> __( 'Add Department', 'rscr' ),
+	'new_item_name' 	=> __( 'Create Department', 'rscr' ),
 	'menu_name' 		=> __( 'Departments', 'rscr' ),
 	'parent_item'		=> NULL,
 ];

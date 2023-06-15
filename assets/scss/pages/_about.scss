@@ -19,15 +19,11 @@
 .search-feature {
     padding: 5rem 0;
     background-color: $secondary-background;
-    border-top: 1px solid $white;
-    border-bottom: 1px solid $white;
 
     &__inner-wrap {
         max-width: 77rem;
         margin: 0 auto;
         padding: 0 1rem;
-        border: 1px solid $white;
-
-        h2 { text-align: left; }
+        text-align: left;
     }
 }
