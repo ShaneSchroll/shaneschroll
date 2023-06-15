@@ -69,6 +69,7 @@
             li a {
                 position: relative;
                 text-transform: uppercase;
+                letter-spacing: 1px;
                 font-size: 0.875rem;
                 font-weight: 700;
                 font-family: $secondary-font;
@@ -78,9 +79,9 @@
                 &:after {
                     content: '';
                     position: absolute;
-                    top: 1.4rem;
+                    top: 1.35rem;
                     left: 50%;
-                    height: 5px;
+                    height: 2px;
                     width: 0;
                     background: transparent;
                     transition: all 0.2s ease-out;

@@ -5,10 +5,7 @@
 
     <span id="tech-stack"></span>
     <div id="sphere-container">
-        <canvas id="sphere-canvas" width="600" height="600"></canvas>
-        <p>Use your mouse to manually rotate the sphere or click on icons to bring them to the front.
-            <br/>You can also use your mouse wheel to zoom in/out.
-        </p>
+        {# <canvas id="sphere-canvas" width="600" height="600" style="width: 100%;"></canvas> #}
 
         <div id="sphere-tags">
             <ul>
@@ -29,9 +26,18 @@
     <span id="search-feature"></span>
     <section id="full-width" class="search-feature">
         <div class="search-feature__inner-wrap">
-            <h1>Search and Filter Examples</h1>
 
-            <div class=""></div>
+            <h2>Sortable / Filterable Search</h2>
+            {% include 'searches/sortable.twig' %}
+
+            <h2>Tabbed Search</h2>
+            {% include 'searches/tabbed.twig' %}
+
+            <h2>Favorite Search</h2>
+            {% include 'searches/favorite.twig' %}
+
+            <h2>All in one search</h2>
+            {% include 'searches/all-in-one.twig' %}
         </div>
     </section>
 </section>
