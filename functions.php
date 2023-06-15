@@ -108,6 +108,10 @@ class ShaneSchrollSite extends TimberSite {
 		add_editor_style( 'style.css' );
 	}
 
+	function register_post_types() {
+		include_once( 'custom-post-types/post-type-employee.php');
+	}
+
 	// remove unused items from admin menu
 	function admin_menu_cleanup() {
 		remove_menu_page( 'edit.php' ); // Default Posts

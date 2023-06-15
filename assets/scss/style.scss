@@ -4,7 +4,7 @@
     Author URI: https://shaneschroll.dev
     Description: Personal portfolio site.
     Text Domain: rscr
-    Version: 1.5.2
+    Version: 1.6.0
 */
 
 // Import required files (dependencies)
@@ -27,7 +27,7 @@
 @import 'form';
 
 // Import page templates
-@import 'templates/home';
-@import 'templates/about';
-@import 'templates/portfolio';
-@import 'templates/404';
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/portfolio';
+@import 'pages/404';
