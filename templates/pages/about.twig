@@ -5,7 +5,7 @@
 
     <span id="tech-stack"></span>
     <div id="sphere-container">
-        {# <canvas id="sphere-canvas" width="600" height="600" style="width: 100%;"></canvas> #}
+        <canvas id="sphere-canvas" width="600" height="600" style="width: 100%;"></canvas>
 
         <div id="sphere-tags">
             <ul>
@@ -23,22 +23,9 @@
         </div>
     </div>
 
-    <span id="search-feature"></span>
-    <section id="full-width" class="search-feature">
-        <div class="search-feature__inner-wrap">
-
-            <h2>Sortable / Filterable Search</h2>
-            {% include '/templates/searches/sortable.twig' %}
-
-            <h2>Tabbed Search</h2>
-            {% include '/templates/searches/tabbed.twig' %}
-
-            <h2>Favorite Search</h2>
-            {% include '/templates/searches/favorite.twig' %}
-
-            <h2>All in one search</h2>
-            {% include 'searches/all-in-one.twig' %}
-        </div>
+    <span id="portfolio"></span>
+    <section id="full-width" class="portfolio-container">
+        <div class="portfolio-container__grid-wrap"></div>
     </section>
 </section>
 {% endblock %}

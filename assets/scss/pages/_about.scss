@@ -16,12 +16,18 @@
     }
 }
 
-.search-feature {
+// main portfolio showcase section
+.portfolio-container {
     padding: 5rem 0;
     background-color: $secondary-background;
 
-    &__inner-wrap {
+    &__grid-wrap {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 22rem));
+        row-gap: 1.5rem;
+        column-gap: 1.5rem;
         max-width: 77rem;
+        width: 100%;
         margin: 0 auto;
         padding: 0 1rem;
         text-align: left;
