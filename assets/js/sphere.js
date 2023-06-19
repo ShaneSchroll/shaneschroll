@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = () => {
     try {
         TagCanvas.Start('sphere-canvas', 'sphere-tags', {
             reverse: false,
