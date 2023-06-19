@@ -7,6 +7,7 @@ class ShaneSchrollSite extends TimberSite {
 
 	function __construct() {
 		// Action Hooks //
+		add_action( 'init', [ $this, 'register_post_types' ] );
 		add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_head', [ $this, 'admin_head_css' ] );
@@ -106,6 +107,10 @@ class ShaneSchrollSite extends TimberSite {
 		add_theme_support( 'disable-custom-colors' );
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'style.css' );
+	}
+
+	function register_post_types() {
+		include_once( 'custom-post-types/post-type-portfolio.php');
 	}
 
 	// remove unused items from admin menu

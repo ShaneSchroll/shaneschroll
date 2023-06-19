@@ -4,7 +4,7 @@ window.onload = function() {
             reverse: false,
             depth: 0.75,
             maxSpeed: 0.06,
-            wheelZoom: true,
+            wheelZoom: false,
             freezeActive: false,
             dragControl: true,
             shuffleTags: true,

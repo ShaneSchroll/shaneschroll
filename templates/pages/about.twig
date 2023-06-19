@@ -10,7 +10,7 @@
         <div id="sphere-tags">
             <ul>
                 {% for lang in post.get_field('language_icons') %}
-                    <li><a href="#">
+                    <li><a href="javascript: void()">
                         <img
                             class="lang-icon"
                             src="{{ TimberImage( lang.icon ).src }}"
@@ -25,7 +25,49 @@
 
     <span id="portfolio"></span>
     <section id="full-width" class="portfolio-container">
-        <div class="portfolio-container__grid-wrap"></div>
+        <div class="portfolio-container__inner-wrap">
+            <h2>Portfolio of past work</h2>
+            <p class="intro">
+                Over the course of my 7-year development career, I have successfully built 50+ websites.<br/>
+                Among those projects, these are a few that stand out as my personal favorites.
+            </p>
+        </div>
+
+        {% for work in portfolio %}
+            {% if (loop.index is odd) %}
+                <section id="full-width" class="odd">
+                    <div class="row-wrap wrap-left">
+                        <img class="project-image" src="{{ TimberImage( work.thumbnail ).src }}" alt="{{ TimberImage( work.thumbnail ).alt }}" />
+                        <article>
+                            <h4>{{ work.title }}</h4>
+                            <p class="tech">Core Technologies</p>
+                            <ul>
+                                {% for term in work.terms('language') %}
+                                    <li>{{ term.name }}</li>
+                                {% endfor %}
+                            </ul>
+                            <a class="main-button main-button--filled inline" href="{{ work.site_link.url }}" target="_blank" rel="noreferrer">View Site</a>
+                        </article>
+                    </div>
+                </section>
+            {% else %}
+                <section id="full-width" class="even">
+                    <div class="row-wrap wrap-right">
+                        <article>
+                            <h4>{{ work.title }}</h4>
+                            <p class="tech">Core Technologies</p>
+                            <ul>
+                                {% for term in work.terms('language') %}
+                                    <li>{{ term.name }}</li>
+                                {% endfor %}
+                            </ul>
+                            <a class="main-button main-button--filled inline" href="{{ work.site_link.url }}" target="_blank" rel="noreferrer">View Site</a>
+                        </article>
+                        <img class="project-image" src="{{ TimberImage( work.thumbnail ).src }}" alt="{{ TimberImage( work.thumbnail ).alt }}" />
+                    </div>
+                </section>
+            {% endif %}
+        {% endfor %}
     </section>
 </section>
 {% endblock %}

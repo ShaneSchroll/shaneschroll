@@ -31,7 +31,13 @@
         transition: 0.4s ease-in;
 
         li a {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            font-family: $secondary-font;
             color: $white;
+            padding: 0.25rem;
         }
 
         .menu-accent {
@@ -73,7 +79,6 @@
                 font-size: 0.875rem;
                 font-weight: 700;
                 font-family: $secondary-font;
-                color: $white;
                 padding: 0.25rem;
 
                 &:after {

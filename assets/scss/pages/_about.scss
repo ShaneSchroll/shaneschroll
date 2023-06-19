@@ -21,15 +21,60 @@
     padding: 5rem 0;
     background-color: $secondary-background;
 
-    &__grid-wrap {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(18rem, 22rem));
-        row-gap: 1.5rem;
-        column-gap: 1.5rem;
+    &__inner-wrap {
         max-width: 77rem;
         width: 100%;
         margin: 0 auto;
         padding: 0 1rem;
-        text-align: left;
+
+        .intro {
+            max-width: 40rem;
+            margin: 0 auto 2.5rem;
+            font-style: italic;
+            font-size: 0.875rem;
+        }
     }
+
+    .odd { background: $secondary-background; }
+    .even { background: $primary-background; }
+
+    .row-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 77rem;
+        margin: 0 auto;
+        text-align: left;
+
+        .project-image {
+            max-width: 45rem;
+        }
+
+        ul {
+            margin-top: 0;
+            padding-left: 1rem;
+        }
+
+        .tech {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+
+    .wrap-left,
+    .wrap-right {
+        padding: 5rem 0;
+    }
+
+    // image left / text right
+    .wrap-left {}
+
+    // image right / text left
+    .wrap-right {}
 }
