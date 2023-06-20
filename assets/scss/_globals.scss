@@ -41,6 +41,7 @@ img {
 	margin-right: -50vw;
 }
 
+// last updated message in footer
 .updated {
 	position: absolute;
 	right: 0.85rem;
@@ -51,3 +52,6 @@ img {
 	color: $dark-grey;
 	text-align: right;
 }
+
+// scroll lock when mobile nav is open
+.no-scroll { overflow-y: hidden; }

@@ -2,7 +2,7 @@
 #menu-toggle {
     display: block;
     &:hover { cursor: pointer; }
-    @include mq(820px) { display: none; }
+    @include mq(980px) { display: none; }
 
     .x-bar {
         display: block;

@@ -11,6 +11,7 @@
         $('#menu-toggle').click(function() {
 			$('.x-bar').toggleClass('x-bar-active');
 			$('.site-nav--main-menu').toggleClass('primary-menu-active');
+            $('body, html').toggleClass('no-scroll');
 		}); // end menu-toggle
 
         // smooth scroll to anchors instead of jumping to content

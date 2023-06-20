@@ -61,12 +61,12 @@
     .main-button { display: none; }
 
     // <ul> desktop
-    @include mq(820px) {
+    @include mq(980px) {
         &--main-menu {
             position: relative;
             right: unset;
             display: flex;
-            max-width: 23rem;
+            max-width: 32rem;
             width: 100%;
             height: unset;
             padding: 0 !important;
