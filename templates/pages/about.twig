@@ -10,22 +10,24 @@
         <div id="sphere-tags">
             <ul>
                 {% for lang in post.get_field('language_icons') %}
-                    <li><a href="javascript: void()">
-                        <img
-                            class="lang-icon"
-                            src="{{ TimberImage( lang.icon ).src }}"
-                            alt="{{ TimberImage( lang.icon ).alt }}"
-                            title="{{ lang.name }}"
-                        />
-                    </a></li>
+                    <li>
+                        <a href="javascript: void()">
+                            <img
+                                class="lang-icon"
+                                src="{{ TimberImage( lang.icon ).src }}"
+                                alt="{{ TimberImage( lang.icon ).alt }}"
+                                title="{{ lang.name }}"
+                            />
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 
-    <span id="portfolio"></span>
     <section id="full-width" class="portfolio-container">
         <div class="portfolio-container__inner-wrap">
+            <span id="portfolio"></span>
             <h2>Portfolio of past work</h2>
             <p class="intro">
                 Over the course of my 7-year development career, I have successfully built 50+ websites.<br/>

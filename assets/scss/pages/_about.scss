@@ -10,7 +10,7 @@
         max-width: 45rem;
 
         .lang-icon {
-            max-width: 2.85rem;
+            max-width: 4.5rem;
             @include mq(sm) { max-width: 4.75rem; }
         }
     }
@@ -46,13 +46,16 @@
         margin: 0 auto;
         text-align: left;
 
-        .project-image { max-width: 45rem; }
+        .project-image {
+            max-width: 45rem;
+            width: 100%;
+        }
 
         article { width: 100%; }
 
         .tech {
             font-size: 1.125rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
@@ -69,13 +72,12 @@
 
     .wrap-left,
     .wrap-right {
-        padding: 5rem 0;
+        padding: 5rem 1rem;
+        article { max-width: 21rem; }
     }
 
     // image left / text right
     .wrap-left {
-        article { max-width: 25rem; }
-
         .project-image {
             margin-right: 0;
             @include mq(sm) { margin-right: 3rem; }
@@ -84,8 +86,6 @@
 
     // image right / text left
     .wrap-right {
-        article { max-width: 30rem; }
-
         .project-image {
             margin-left: 0;
             @include mq(sm) { margin-left: 3rem; }

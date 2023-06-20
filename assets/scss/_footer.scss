@@ -1,4 +1,5 @@
 .main-site-footer {
+    position: relative;
     max-width: 100%;
     text-align: center;
     padding: 1rem;
@@ -9,7 +10,7 @@
         font-size: 12px;
         @include mq(440px) { font-size: 1rem; }
 
-        span {
+        span:not(.pipe) {
             margin-left: 2px;
             margin-right: 2px;
             font-size: 12px;

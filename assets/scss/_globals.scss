@@ -40,3 +40,14 @@ img {
 	margin-left: -50vw;
 	margin-right: -50vw;
 }
+
+.updated {
+	position: absolute;
+	right: 0.85rem;
+	bottom: 0.7rem;
+	font-family: $secondary-font;
+	font-size: 11px !important;
+	font-style: italic;
+	color: $dark-grey;
+	text-align: right;
+}
