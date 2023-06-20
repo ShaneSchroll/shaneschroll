@@ -11,7 +11,7 @@ html, body {
 }
 
 img {
-	display: block; // prevents text-wrap around images
+	display: block; // preserve aspect ration (scale instead of smush)
 	max-width: 100%;
 	height: auto;
 }
@@ -55,3 +55,12 @@ img {
 
 // scroll lock when mobile nav is open
 .no-scroll { overflow-y: hidden; }
+
+// main content fade wrapper when mobile menu is active
+#fader { transition: 0.4s ease-out; }
+
+// wrapper inside the body to darken content while leaving the menu and navigation visible
+.fade-lock {
+	opacity: 0.2;
+	transition: 0.4s ease-out;
+}

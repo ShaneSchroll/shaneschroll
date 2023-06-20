@@ -6,7 +6,7 @@
     max-width: 77rem;
     padding: 1rem;
     margin: 0 auto;
-    
+
     &--text-logo {
         font-size: 1.5rem;
         color: $white;
@@ -28,7 +28,7 @@
         overflow: hidden;
         z-index: 99;
         padding: 5.5rem 1.75rem 0 !important;
-        transition: 0.4s ease-in;
+        transition: 0.6s ease-out;
 
         li a {
             text-transform: uppercase;
@@ -40,21 +40,37 @@
             padding: 0.25rem;
         }
 
+        // green triangles
         .menu-accent {
             position: absolute;
-            bottom: -5.5rem;
-            left: 3rem;
-            width: 18rem;
+            width: 30rem;
             height: 18rem;
             transform: rotateZ(-45deg);
             background-color: $green;
+
+            &--top,
+            &--bottom {
+                @extend .menu-accent;
+            }
+
+            // top-left corner
+            &--top {
+                top: -5.5rem;
+                left: -14rem;
+            }
+
+            // bottom-right corner
+            &--bottom {
+                right: -14rem;
+                bottom: -5.5rem;
+            }
         }
 
         &.primary-menu-active {
             right: 0;
             width: 20rem;
             background-color: $secondary-background;
-            transition: 0.4s ease-out;
+            transition: 0.3s ease-out;
         }
     }
 

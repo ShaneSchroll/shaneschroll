@@ -5,21 +5,24 @@
         AOS.init({
             offset: 150,
             duration: 1200
-        }); // end AOS
+        }); // end AOS setup
 
         // mobile menu toggle and xbar animation
-        $('#menu-toggle').click(function() {
-			$('.x-bar').toggleClass('x-bar-active');
-			$('.site-nav--main-menu').toggleClass('primary-menu-active');
-            $('body, html').toggleClass('no-scroll');
-		}); // end menu-toggle
+        $(function menuFunctions() {
+            $('#menu-toggle').click(function() {
+                $('.x-bar').toggleClass('x-bar-active');
+                $('.site-nav--main-menu').toggleClass('primary-menu-active');
+                $('body, html').toggleClass('no-scroll');
+                $('#fader, .site-nav--text-logo').toggleClass('fade-lock');
+            });
+        }); // end menuFunctions()
 
         // smooth scroll to anchors instead of jumping to content
         $(function smoothScroll() {
             $('a[href*="#"]')
             .not('[href="#"]')
             .not('[href="#0"]')
-            .click(function(event) {
+            .on('click', function(event) {
                 if(
                 location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
                 && 
@@ -37,7 +40,7 @@
                     }
                 }
             });
-        }); // end smoothScroll
+        }); // end smoothScroll()
 
 	}); // end window.load
 })(jQuery);
