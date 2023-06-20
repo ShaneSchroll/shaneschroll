@@ -10,7 +10,7 @@
         max-width: 45rem;
 
         .lang-icon {
-            max-width: 2.5rem;
+            max-width: 2.85rem;
             @include mq(sm) { max-width: 4.75rem; }
         }
     }
@@ -18,7 +18,7 @@
 
 // main portfolio showcase section
 .portfolio-container {
-    padding: 5rem 0;
+    padding: 5rem 0 0;
     background-color: $secondary-background;
 
     &__inner-wrap {
@@ -46,19 +46,19 @@
         margin: 0 auto;
         text-align: left;
 
-        .project-image {
-            max-width: 45rem;
-        }
+        .project-image { max-width: 45rem; }
 
-        ul {
-            margin-top: 0;
-            padding-left: 1rem;
-        }
+        article { width: 100%; }
 
         .tech {
             font-size: 1.125rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+
+        ul {
+            margin-top: 0;
+            padding-left: 1rem;
         }
 
         a {
@@ -73,8 +73,22 @@
     }
 
     // image left / text right
-    .wrap-left {}
+    .wrap-left {
+        article { max-width: 25rem; }
+
+        .project-image {
+            margin-right: 0;
+            @include mq(sm) { margin-right: 3rem; }
+        }
+    }
 
     // image right / text left
-    .wrap-right {}
+    .wrap-right {
+        article { max-width: 30rem; }
+
+        .project-image {
+            margin-left: 0;
+            @include mq(sm) { margin-left: 3rem; }
+        }
+    }
 }
