@@ -10,7 +10,7 @@
         font-size: 12px;
         @include mq(440px) { font-size: 1rem; }
 
-        span:not(.pipe) {
+        span {
             margin-left: 2px;
             margin-right: 2px;
             font-size: 12px;

@@ -41,23 +41,8 @@ img {
 	margin-right: -50vw;
 }
 
-// last updated message in footer
-.updated {
-	position: absolute;
-	right: 0.85rem;
-	bottom: 0.7rem;
-	font-family: $secondary-font;
-	font-size: 11px !important;
-	font-style: italic;
-	color: $dark-grey;
-	text-align: right;
-}
-
 // scroll lock when mobile nav is open
 .no-scroll { overflow-y: hidden; }
-
-// main content fade wrapper when mobile menu is active
-#fader { transition: 0.4s ease-out; }
 
 // wrapper inside the body to darken content while leaving the menu and navigation visible
 .fade-lock {
