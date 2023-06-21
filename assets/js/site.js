@@ -24,7 +24,6 @@
                 $('.portfolio-modal').addClass('modal-active');
                 $('.portfolio-modal-image').attr('src', image);
                 $('body, html').toggleClass('no-scroll');
-                $('#fader, .site-nav--text-logo').toggleClass('fade-lock');
             });
         }); // end fullScreenImage()
 

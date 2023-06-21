@@ -11,7 +11,7 @@
             <ul>
                 {% for lang in post.get_field('language_icons') %}
                     <li>
-                        <a href="javascript: void()">
+                        <a href="javascript: void();">
                             <img
                                 class="lang-icon"
                                 src="{{ TimberImage( lang.icon ).src }}"
@@ -20,16 +20,6 @@
                             />
                         </a>
                     </li>
-
-                    {# Create flip icons with the above showing the language name and skill level using
-
-                        SKILL LEVEL
-                        https://dev.to/jmitchell38488/the-five-expertise-levels-of-a-software-developer-the-road-to-zen-master-36d7
-
-                        FLIP CARDS
-                        https://www.w3schools.com/howto/howto_css_flip_card.asp
-                    #}
-
                 {% endfor %}
             </ul>
         </div>
@@ -95,7 +85,7 @@
                             </a>
                         </article>
                         <img
-                            class="project-image"
+                            class="project-image portfolio-modal-image"
                             src="{{ TimberImage( work.thumbnail ).src }}"
                             alt="{{ TimberImage( work.thumbnail ).alt }}"
                         />
@@ -103,9 +93,15 @@
                 </section>
             {% endif %}
         {% endfor %}
+
+        <diologue class="portfolio-modal" aria-modal="true">
+            <img
+                class="portfolio-modal-image"
+                src=""
+                alt="{{ work.title }} Website"
+            />
+        </diologue>
+
     </section>
 </section>
-
-<dialog class="portfolio-modal" aria-modal="true"></dialog>
-
 {% endblock %}
