@@ -3,7 +3,7 @@
 {% block content %}
 <section class="about-content-block">
 
-    <span id="tech-stack"></span>
+    <span id="tech-stack"></span> {# for jump link #}
     <div id="sphere-container">
         <canvas id="sphere-canvas" width="600" height="600" style="width: 100%;"></canvas>
 
@@ -20,6 +20,16 @@
                             />
                         </a>
                     </li>
+
+                    {# Create flip icons with the above showing the language name and skill level using
+
+                        SKILL LEVEL
+                        https://dev.to/jmitchell38488/the-five-expertise-levels-of-a-software-developer-the-road-to-zen-master-36d7
+
+                        FLIP CARDS
+                        https://www.w3schools.com/howto/howto_css_flip_card.asp
+                    #}
+
                 {% endfor %}
             </ul>
         </div>
@@ -27,11 +37,12 @@
 
     <section id="full-width" class="portfolio-container">
         <div class="portfolio-container__inner-wrap">
-            <span id="portfolio"></span>
+            <span id="portfolio"></span> {# for jump link #}
             <h2>Portfolio of Past Work</h2>
             <p class="intro">
                 Over the course of my 7-year development career, I have successfully built 50+ websites.<br/>
-                Among those projects, these are a few that stand out as my personal favorites.
+                Among those projects, these are a few that stand out as my personal favorites.<br/><br/>
+                Please Note: These projects were based on contracts (now expired) and are up to the client to update/maintain.
             </p>
         </div>
 
@@ -39,7 +50,11 @@
             {% if (loop.index is odd) %}
                 <section id="full-width" class="odd">
                     <div class="row-wrap wrap-left">
-                        <img class="project-image" src="{{ TimberImage( work.thumbnail ).src }}" alt="{{ TimberImage( work.thumbnail ).alt }}" />
+                        <img
+                            class="project-image"
+                            src="{{ TimberImage( work.thumbnail ).src }}"
+                            alt="{{ TimberImage( work.thumbnail ).alt }}"
+                        />
                         <article>
                             <h4>{{ work.title }}</h4>
                             <p class="tech">Core Technologies</p>
@@ -48,7 +63,14 @@
                                     <li>{{ term.name }}</li>
                                 {% endfor %}
                             </ul>
-                            <a class="main-button main-button--filled inline" href="{{ work.site_link.url }}" target="_blank" rel="noreferrer">View Site</a>
+
+                            <a
+                                class="main-button main-button--filled inline"
+                                href="{{ work.site_link.url }}"
+                                target="_blank"
+                                rel="noreferrer noopener">
+                                {{ work.site_link.title }}
+                            </a>
                         </article>
                     </div>
                 </section>
@@ -63,13 +85,27 @@
                                     <li>{{ term.name }}</li>
                                 {% endfor %}
                             </ul>
-                            <a class="main-button main-button--filled inline" href="{{ work.site_link.url }}" target="_blank" rel="noreferrer">View Site</a>
+
+                            <a
+                                class="main-button main-button--filled inline"
+                                href="{{ work.site_link.url }}"
+                                target="_blank"
+                                rel="noreferrer noopener">
+                                {{ work.site_link.title }}
+                            </a>
                         </article>
-                        <img class="project-image" src="{{ TimberImage( work.thumbnail ).src }}" alt="{{ TimberImage( work.thumbnail ).alt }}" />
+                        <img
+                            class="project-image"
+                            src="{{ TimberImage( work.thumbnail ).src }}"
+                            alt="{{ TimberImage( work.thumbnail ).alt }}"
+                        />
                     </div>
                 </section>
             {% endif %}
         {% endfor %}
     </section>
 </section>
+
+<dialog class="portfolio-modal" aria-modal="true"></dialog>
+
 {% endblock %}

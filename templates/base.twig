@@ -16,31 +16,8 @@
 	</head>
 
 	<body data-template="base.twig" class="{{ body_class }}">
-		<nav class="site-nav">
-			<a class="site-nav--text-logo" {% if not is_front_page %}href="/"{% endif %}><strong>Shane Schroll</strong></a>
-	
-			<ul class="site-nav--main-menu">
-				<div class="menu-accent menu-accent--top">{# Top Slant #}</div>
-	
-				<li><a href="/about">About</a></li>
-				<li><a href="/about/#portfolio">Portfolio</a></li>
-				<li><a href="/about/#tech-stack">Tech Stack</a></li>
-				<li><a href="/technology-opinions">Opinions</a></li>
-	
-				<div class="menu-accent menu-accent--bottom">{# Bottom Slant #}</div>
-			</ul>
-	
-			<a class="main-button main-button--outlined" href="/#contact">
-				Get In Touch <span class="fa-solid fa-mug-hot icon-right" role="img" aria-label="Contact"></span>
-			</a>
-	
-			<div id="menu-toggle">
-				<span class="x-bar"></span>
-				<span class="x-bar"></span>
-				<span class="x-bar"></span>
-			</div>
-		</nav>
-		
+		{% include 'navigation.twig' %}
+
 		<div id="fader">
 			{% include 'header.twig' %}
 
