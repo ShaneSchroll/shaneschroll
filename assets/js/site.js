@@ -9,17 +9,26 @@
 
         // mobile menu toggle and xbar animation
         $(function menuFunctions() {
-            $('#menu-toggle').click(function() {
+            $('#menu-toggle, .mobile-contact-button').on('click', function() {
+                $(this).addClass('toggle-active'); // used for mobile menu below
                 $('.x-bar').toggleClass('x-bar-active');
                 $('.site-nav--main-menu').toggleClass('primary-menu-active');
                 $('body, html').toggleClass('no-scroll');
                 $('#fader, .site-nav--text-logo').toggleClass('fade-lock');
             });
+
+            // close menu and remove fade-lock on click
+            $('.toggle-active li a').on('click', function() {
+                $('#menu-toggle, .x-bar').removeClass('toggle-active');
+                $('.site-nav--main-menu').removeClass('primary-menu-active');
+                $('body, html').removeClass('no-scroll');
+                $('#fader, .site-nav--text-logo').removeClass('fade-lock');
+            });
         }); // end menuFunctions()
 
         // Expand portfolio images in modal on click
         $(function fullScreenImage() {
-            $('.project-image').click(function() {
+            $('.project-image').on('click', function() {
                 var image = $(this).attr('src');
                 $('.portfolio-modal').addClass('modal-active');
                 $('.portfolio-modal-image').attr('src', image);

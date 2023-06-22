@@ -15,7 +15,10 @@
     .icon-left { margin-right: 0.5rem; }
 
     .icon-right,
-    .icon-left { color: $white; }
+    .icon-left {
+        color: $white;
+        transition: 0.2s ease-out;
+    }
 
     // green filled
     &--filled {
@@ -32,8 +35,41 @@
     }
 }
 
-
+// allow margin interaction
 .inline {
     display: inline-block;
     margin-top: 0.65rem;
+}
+
+.mobile-contact-button {
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+    padding: 0.65rem 1rem;
+    border-radius: $radius-small;
+    font-family: $secondary-font;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $secondary-background;
+    border: 2px solid $secondary-background;
+    @include mq(980px) { display: none; }
+
+    &:hover {
+        background-color: $secondary-background;
+        color: $white;
+
+        .icon-right {
+            color: $white;
+            transition: 0.2s ease-out;
+        }
+    }
+
+    .icon-right {
+        transition: 0.2s ease-out;
+        margin-left: 0.5rem;
+        color: $secondary-background;
+    }
 }
