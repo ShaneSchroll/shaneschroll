@@ -85,11 +85,13 @@ class ShaneSchrollSite extends TimberSite {
 		wp_enqueue_script( 'aos', get_template_directory_uri() . '/assets/js/packages/aos.js', [], '2.3.4' );
 		wp_enqueue_script( 'rscr-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'aos'], $version );
 
+		// sphere functions
 		if( is_page('about') ) {
 			wp_enqueue_script( 'tagcanvas-js', get_template_directory_uri() . '/assets/js/packages/tagcanvas.js', [], '2.11' );
 			wp_enqueue_script( 'sphere-js', get_template_directory_uri() . '/assets/js/sphere-dist.js', ['tagcanvas-js'], $version );
 		}
 
+		// open source code snippet formatting and support
 		if( is_page('technology-opinions') ) {
 			wp_enqueue_script( 'prism-js', get_template_directory_uri() . '/assets/js/packages/prism.js', [], '1.29.0' );
 			wp_enqueue_style( 'prism-css', get_stylesheet_directory_uri() . '/assets/scss/packages/prism.css', [], '1.29.0' );

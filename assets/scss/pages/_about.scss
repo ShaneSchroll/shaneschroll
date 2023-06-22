@@ -34,9 +34,11 @@
         }
     }
 
+    // alternate row colors
     .odd { background: $secondary-background; }
     .even { background: $primary-background; }
 
+    // global wrapper and params for left/right flip section
     .row-wrap {
         display: flex;
         justify-content: space-between;
@@ -73,6 +75,7 @@
     .wrap-right {
         padding: 5rem 1rem;
         article { max-width: 21rem; }
+        .project-image { &:hover { cursor: pointer; } }
     }
 
     // image left / text right
@@ -89,42 +92,5 @@
             margin-left: 0;
             @include mq(sm) { margin-left: 3rem; }
         }
-    }
-
-    // modal popups for site mockup images
-    .portfolio-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        transition: 0.3s ease-out;
-        z-index: 9999;
-        background-color: rgba($primary-background, 0.95);
-
-        .portfolio-modal-image {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 75rem;
-            width: 100%;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 1.75rem;
-            height: 1.75rem;
-            background-color: $secondary-background;
-        }
-    }
-
-    .modal-active {
-        display: block;
-        transition: 0.3s ease-out;
     }
 }

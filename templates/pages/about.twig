@@ -45,6 +45,7 @@
                             src="{{ TimberImage( work.thumbnail ).src }}"
                             alt="{{ TimberImage( work.thumbnail ).alt }}"
                         />
+
                         <article>
                             <h4>{{ work.title }}</h4>
                             <p class="tech">Core Technologies</p>
@@ -84,8 +85,9 @@
                                 {{ work.site_link.title }}
                             </a>
                         </article>
+
                         <img
-                            class="project-image portfolio-modal-image"
+                            class="project-image"
                             src="{{ TimberImage( work.thumbnail ).src }}"
                             alt="{{ TimberImage( work.thumbnail ).alt }}"
                         />
@@ -93,15 +95,6 @@
                 </section>
             {% endif %}
         {% endfor %}
-
-        <diologue class="portfolio-modal" aria-modal="true">
-            <img
-                class="portfolio-modal-image"
-                src=""
-                alt="{{ work.title }} Website"
-            />
-        </diologue>
-
     </section>
 </section>
 {% endblock %}
