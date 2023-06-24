@@ -44,14 +44,16 @@
             }
 
             h1 {
-                font-size: 140px;
+                font-size: 120px;
                 margin-right: 2rem;
                 color: $green;
+                @include mq(500px) { font-size: 140px; }
                 @include mq(620px) { font-size: 150px; }
             }
 
             h2 {
-                font-size: 35px;
+                font-size: 28px;
+                @include mq(xs) { font-size: 35px; }
                 @include mq(620px) { font-size: 45px; }
             }
         }

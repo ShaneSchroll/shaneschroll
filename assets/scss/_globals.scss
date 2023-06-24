@@ -13,6 +13,7 @@ html, body {
 img {
 	display: block; // preserve aspect ration (scale instead of smush)
 	max-width: 100%;
+	width: 100%;
 	height: auto;
 }
 
