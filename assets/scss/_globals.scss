@@ -10,6 +10,8 @@ html, body {
 	background-color: $primary-background;
 }
 
+body { position:relative; }
+
 img {
 	display: block; // preserve aspect ration (scale instead of smush)
 	max-width: 100%;
@@ -43,7 +45,10 @@ img {
 }
 
 // scroll lock when mobile nav is open
-.no-scroll { overflow-y: hidden; }
+.no-scroll {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
 
 // wrapper inside the body to darken content while leaving the menu and navigation visible
 .fade-lock {
