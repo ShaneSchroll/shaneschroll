@@ -36,23 +36,42 @@
 
     // alternate row colors
     .odd { background: $secondary-background; }
-    .even { background: $primary-background; }
+    .even {
+        background: $primary-background;
+
+        .row-wrap {
+            flex-direction: column-reverse;
+            @include mq(800px) { flex-direction: row; }
+        }
+    }
 
     // global wrapper and params for left/right flip section
     .row-wrap {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        max-width: 77rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 35rem;
         margin: 0 auto;
         text-align: left;
 
-        .project-image {
-            max-width: 45rem;
-            width: 100%;
+        @include mq(800px) {
+            max-width: 77rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
-        article { width: 100%; }
+        .project-image {
+            max-width: 35rem;
+            width: 100%;
+            margin-bottom: 2.5rem;
+
+            @include mq(800px) {
+                max-width: 45rem;
+                margin-bottom: 0; 
+            }
+        }
 
         .tech {
             font-size: 1.125rem;
@@ -74,15 +93,21 @@
     .wrap-left,
     .wrap-right {
         padding: 5rem 1rem;
-        article { max-width: 21rem; }
-        .project-image { &:hover { cursor: pointer; } }
+
+        article {
+            max-width: 21rem;
+            width: 100%;
+            flex-shrink: 0;
+            align-self: flex-start;
+            @include mq(800px) { align-self: initial; }
+        }
     }
 
     // image left / text right
     .wrap-left {
         .project-image {
             margin-right: 0;
-            @include mq(sm) { margin-right: 3rem; }
+            @include mq(800px) { margin-right: 3rem; }
         }
     }
 
@@ -90,7 +115,7 @@
     .wrap-right {
         .project-image {
             margin-left: 0;
-            @include mq(sm) { margin-left: 3rem; }
+            @include mq(800px) { margin-left: 3rem; }
         }
     }
 }
