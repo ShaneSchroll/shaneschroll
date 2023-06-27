@@ -18,11 +18,12 @@
             });
 
             // close menu and remove fade-lock on click
-            $('.toggle-active li a').on('click', function() {
-                $('#menu-toggle, .x-bar').removeClass('toggle-active');
-                $('.site-nav--main-menu').removeClass('primary-menu-active');
-                $('body, html').removeClass('no-scroll');
-                $('#fader, .site-nav--text-logo').removeClass('fade-lock');
+            $('.site-nav--main-menu li a').on('click', function() {
+                $('.site-nav--main-menu').removeClass('toggle-active');
+                $('.x-bar').toggleClass('x-bar-active');
+                $('.site-nav--main-menu').toggleClass('primary-menu-active');
+                $('body, html').toggleClass('no-scroll');
+                $('#fader, .site-nav--text-logo').toggleClass('fade-lock');
             });
         }); // end menuFunctions()
 

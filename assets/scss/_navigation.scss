@@ -27,7 +27,7 @@
         height: 100vh;
         overflow: hidden;
         z-index: 99;
-        padding: 17rem 1.75rem 0 4rem !important;
+        padding: 15rem 1.75rem 0 4rem !important;
         transition: 0.6s ease-out;
 
         li { margin-bottom: 1.5rem; }
@@ -57,14 +57,14 @@
 
             // top-left corner
             &--top {
-                top: -5.5rem;
+                top: -6.5rem;
                 left: -14rem;
             }
 
             // bottom-right corner
             &--bottom {
                 right: -14rem;
-                bottom: -5.5rem;
+                bottom: -6.5rem;
             }
         }
 
