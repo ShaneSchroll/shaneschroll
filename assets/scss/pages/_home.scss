@@ -56,7 +56,11 @@
             align-items: center;
             flex-wrap: wrap;
 
-            img { max-width: 150px; }
+            img {
+                max-width: 110px;
+                @include mq(xs) { max-width: 120px; }
+                @include mq(768px) { max-width: 150px; }
+            }
         }
     }
 

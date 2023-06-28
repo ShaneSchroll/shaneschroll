@@ -23,6 +23,7 @@
                 }
             });
 
+            // redundant but needed since the menu toggle is inside the nav itself (causes desktop issues)
             $('.site-nav--main-menu li a, .mobile-contact-button').on('click', function() {
                 if( $('#menu-toggle').hasClass('toggle-active') ) {
                     $('#menu-toggle').toggleClass('toggle-active');
