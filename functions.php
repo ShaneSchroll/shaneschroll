@@ -17,7 +17,6 @@ class ShaneSchrollSite extends TimberSite {
 		// Filter Hooks //
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
-		add_filter( 'use_block_editor_for_post', '__return_false' );
 
 		parent::__construct();
 	}
@@ -82,19 +81,12 @@ class ShaneSchrollSite extends TimberSite {
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
 		wp_enqueue_style( 'rscr-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-		wp_enqueue_script( 'aos', get_template_directory_uri() . '/assets/js/packages/aos.js', [], '2.3.4' );
-		wp_enqueue_script( 'rscr-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'aos'], $version );
+		wp_enqueue_script( 'rscr-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'jquery-ui-tabs'], $version );
 
 		// sphere functions
 		if( is_page('about') ) {
 			wp_enqueue_script( 'tagcanvas-js', get_template_directory_uri() . '/assets/js/packages/tagcanvas.js', [], '2.11' );
 			wp_enqueue_script( 'sphere-js', get_template_directory_uri() . '/assets/js/sphere-dist.js', ['tagcanvas-js'], $version );
-		}
-
-		// open source code snippet formatting and support
-		if( is_page('technology-opinions') ) {
-			wp_enqueue_script( 'prism-js', get_template_directory_uri() . '/assets/js/packages/prism.js', [], '1.29.0' );
-			wp_enqueue_style( 'prism-css', get_stylesheet_directory_uri() . '/assets/scss/packages/prism.css', [], '1.29.0' );
 		}
 	}
 
@@ -116,6 +108,7 @@ class ShaneSchrollSite extends TimberSite {
 
 	function register_post_types() {
 		include_once( 'custom-post-types/post-type-portfolio.php');
+		include_once( 'custom-post-types/post-type-service.php');
 	}
 
 	// remove unused items from admin menu

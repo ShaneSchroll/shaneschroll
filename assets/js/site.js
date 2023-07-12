@@ -1,12 +1,6 @@
 (function($) {
     $(window).on('load', function() {
 
-        // initialize aos + defaults
-        AOS.init({
-            offset: 150,
-            duration: 1200
-        }); // end AOS setup
-
         // mobile menu toggle and xbar animation
         $(function menuFunctions() {
             $('#menu-toggle').on('click', function() {
@@ -40,6 +34,10 @@
                 }
             });
         }); // end menuFunctions()
+
+        if( window.location.href.indexOf('services') > -1 ) {
+            $('#service-option-tabs').tabs(); // initialize tabs
+        }
 
         // smooth scroll to anchors instead of jumping to content
         $(function smoothScroll() {

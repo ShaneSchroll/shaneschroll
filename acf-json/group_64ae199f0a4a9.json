@@ -1,13 +1,13 @@
 {
-    "key": "group_64892d48d2c68",
-    "title": "Pages - Default Header",
+    "key": "group_64ae199f0a4a9",
+    "title": "Services",
     "fields": [
         {
-            "key": "field_64892e2ee3613",
-            "label": "Small Header",
-            "name": "small_header",
+            "key": "field_64ae199f09925",
+            "label": "Services Offered Image",
+            "name": "services_offered_image",
             "aria-label": "",
-            "type": "text",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,18 +16,21 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": []
         },
         {
-            "key": "field_64892d4969610",
-            "label": "Header",
-            "name": "header",
+            "key": "field_64ae2d85137c8",
+            "label": "Services Blurb",
+            "name": "services_blurb",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,24 +41,17 @@
             },
             "default_value": "",
             "maxlength": "",
+            "rows": "",
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         }
     ],
     "location": [
         [
             {
                 "param": "page_template",
-                "operator": "!=",
-                "value": "front-page.php"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
                 "operator": "==",
-                "value": "service"
+                "value": "services.php"
             }
         ]
     ],
@@ -70,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689132079
+    "modified": 1689136549
 }
