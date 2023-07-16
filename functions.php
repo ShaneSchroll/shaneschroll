@@ -86,7 +86,7 @@ class ShaneSchrollSite extends TimberSite {
 		// sphere functions
 		if( is_page('about') ) {
 			wp_enqueue_script( 'tagcanvas-js', get_template_directory_uri() . '/assets/js/packages/tagcanvas.js', [], '2.11' );
-			wp_enqueue_script( 'sphere-js', get_template_directory_uri() . '/assets/js/sphere-dist.js', ['tagcanvas-js'], $version );
+			wp_enqueue_script( 'sphere-js', get_template_directory_uri() . '/assets/js/packages/sphere-dist.js', ['tagcanvas-js'], $version );
 		}
 	}
 

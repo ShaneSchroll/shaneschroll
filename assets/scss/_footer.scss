@@ -22,5 +22,11 @@
                 margin-right: 3px;
             }
         }
+
+        a {
+            color: $green;
+            font-size: 12px;
+            @include mq(440px) { font-size: 1rem; }
+        }
     }
 }
