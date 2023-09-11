@@ -13,6 +13,7 @@ class ShaneSchrollSite extends TimberSite {
 		add_action( 'admin_head', [ $this, 'admin_head_css' ] );
 		add_action( 'admin_menu', [ $this, 'admin_menu_cleanup'] );
 		add_action( 'login_enqueue_scripts', [ $this, 'style_login' ] );
+		add_action( 'wp_default_scripts', [ $this, 'remove_jqmigrate' ] );
 
 		// Filter Hooks //
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
@@ -21,7 +22,7 @@ class ShaneSchrollSite extends TimberSite {
 		parent::__construct();
 	}
 
-	// hide nags and unused items
+	// hide nags and cleanup admin bar
 	function admin_head_css() {
 		?>
 		<style type="text/css">
@@ -33,19 +34,8 @@ class ShaneSchrollSite extends TimberSite {
 			#wp-admin-bar-new-content,
 			#wp-admin-bar-rank-math,
 			#adminmenu #collapse-menu,
+			#adminmenu .update-plugins,
 			.hide-if-no-customize { display: none !important; }
-
-			.edit-post-fullscreen-mode-close.components-button {
-				background-color: #fff;
-				border-bottom: 1px solid #e0e0e0;
-				border-right: 1px solid #e0e0e0;
-			}
-
-			.edit-post-fullscreen-mode-close.components-button:before {
-				box-shadow: unset !important;
-			}
-
-			#adminmenu .update-plugins { display: none !important; }
 		</style>
 		<?php
 	}
@@ -61,7 +51,7 @@ class ShaneSchrollSite extends TimberSite {
 			}
 
 			#login h1 a, .login h1 a {
-				background-image: url('<?= get_stylesheet_directory_uri() . '/media/ss-logo.webp' ?>') !important;
+				background-image: url('<?= get_stylesheet_directory_uri() . '/screenshot.png' ?>') !important;
 				background-position: center;
 				width: 20rem;
 				height: 10rem;
@@ -80,13 +70,18 @@ class ShaneSchrollSite extends TimberSite {
 	// enqueue styles & scripts
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
-		wp_enqueue_style( 'rscr-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-		wp_enqueue_script( 'rscr-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'jquery-ui-tabs'], $version );
+		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
+		// wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/site-dist.js', [], $version );
+	}
 
-		// sphere functions
-		if( is_page('about') ) {
-			wp_enqueue_script( 'tagcanvas-js', get_template_directory_uri() . '/assets/js/packages/tagcanvas.js', [], '2.11' );
-			wp_enqueue_script( 'sphere-js', get_template_directory_uri() . '/assets/js/packages/sphere-dist.js', ['tagcanvas-js'], $version );
+	// remove jqmigrate from frontend
+	function remove_jqmigrate( $scripts ) {
+		if( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+			$script = $scripts->registered['jquery'];
+
+			if( $script->deps ) {
+				$script->deps = array_diff( $script->deps, ['jquery-migrate'] );
+			}
 		}
 	}
 

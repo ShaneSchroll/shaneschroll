@@ -2,35 +2,31 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="content-language" content="en-us">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="content-language" content="en-us" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{{ site.name }} | {{ post.title }}</title>
 
 		{{ fn('wp_head') }}
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"> 
+		<link rel="stylesheet" href="{{ theme.link}}/node_modules/aos/dist/aos.css" />
+		<script src="{{ theme.link}}/node_modules/aos/dist/aos.js"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" />
 	</head>
 
 	<body data-template="base.twig" class="{{ body_class }}">
 		{% include 'navigation.twig' %}
+		{% include 'header.twig' %}
 
-		<div id="fader" role="region" aria-disabled="false">
-			{% include 'header.twig' %}
-
-			<section class="main-post-wrapper" role="main" aria-label="Main page content">
-				{% block content %}{% endblock %}
-			</section>
-
-			<footer class="main-site-footer">
-				<p>Designed &amp; Developed with <span class="fa-solid fa-heart" title="love"></span> by
-					<a href="https://github.com/shaneschroll" target="_blank" rel="noopener">Shane Schroll</a>
-				</p>
-			</footer>
-		</div>
+		<section class="main-post-wrapper" role="main" aria-label="Main page content">
+			{% block content %}{% endblock %}
+		</section>
 
 		{{ fn('wp_footer') }}
+
+		<script src="{{ theme.link }}/assets/js/aos-init.js"></script>
 	</body>
 </html>
