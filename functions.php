@@ -71,7 +71,13 @@ class ShaneSchrollSite extends TimberSite {
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
 		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-		// wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/site-dist.js', [], $version );
+		wp_enqueue_script( 'aos', get_template_directory_uri() . '/assets/js/aos.js', [], '3.0.0' );
+		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/aos-init.js', ['aos'], $version );
+
+		// remove jquery from frontend
+		if( ! is_admin() ) {
+			wp_deregister_script( 'jquery');
+		}
 	}
 
 	// remove jqmigrate from frontend
