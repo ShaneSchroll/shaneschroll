@@ -108,7 +108,6 @@ class ShaneSchrollSite extends TimberSite {
 
 	function register_post_types() {
 		include_once( 'custom-post-types/post-type-portfolio.php');
-		include_once( 'custom-post-types/post-type-service.php');
 	}
 
 	// remove unused items from admin menu
