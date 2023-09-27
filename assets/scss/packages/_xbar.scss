@@ -1,4 +1,4 @@
-// mobile menu toggle
+// mobile menu toggle and animation
 #menu-toggle {
     display: block;
     &:hover { cursor: pointer; }
@@ -11,8 +11,8 @@
         background-color: $teal;
         transition: 0.3s ease-out;
         border-radius: 2px;
-        margin-right: 0; // align bars right
-        margin-left: auto; // align bars right
+        margin-right: 0;
+        margin-left: auto;
 
         // adjust the widths to make them staggered
         &:nth-child(3n+1) { width: 1.8rem; }
