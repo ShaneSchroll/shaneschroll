@@ -1,13 +1,22 @@
-<nav class="site-nav">
-    {% if not is_front_page %}
-        <a class="text-title" href="/">ShaneSchroll</a>
-    {% else %}
-        <p class="text-title">ShaneSchroll</p>
-    {% endif %}
+<nav class="site-nav" aria-label="Main site navigation">
+    <div class="site-nav__wrap">
+        {% if not is_front_page %}
+            <a class="text-title" href="/">ShaneSchroll</a>
+        {% else %}
+            <p class="text-title">ShaneSchroll</p>
+        {% endif %}
 
-    <div id="menu-toggle">
-        <span class="x-bar"></span>
-        <span class="x-bar"></span>
-        <span class="x-bar"></span>
+        <ul class="nav-menu">
+            <li><a href="/about">About</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/mockups">Mockups</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+
+        <div id="menu-toggle">
+            <span class="x-bar"></span>
+            <span class="x-bar"></span>
+            <span class="x-bar"></span>
+        </div>
     </div>
 </nav>

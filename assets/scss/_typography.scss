@@ -12,6 +12,7 @@ small, time { font-size: 0.875rem; }
 a {
 	text-decoration: none;
 	transition: 0.2s ease-in;
+	font-weight: 500;
 	&:hover { transition: 0.2s ease-out; }
 }
 
@@ -49,11 +50,3 @@ h3 { font-size: fluid-text(480px, 20px, 1200px, 35px); }
 h4 { font-size: fluid-text(480px, 18px, 1200px, 25px); }
 h5 { font-size: 16px; }
 h6 { font-size: 14px; }
-
-.small-title {
-	font-size: 1.125rem;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	margin-bottom: 0.5rem;
-	color: $navy;
-}
