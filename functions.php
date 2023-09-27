@@ -71,13 +71,10 @@ class ShaneSchrollSite extends TimberSite {
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
 		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-		wp_enqueue_script( 'aos', get_template_directory_uri() . '/assets/js/aos.js', [], '3.0.0' );
-		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/aos-init.js', ['aos'], $version );
+		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/site.js', ['jquery'], $version );
 
-		// remove jquery from frontend
-		if( ! is_admin() ) {
-			wp_deregister_script( 'jquery');
-		}
+		// wp_enqueue_script( 'aos-js', get_template_directory_uri() . '/assets/js/aos.js', [], '3.0.0' );
+		// wp_enqueue_script( 'aos-init', get_template_directory_uri() . '/assets/js/aos-init.js', ['aos-js'], $version );
 	}
 
 	// remove jqmigrate from frontend
@@ -103,11 +100,14 @@ class ShaneSchrollSite extends TimberSite {
 
 	// theme support and options page
 	function after_setup_theme() {
+		add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'disable-custom-colors' );
 	}
 
+	// add custom post types
 	function register_post_types() {
+		include_once( 'custom-post-types/post-type-mockup.php');
 		include_once( 'custom-post-types/post-type-portfolio.php');
 	}
 
@@ -124,4 +124,5 @@ class ShaneSchrollSite extends TimberSite {
 	}
 }
 
+// create a new instance of our site class
 new ShaneSchrollSite();

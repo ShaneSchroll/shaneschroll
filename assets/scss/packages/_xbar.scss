@@ -2,13 +2,13 @@
 #menu-toggle {
     display: block;
     &:hover { cursor: pointer; }
-    @include mq(980px) { display: none; }
+    @include mq(md) { display: none; }
 
     .x-bar {
         display: block;
         height: 3px;
         margin-bottom: 6px;
-        background-color: $green;
+        background-color: $teal;
         transition: 0.3s ease-out;
         border-radius: 2px;
         margin-right: 0; // align bars right
