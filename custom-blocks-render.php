@@ -1,13 +1,13 @@
 <?php
 /**
-*  Callback to render our ACF blocks
+*  Callback to render our custom ACF blocks.
 *
 * @param   array $block - The block settings and attributes.
 * @param   string $content - The block content (empty string).
 * @param   bool $is_preview - True during AJAX preview.
 */
 
-function acf_custom_blocks_callback( $block, $content = '', $is_preview = false ) {
+function custom_blocks_callback( $block, $content = '', $is_preview = false ) {
 	$context = Timber::get_context();
 
 	$context['block'] = $block;

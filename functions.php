@@ -20,6 +20,7 @@ class ShaneSchrollSite extends TimberSite {
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
 		add_filter( 'block_categories', [ $this, 'srs_block_category' ], 10, 2 );
+		add_filter( 'admin_footer_text', [ $this, 'admin_footer_white_label' ] );
 
 		parent::__construct();
 	}
@@ -69,6 +70,14 @@ class ShaneSchrollSite extends TimberSite {
 		<?php
 	}
 
+	// admin footer white label
+	function admin_footer_white_label() {
+		echo '
+		<span id="footer-thankyou">Developed by
+			<a href="https://shaneschroll.dev" target="_blank" rel="noreferrer nofollow">Shane Schroll</a>.
+		</span>';
+	}
+
 	// enqueue styles & scripts
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
@@ -107,12 +116,7 @@ class ShaneSchrollSite extends TimberSite {
 		add_theme_support( 'disable-custom-colors' );
 	}
 
-	// registers and renders our custom acf blocks
-	function render_custom_acf_blocks() {
-		require 'custom-blocks-loader.php';
-	}
-
-	// creates a custom category for our theme-specific blocks
+	// creates a custom category for our custom blocks
 	function srs_block_category( $categories, $post ) {
 		return array_merge(
 			$categories,
@@ -123,6 +127,11 @@ class ShaneSchrollSite extends TimberSite {
 				],
 			]
 		);
+	}
+
+	// registers and renders our custom acf blocks
+	function render_custom_acf_blocks() {
+		require 'custom-blocks-loader.php';
 	}
 
 	// add custom post types
