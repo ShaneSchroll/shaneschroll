@@ -8,6 +8,7 @@ class ShaneSchrollSite extends TimberSite {
 	function __construct() {
 		// Action Hooks //
 		add_action( 'init', [ $this, 'register_post_types' ] );
+		add_action( 'acf/init', array( $this, 'render_custom_acf_blocks' ) );
 		add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_head', [ $this, 'admin_head_css' ] );
@@ -18,6 +19,7 @@ class ShaneSchrollSite extends TimberSite {
 		// Filter Hooks //
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
+		add_filter( 'block_categories', [ $this, 'srs_block_category' ], 10, 2 );
 
 		parent::__construct();
 	}
@@ -105,10 +107,28 @@ class ShaneSchrollSite extends TimberSite {
 		add_theme_support( 'disable-custom-colors' );
 	}
 
+	// registers and renders our custom acf blocks
+	function render_custom_acf_blocks() {
+		require 'custom-blocks-loader.php';
+	}
+
+	// creates a custom category for our theme-specific blocks
+	function srs_block_category( $categories, $post ) {
+		return array_merge(
+			$categories,
+			[
+				[
+					'slug'  => 'srs-blocks',
+					'title' => 'Custom Blocks',
+				],
+			]
+		);
+	}
+
 	// add custom post types
 	function register_post_types() {
-		include_once( 'custom-post-types/post-type-mockup.php');
-		include_once( 'custom-post-types/post-type-portfolio.php');
+		include_once( 'custom-post-types/post-type-mockup.php' );
+		include_once( 'custom-post-types/post-type-portfolio.php' );
 	}
 
 	// remove unused items from admin menu
