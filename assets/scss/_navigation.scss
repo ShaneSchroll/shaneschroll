@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 1.75rem;
     background-color: $white;
+    box-shadow: 0 0 9px -7px $navy;
 
     &__wrap {
         display: flex;
@@ -32,6 +33,41 @@
             justify-content: space-between;
             align-items: center;
             width: 30rem;
-        }
-    }
+
+            .sub-wrap {
+                position: relative;
+
+                &:hover {
+                    .sub-menu {
+                        visibility: visible;
+                        opacity: 1;
+                        transition: 0.3s ease-in;
+                    }
+                }
+            }
+
+            .sub-menu {
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.3s ease-out;
+                border: 1px solid $black;
+                background-color: $navy;
+                padding: 1rem;
+
+                li {
+                    margin-top: 0.65rem;
+                    margin-bottom: 0.65rem;
+                    &:first-of-type { margin-top: 0; }
+                    &:last-of-type { margin-bottom: 0; }
+                }
+
+                li a {
+                    color: $white;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        } // .nav-menu
+    } // &__wrap
 }

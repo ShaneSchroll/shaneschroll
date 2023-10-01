@@ -38,7 +38,8 @@ class ShaneSchrollSite extends TimberSite {
 			#wp-admin-bar-rank-math,
 			#adminmenu #collapse-menu,
 			#adminmenu .update-plugins,
-			.hide-if-no-customize { display: none !important; }
+			.hide-if-no-customize,
+			.wrap .frash-notice.notice { display: none !important; }
 		</style>
 		<?php
 	}
@@ -74,7 +75,7 @@ class ShaneSchrollSite extends TimberSite {
 	function admin_footer_white_label() {
 		echo '
 		<span id="footer-thankyou">Developed by
-			<a href="https://shaneschroll.dev" target="_blank" rel="noreferrer nofollow">Shane Schroll</a>.
+			<a href="https://github.com/shaneschroll" target="_blank" rel="noreferrer nofollow">Shane Schroll</a>.
 		</span>';
 	}
 
@@ -82,10 +83,29 @@ class ShaneSchrollSite extends TimberSite {
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
 		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/site.js', ['jquery'], $version );
+		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery'], $version );
 
-		// wp_enqueue_script( 'aos-js', get_template_directory_uri() . '/assets/js/aos.js', [], '3.0.0' );
-		// wp_enqueue_script( 'aos-init', get_template_directory_uri() . '/assets/js/aos-init.js', ['aos-js'], $version );
+		// get url and check for 'mockups' in url
+		$current_url = $_SERVER['REQUEST_URI'];
+
+		if( str_contains($current_url, 'mockups') ) {
+			// AOS Library - Animations Mockup
+			// wp_enqueue_script( 'aos-js', get_template_directory_uri() . '/assets/js/packages/aos.js', [], '3.0.0' );
+			// wp_enqueue_script( 'aos-init', get_template_directory_uri() . '/assets/js/mockups/aos-dist.js', ['aos-js'], $version );
+			// wp_enqueue_style( 'aos-css', get_stylesheet_directory_uri() . '/assets/css/aos.css', [], $version );
+
+			// JustValidate Library - Forms Mockup
+			// wp_enqueue_script( 'validate-js', get_template_directory_uri() . '/assets/js/packages/validate.js', [], '4.2.0' );
+			// wp_enqueue_script( 'validate-init', get_template_directory_uri() . '/assets/js/mockups/form-dist.js', ['validate-js'], $version );
+
+			// Datatables Library - Tables Mockup
+			// wp_enqueue_script( 'datatables-js', get_template_directory_uri() . '/assets/js/packages/datatables.js', [], '1.13.6' );
+			// wp_enqueue_script( 'datatables-init', get_template_directory_uri() . '/assets/js/mockups/table-dist.js', ['datatables-js'], $version );
+
+			// Documentation Library - Help Docs Mockup
+			// wp_enqueue_script( 'prism-js', get_template_directory_uri() . '/assets/js/packages/prism.js', [], '1.29.0' );
+			// wp_enqueue_script( 'prism-init', get_template_directory_uri() . '/assets/js/mockups/docs-dist.js', ['prism-js'], $version );
+		}
 	}
 
 	// remove jqmigrate from frontend
