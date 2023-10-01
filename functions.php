@@ -85,10 +85,15 @@ class ShaneSchrollSite extends TimberSite {
 		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
 		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery'], $version );
 
-		// get current url
+		/**
+		 * Conditionally load external libraries based on url
+		 * since the libraries are not needed sitewide.
+		 * 
+		 * New in PHP 8: str_contains() returns a boolean
+		*/
+
 		$current_url = $_SERVER['REQUEST_URI'];
 
-		// conditionally load external libraries based on url
 		switch (true) {
 
 			// AOS Library - Animations Mockup
