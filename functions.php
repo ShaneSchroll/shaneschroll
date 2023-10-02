@@ -151,6 +151,24 @@ class ShaneSchrollSite extends TimberSite {
 		add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'disable-custom-colors' );
+
+		// add options for sitewide settings
+		if( function_exists( 'acf_add_options_page' ) ) {
+			$parent = acf_add_options_page([
+				'page_title'  => __('Theme Options'),
+				'menu_title'  => __('Theme Options'),
+				'capability'  => 'edit_posts',
+				'redirect'    => false,
+				'icon_url' 	  => 'dashicons-database-add'
+			]);
+
+			// Footer Settings
+			$child = acf_add_options_sub_page([
+				'page_title'  => __('Footer Settings'),
+				'menu_title'  => __('Footer Settings'),
+				'parent_slug' => $parent['menu_slug'],
+			]);
+		} 
 	}
 
 	// creates a custom category for our custom blocks
@@ -179,8 +197,19 @@ class ShaneSchrollSite extends TimberSite {
 
 	// remove unused items from admin menu
 	function admin_menu_cleanup() {
-		remove_menu_page( 'edit.php' ); // Default Posts
-		remove_menu_page( 'edit-comments.php' ); // Comments
+		remove_menu_page( 'edit.php' );
+		remove_menu_page( 'edit-comments.php' );
+
+		if( ! current_user_can( 'administrator' ) ) {
+			remove_menu_page( 'tools.php' );
+			remove_menu_page( 'plugins.php' );
+			remove_menu_page( 'themes.php' );
+			remove_menu_page( 'options-general.php' );
+			remove_menu_page( 'users.php' );
+			remove_menu_page( 'wppusher' );
+			remove_menu_page( 'smush' );
+			remove_menu_page( 'edit.php?post_type=acf-field-group' );
+		}
 	}
 
 	// removed comment column from posts pages
@@ -192,3 +221,22 @@ class ShaneSchrollSite extends TimberSite {
 
 // create a new instance of our site class
 new ShaneSchrollSite();
+
+// move our ACF Options Page below the Dashboard tab
+function custom_menu_order( $menu_ord ) {
+	if( ! $menu_ord ) {
+		return true;
+	}
+
+	$menu = 'acf-options-theme-options';
+
+	// remove from current menu
+	$menu_ord = array_diff( $menu_ord, [$menu] );
+
+	// append after index [0]
+	array_splice( $menu_ord, 1, 0, [$menu] );
+
+	return $menu_ord;
+}
+add_filter( 'custom_menu_order', 'custom_menu_order' );
+add_filter( 'menu_order', 'custom_menu_order' );
