@@ -8,20 +8,75 @@
 
     &__inner-wrap {
         display: flex;
-        flex-direction: row;
+        max-width: 75rem;
+        margin: 0 auto;
+        flex-direction: column;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
 
         @include mq(sm) {
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
-        .text-content {}
+        .text-content {
+            max-width: 34rem;
+            margin-right: 1.5rem;
 
-        .image-content {}
+            h1 { font-weight: 600; }
+        }
+
+        .image-content {
+            position: relative;
+            max-width: 38.5rem;
+
+            svg {
+                display: block;
+                position: absolute;
+                max-width: 100%;
+                top: 1.25rem;
+                height: auto;
+                z-index: 1;
+            }
+
+            img {
+                position: relative;
+                max-width: 35rem;
+                z-index: 5;
+            }
+        }
     }
 }
 
+// home page skill bar below header
+.sub-header {
+    padding: 3rem 1rem;
+    background-color: $purple;
+
+    &__wrap {
+        display: flex;
+        max-width: 75rem;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    p {
+        max-width: 20rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: $white;
+    }
+
+    .logo-row {
+        display: flex;
+        max-width: 55rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+// Default site header for all other pages
 .site-header {
     padding: 1rem;
 }

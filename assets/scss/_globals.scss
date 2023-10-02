@@ -19,6 +19,12 @@ img {
 // Font Awesome base color
 .fa-solid { color: $white; }
 
+// no top margin
+.no-mb { margin-bottom: 0; }
+
+// no bottom margin
+.no-mt { margin-top: 0; }
+
 // post content wrapper
 .main-post-wrapper {
 	position: relative;

@@ -1,10 +1,23 @@
 {% if is_front_page %}
     <header class="home-header">
         <div class="home-header__inner-wrap">
-            <div class="text-content"></div>
-            <div class="image-content"></div>
+            <div class="text-content">
+                <h1>{{ post.large_header_text }}</h1>
+                <p class="no-mb">{{ post.paragraph_text }}</p>
+            </div>
+            <div class="image-content">
+                {% include '/assets/media/paint-splash.svg' %}
+                <img src="{{ TimberImage( post.thumbnail ).src }}" alt="{{ TimberImage( post.thumbnail ).alt }}" />
+            </div>
         </div>
     </header>
+
+    <section class="sub-header">
+        <div class="sub-header__wrap">
+            <p class="no-mt no-mb">Lorem ipsum dolor ist amet consectatur;</p>
+            <div class="logo-row"></div>
+        </div>
+    </section>
 {% else %}
     <header class="site-header"></header>
 {% endif %}
