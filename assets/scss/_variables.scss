@@ -19,8 +19,7 @@ $secondary-font: 'Poppins', sans-serif; // weights: 600, 700, 900
 
 // Consistency Utils
 $radius-small: 5px;
-$radius-medium: 10px;
-$radius-large: 15px;
+$radius-large: 10px;
 
 // Breakpoint Mixin
 @mixin mq($size) {
