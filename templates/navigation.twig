@@ -9,15 +9,25 @@
         <ul class="nav-menu">
             <li><a href="/about">About</a></li>
             <li><a href="/portfolio">Portfolio</a></li>
+
             <li class="sub-wrap">
-                <a href="/mockups">Mockups</a>
+                <a href="javascript://">Mockups</a>
+
                 <ul class="sub-menu">
-                    <li><a class="" href="/">BlackRoast</a></li>
-                    <li><a class="" href="/">Dashboard</a></li>
-                    <li><a class="" href="/">Tables & Data</a></li>
-                    <li><a class="" href="/">Search & Filter</a></li>
+                    <li><a href="/mockups">
+                        <span class="fa-solid fa-box-archive" aria-hidden="true"></span>Mockup Archive
+                    </a></li>
+
+                    {% for mockup in mockups %}
+                        <li>
+                            <a href="{{ mockup.link }}">
+                                <span class="fa-solid {{ mockup.icon_name }}" aria-hidden="true"></span>{{ mockup.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </li>
+
             <li><a href="/contact">Get in Touch</a></li>
         </ul>
 

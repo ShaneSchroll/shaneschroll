@@ -20,7 +20,7 @@ $args = [
 	'hierarchical'        => false,
 	'description'         => '',
 	'taxonomies'          => [],
-	'public'              => false,
+	'public'              => true,
 	'show_ui'             => true,
 	'show_in_menu'        => true,
 	'show_in_admin_bar'   => true,
@@ -34,7 +34,7 @@ $args = [
 	'can_export'          => true,
 	'rewrite'             => true,
 	'capability_type'     => 'post',
-	'supports'            => [ 'title', 'thumbnail', 'editor' ],
+	'supports'            => [ 'title', 'thumbnail' ],
 ];
 register_post_type( 'mockup', $args );
 

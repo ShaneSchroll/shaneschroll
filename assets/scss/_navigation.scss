@@ -29,19 +29,18 @@
         }
 
         .nav-menu {
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 30rem;
 
             .sub-wrap {
-                position: relative;
-
                 &:hover {
                     .sub-menu {
                         visibility: visible;
                         opacity: 1;
-                        transition: 0.3s ease-in;
+                        transition: 0.2s ease-in;
                     }
                 }
             }
@@ -50,10 +49,10 @@
                 position: absolute;
                 visibility: hidden;
                 opacity: 0;
-                transition: 0.3s ease-out;
-                border: 1px solid $black;
+                top: 2rem;
+                padding: 1rem 1.25rem;
+                transition: 0.2s 0.15s ease-out;
                 background-color: $navy;
-                padding: 1rem;
 
                 li {
                     margin-top: 0.65rem;
@@ -63,9 +62,16 @@
                 }
 
                 li a {
-                    color: $white;
+                    display: inline-block;
+                    width: 100%;
                     margin: 0;
-                    padding: 0;
+                    padding: 0.2rem;
+                    color: $white;
+                }
+
+                span {
+                    display: inline-block;
+                    margin-right: 0.75rem;
                 }
             }
         } // .nav-menu
