@@ -38,9 +38,10 @@
             .sub-wrap {
                 &:hover {
                     .sub-menu {
+                        top: 2rem;
                         visibility: visible;
                         opacity: 1;
-                        transition: 0.2s ease-in;
+                        transition: 0.2s ease-out;
                     }
                 }
             }
@@ -49,7 +50,7 @@
                 position: absolute;
                 visibility: hidden;
                 opacity: 0;
-                top: 2rem;
+                top: 1.5rem;
                 padding: 1rem 1.25rem;
                 transition: 0.2s 0.15s ease-out;
                 background-color: $navy;

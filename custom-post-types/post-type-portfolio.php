@@ -34,7 +34,7 @@ $args = [
 	'can_export'          => true,
 	'rewrite'             => true,
 	'capability_type'     => 'post',
-	'supports'            => [ 'title', 'thumbnail', 'editor' ],
+	'supports'            => [ 'title', 'thumbnail' ],
 ];
 register_post_type( 'portfolio', $args );
 
