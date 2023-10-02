@@ -1,7 +1,7 @@
 .site-nav {
     max-width: 100%;
     margin: 0 auto;
-    padding: 1.75rem;
+    padding: 0 1rem;
     background-color: $white;
     box-shadow: 0 0 9px -7px $navy;
 
@@ -24,7 +24,7 @@
         // base list reset
         ul {
             margin: 0;
-            padding: 0;
+            padding: 1.75rem 0;
             list-style: none;
         }
 
@@ -35,10 +35,14 @@
             align-items: center;
             width: 30rem;
 
+            li a {
+                padding: 1.75rem 0.2rem;
+            }
+
             .sub-wrap {
                 &:hover {
                     .sub-menu {
-                        top: 2rem;
+                        top: 5rem;
                         visibility: visible;
                         opacity: 1;
                         transition: 0.2s ease-out;
@@ -50,8 +54,9 @@
                 position: absolute;
                 visibility: hidden;
                 opacity: 0;
-                top: 1.5rem;
+                top: 4rem;
                 padding: 1rem 1.25rem;
+                border-top: 4px solid $teal;
                 transition: 0.2s 0.15s ease-out;
                 background-color: $navy;
 
