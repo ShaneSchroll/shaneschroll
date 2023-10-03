@@ -2,14 +2,14 @@
 #menu-toggle {
     display: block;
     &:hover { cursor: pointer; }
-    @include mq(md) { display: none; }
+    @include mq(865px) { display: none; }
 
     .x-bar {
         display: block;
         height: 3px;
         margin-bottom: 6px;
-        background-color: $teal;
-        transition: 0.3s ease-out;
+        background-color: $navy;
+        transition: 0.2s ease-out;
         border-radius: 2px;
         margin-right: 0;
         margin-left: auto;
@@ -25,7 +25,7 @@
 
     .x-bar-active {
         position: relative;
-        transition: 0.3s ease-out;
+        transition: 0.2s ease-out;
         margin-bottom: 0;
         height: 3px;
         z-index: 999;

@@ -8,13 +8,14 @@
     &__wrap {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         max-width: 75rem;
         margin: 0 auto;
 
         .text-title {
             display: inline-block;
-            margin: 0 5rem 0 0;
-            padding: 0;
+            margin: 0;
+            padding: 1rem 0;
             font-family: $secondary-font;
             font-size: 1.25rem;
             font-weight: 700;
@@ -29,14 +30,30 @@
         }
 
         .nav-menu {
+            display: none;
             position: relative;
-            display: flex;
             justify-content: space-between;
             align-items: center;
             width: 30rem;
+            @include mq(865px) { display: flex; }
 
             li a {
+                position: relative;
                 padding: 1.75rem 0.2rem;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -5px;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                }
+
+                &:hover {
+                    background-color: $magenta;
+                }
             }
 
             .sub-wrap {
@@ -59,6 +76,7 @@
                 border-top: 4px solid $teal;
                 transition: 0.2s 0.15s ease-out;
                 background-color: $navy;
+                z-index: 20;
 
                 li {
                     margin-top: 0.65rem;
@@ -73,11 +91,21 @@
                     margin: 0;
                     padding: 0.2rem;
                     color: $white;
+
+                    &:hover {
+                        color: $teal;
+
+                        span {
+                            transition: 0.2s ease-out;
+                            color: $teal;
+                        }
+                    }
                 }
 
                 span {
                     display: inline-block;
                     margin-right: 0.75rem;
+                    transition: 0.2s ease-out;
                 }
             }
         } // .nav-menu
