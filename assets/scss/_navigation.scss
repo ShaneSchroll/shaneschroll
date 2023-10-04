@@ -57,12 +57,26 @@
                     transition: 0.2s ease-out;
                 }
 
-                &:hover:before {
-                    background-color: $magenta;
-                    transition: 0.2s ease-out;
+                &:hover {
+                    .fa-chevron-down {
+                        transform: rotateX(180deg);
+                        transition: 0.2s ease-out;
+                    }
+
+                    &:before {
+                        background-color: $magenta;
+                        transition: 0.2s ease-out;
+                    }
                 }
 
                 &.active:before { background-color: $magenta; }
+            }
+
+            .fa-chevron-down {
+                padding-left: 0.25rem;
+                font-size: 0.85rem;
+                color: $navy;
+                transition: 0.2s ease-out;
             }
 
             .sub-menu-wrap {
