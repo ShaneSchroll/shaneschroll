@@ -1,2 +1,2 @@
-var e;(e=jQuery)(document).ready((function(){e("#menu-toggle").on("click",(function(){e(".x-bar").toggleClass("x-bar-active")}))}));
+var a;(a=jQuery)(document).ready((function(){a("#menu-toggle").on("click",(function(){a(".x-bar").toggleClass("x-bar-active")})),""!==location.pathname.split("/")[1]&&a('.top-level-item[href^="/'+location.pathname.split("/")[1]+'"]').addClass("active")}));
 //# sourceMappingURL=site-dist.js.map

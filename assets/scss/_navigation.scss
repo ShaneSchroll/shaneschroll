@@ -38,25 +38,34 @@
             @include mq(865px) { display: flex; }
 
             li a {
-                position: relative;
                 padding: 1.75rem 0.2rem;
+            }
+
+            .top-level-item {
+                position: relative;
 
                 &:before {
                     content: '';
                     position: absolute;
-                    top: -5px;
-                    width: 5px;
-                    height: 5px;
+                    top: 1rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 7px;
+                    height: 7px;
                     border-radius: 50%;
                     background-color: transparent;
+                    transition: 0.2s ease-out;
                 }
 
-                &:hover {
+                &:hover:before {
                     background-color: $magenta;
+                    transition: 0.2s ease-out;
                 }
+
+                &.active:before { background-color: $magenta; }
             }
 
-            .sub-wrap {
+            .sub-menu-wrap {
                 &:hover {
                     .sub-menu {
                         top: 5rem;
