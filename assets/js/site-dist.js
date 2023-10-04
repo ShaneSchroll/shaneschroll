@@ -1,2 +1,2 @@
-var a;(a=jQuery)(document).ready((function(){a("#menu-toggle").on("click",(function(){a(".x-bar").toggleClass("x-bar-active")})),""!==location.pathname.split("/")[1]&&a('.top-level-item[href^="/'+location.pathname.split("/")[1]+'"]').addClass("active")}));
+var t;(t=jQuery)(document).ready((function(){t("#menu-toggle").on("click",(function(){t(".x-bar").toggleClass("x-bar-active")})),""!==location.pathname.split("/")[1]&&t('.top-level-item[href^="/'+location.pathname.split("/")[1]+'"]').addClass("active"),window.location.href.indexOf("mockup")>-1&&t('.sub-level-item[href^="http://portfolio-site.local/mockup/'+location.pathname.split("/")[2]+'"]').addClass("sub-active")}));
 //# sourceMappingURL=site-dist.js.map

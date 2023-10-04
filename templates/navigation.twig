@@ -11,16 +11,12 @@
             <li><a class="top-level-item" href="/portfolio">Portfolio</a></li>
 
             <li class="sub-menu-wrap">
-                <a class="top-level-item" href="javascript:void(0)">Mockups</a>
+                <a class="top-level-item" href="/mockups">Mockups</a>
 
                 <ul class="sub-menu">
-                    <li><a href="/mockups">
-                        <span class="fa-solid fa-box-archive" aria-hidden="true"></span>Mockup Archive
-                    </a></li>
-
                     {% for mockup in mockups %}
                         <li>
-                            <a href="{{ mockup.link }}">
+                            <a class="sub-level-item" href="{{ mockup.link }}">
                                 <span class="fa-solid {{ mockup.icon_name }}" aria-hidden="true"></span>{{ mockup.title }}
                             </a>
                         </li>

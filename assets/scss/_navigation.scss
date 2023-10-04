@@ -111,6 +111,11 @@
                     }
                 }
 
+                .sub-active {
+                    color: $teal;
+                    span { color: $teal; }
+                }
+
                 span {
                     display: inline-block;
                     margin-right: 0.75rem;
