@@ -35,7 +35,7 @@
             justify-content: space-between;
             align-items: center;
             width: 30rem;
-            @include mq(865px) { display: flex; }
+            @include mq(md) { display: flex; }
 
             li a {
                 padding: 1.75rem 0.2rem;

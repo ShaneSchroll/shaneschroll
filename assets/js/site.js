@@ -5,16 +5,18 @@
             $('.x-bar').toggleClass('x-bar-active');
         });
 
-        // set active link based on URL
-        if( location.pathname.split('/')[1] !== '' ) {
-            $('.top-level-item[href^="/' + location.pathname.split('/')[1] + '"]').addClass('active');
-        }
-
-        // set active link based on URL for sub menu items and keep top level active
+        var path = location.pathname.split('/');
         var get_url = window.location.href;
 
-        if( get_url.indexOf('mockup') > -1 ) {
-            $('.sub-level-item[href^="http://portfolio-site.local/mockup/' + location.pathname.split('/')[2] + '"]').addClass('sub-active');
+        // set active link based on URL
+        if( path[1] !== '' ) {
+            $('.top-level-item[href^="/' + path[1] + '"]').addClass('active');
+        }
+
+        // set active link based on URL for sub menu items
+        if( get_url.indexOf('mockup') > -1 && path[1] !== 'mockups' ) {
+            $('.sub-level-item[href^="http://portfolio-site.local/mockup/' + path[2] + '"]').addClass('sub-active');
+            // $('.sub-level-item[href^="https://shaneschroll.dev/mockup/' + path[2] + '"]').addClass('sub-active');
         }
 
     }); // end document.ready

@@ -17,7 +17,7 @@ $navy: #1C1C57;
 $primary-font: 'Montserrat', sans-serif; // weights (+i): 400, 500, 600, 700
 $secondary-font: 'Poppins', sans-serif; // weights: 600, 700, 900
 
-// Consistency Utils
+// Consistency Utilities
 $radius-small: 5px;
 $radius-large: 10px;
 
@@ -30,11 +30,11 @@ $radius-large: 10px;
 	} @else if $size == sm {
 		@media (min-width: 768px) { @content; }
 	} @else if $size == md {
-		@media (min-width: 1024px) { @content; }
+		@media (min-width: 860px) { @content; }
 	} @else if $size == lg {
-		@media (min-width: 1200px) { @content; }
+		@media (min-width: 1024px) { @content; }
 	} @else if $size == xl {
-		@media (min-width: 1600px) { @content; }
+		@media (min-width: 1200px) { @content; }
 	} @else {
 		@media (min-width: $size) { @content; }
 	}
