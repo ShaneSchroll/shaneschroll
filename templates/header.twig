@@ -14,8 +14,12 @@
 
     <section class="sub-header">
         <div class="sub-header__wrap">
-            <p class="no-mt no-mb">Lorem ipsum dolor ist amet consectatur;</p>
-            <div class="logo-row"></div>
+            <p class="no-mt no-mb">A few of my favorite technologies to work with.</p>
+            <div class="logo-row">
+                {% for logo in post.meta('logo_row') %}
+                    <img src="{{ TimberImage( logo.logo ).src }}" alt="{{ TimberImage( logo.logo ).alt }}" />
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% else %}

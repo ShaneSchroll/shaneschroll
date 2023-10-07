@@ -64,8 +64,8 @@ class ShaneSchrollSite extends TimberSite {
 
 			#login-message.message { border-color: #F6BE00 !important; }
 
-			#backtoblog { display: none !important; }
-			.privacy-policy-page-link { display: none !important; }
+			#backtoblog,
+			.privacy-policy-page-link,
 			p#nav { display: none !important; }
 		</style>
 		<?php
@@ -75,7 +75,7 @@ class ShaneSchrollSite extends TimberSite {
 	function admin_footer_white_label() {
 		echo '
 		<span id="footer-thankyou">Developed by
-			<a href="https://github.com/shaneschroll" target="_blank" rel="noreferrer nofollow">Shane Schroll</a>.
+			<a href="https://github.com/shaneschroll" target="_blank" rel="noreferrer">Shane Schroll</a>.
 		</span>';
 	}
 

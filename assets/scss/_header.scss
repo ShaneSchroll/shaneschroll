@@ -62,7 +62,7 @@
     }
 
     p {
-        max-width: 20rem;
+        max-width: 17rem;
         font-size: 1.125rem;
         font-weight: 500;
         color: $white;
@@ -70,9 +70,14 @@
 
     .logo-row {
         display: flex;
-        max-width: 55rem;
+        max-width: 45rem;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
+
+        img {
+            max-width: 9.25rem;
+        }
     }
 }
 
