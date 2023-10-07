@@ -37,27 +37,29 @@
             width: 30rem;
             @include mq(md) { display: flex; }
 
-            li a {
-                padding: 1.75rem 0.2rem;
-            }
+            li {
+                a { padding: 1.75rem 0.2rem; }
 
-            .top-level-item {
-                position: relative;
+                // setup top level styles when hovered / active
+                .top-level-item {
+                    position: relative;
 
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 1rem;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 7px;
-                    height: 7px;
-                    border-radius: 50%;
-                    background-color: transparent;
-                    transition: 0.2s ease-out;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 1rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        transition: 0.2s ease-out;
+                    }
                 }
 
-                &:hover {
+                // keep styles active when sub-menu is hovered
+                &:hover .top-level-item {
                     .fa-chevron-down {
                         transform: rotateX(180deg);
                         transition: 0.2s ease-out;
@@ -69,7 +71,7 @@
                     }
                 }
 
-                &.active:before { background-color: $magenta; }
+                a.active:before { background-color: $magenta; }
             }
 
             .fa-chevron-down {
