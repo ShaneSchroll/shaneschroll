@@ -1,68 +1,23 @@
 (function($) {
-    $(window).on('load', function() {
+    $(document).ready(function() {
 
-        // mobile menu toggle and xbar animation
-        $(function menuFunctions() {
-            $('#menu-toggle').on('click', function() {
-                $(this).toggleClass('toggle-active');
-                $('.x-bar').toggleClass('x-bar-active');
-                $('.site-nav--main-menu').toggleClass('primary-menu-active');
-                $('body, html').toggleClass('no-scroll');
-                $('#fader, .site-nav--text-logo').toggleClass('fade-lock');
+        $('#menu-toggle').on('click', function() {
+            $('.x-bar').toggleClass('x-bar-active');
+        });
 
-                if( $('#fader').hasClass('fade-lock') ) {
-                    $('#fader').attr('aria-disabled', 'true');
-                } else {
-                    $('#fader').attr('aria-disabled', 'false');
-                }
-            });
+        var path = location.pathname.split('/');
+        var get_url = window.location.href;
 
-            // redundant but needed since the menu toggle is inside the nav itself (causes desktop issues)
-            $('.site-nav--main-menu li a, .mobile-contact-button').on('click', function() {
-                if( $('#menu-toggle').hasClass('toggle-active') ) {
-                    $('#menu-toggle').toggleClass('toggle-active');
-                    $('.x-bar').toggleClass('x-bar-active');
-                    $('.site-nav--main-menu').toggleClass('primary-menu-active');
-                    $('body, html').toggleClass('no-scroll');
-                    $('#fader, .site-nav--text-logo').toggleClass('fade-lock');
-
-                    if( $('#fader').hasClass('fade-lock') ) {
-                        $('#fader').attr('aria-disabled', 'true');
-                    } else {
-                        $('#fader').attr('aria-disabled', 'false');
-                    }
-                }
-            });
-        }); // end menuFunctions()
-
-        if( window.location.href.indexOf('services') > -1 ) {
-            $('#service-option-tabs').tabs(); // initialize tabs
+        // set active link based on URL
+        if( path[1] !== '' ) {
+            $('.top-level-item[href^="/' + path[1] + '"]').addClass('active');
         }
 
-        // smooth scroll to anchors instead of jumping to content
-        $(function smoothScroll() {
-            $('a[href*="#"]')
-            .not('[href="#"]')
-            .not('[href="#0"]')
-            .on('click', function(event) {
-                if(
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-                && 
-                location.hostname == this.hostname
-                ) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        // set active link based on URL for sub menu items
+        if( get_url.indexOf('mockup') > -1 && path[1] !== 'mockups' ) {
+            $('.sub-level-item[href^="http://portfolio-site.local/mockup/' + path[2] + '"]').addClass('sub-active'); // local dev
+            // $('.sub-level-item[href^="https://shaneschroll.dev/mockup/' + path[2] + '"]').addClass('sub-active'); // production
+        }
 
-                    if(target.length) {
-                        event.preventDefault();
-
-                        $('html, body').animate({
-                            scrollTop: target.offset().top
-                        }, 1000 );
-                    }
-                }
-            });
-        }); // end smoothScroll()
-
-	}); // end window.load
+    }); // end document.ready
 })(jQuery);

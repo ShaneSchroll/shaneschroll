@@ -1,42 +1,5 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<section class="home-content">
-    <section class="about-section">
-        <img src="{{ TimberImage( post.about_image ).src }}" alt="{{ TimberImage( post.about_image ).alt }}" />
-        <article class="about-section__text-content">
-            <h3 class="small-title">About Me</h3>
-            <h2>{{ post.section_title }}</h2>
-            <p>{{ post.text_content }}</p>
-            <a class="main-button main-button--outlined inline" href="/about">Learn More</a>
-        </article>
-    </section>
-
-    <section id="full-width" class="tech-section">
-        <div class="icon-wrapper">
-            <h3 class="small-title">Tech Stack</h3>
-            <h2>Core Technologies in My Skillset</h2>
-
-            <div class="tech-row">
-                {% for icon in post.get_field('tech_icon_row') %}
-                    <img
-                        src="{{ TimberImage( icon.tech_icon ).src }}"
-                        alt="{{ TimberImage( icon.tech_icon ).alt }}"
-                        title="{{ icon.tech_name }}"
-                    />
-                {% endfor %}
-            </div>
-
-            <a class="main-button main-button--outlined inline" href="/about/#tech-stack">
-                See More <span class="fa-solid fa-glasses icon-right" role="img" aria-label="See Tech Stack"></span>
-            </a>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <h3 class="small-title">Contact</h3>
-        <h2 id="contact">Get In Touch</h2>
-        {% include 'form.twig' %}
-    </section>
-</section>
+<section class="home-content"></section>
 {% endblock %}

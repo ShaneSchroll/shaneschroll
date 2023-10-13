@@ -1,32 +1,6 @@
-.main-site-footer {
-    position: relative;
-    max-width: 100%;
-    text-align: center;
-    padding: 1rem;
-    background-color: $secondary-background;
-
-    p {
-        margin: 0 auto;
-        font-size: 12px;
-        @include mq(440px) { font-size: 1rem; }
-
-        span {
-            margin-left: 2px;
-            margin-right: 2px;
-            font-size: 12px;
-            color: $green;
-
-            @include mq(440px) {
-                font-size: 1rem;
-                margin-left: 3px;
-                margin-right: 3px;
-            }
-        }
-
-        a {
-            color: $green;
-            font-size: 12px;
-            @include mq(440px) { font-size: 1rem; }
-        }
-    }
-}
+// .site-footer {
+//     clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+//     margin: 0 auto;
+//     padding: 3rem 1rem;
+//     background-color: $navy;
+// }

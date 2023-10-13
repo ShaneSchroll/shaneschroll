@@ -3,30 +3,22 @@
     Author: Shane Schroll
     Author URI: https://shaneschroll.dev
     Description: Personal portfolio site.
-    Text Domain: rscr
-    Version: 1.8.1
+    Text Domain: srs
+    Version: 2.1.4
 */
 
 // Import required files (dependencies)
-@import 'packages/normalize';
-@import 'variables';
-@import 'globals';
-@import 'typography';
-
-// Import core packages
-@import 'packages/xbar';
+@import 'packages/normalize';       // Soft reset + browser consistencies
+@import 'variables';                // Sitewide variables + Custom Mixins, functions
+@import 'globals';                  // Base html/body setup, wrappers, containers
+@import 'typography';               // Sitewide typography, sizing, spacing, colors
 
 // Import main site chunks
-@import 'navigation';
-@import 'header';
-@import 'footer';
+@import 'header';                   // imports [xbar.scss] and [navigation.scss]
+@import 'footer';                   // site footer + footer nav
 
 // Import components
-@import 'buttons';
-@import 'form';
+@import 'components/component-loader';
 
-// Import page templates
-@import 'pages/home';
-@import 'pages/about';
-@import 'pages/services';
-@import 'pages/404';
+// Import templates
+@import 'templates/template-loader';

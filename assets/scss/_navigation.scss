@@ -1,130 +1,143 @@
-// nav container
 .site-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 77rem;
-    padding: 1rem;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0 1rem;
+    background-color: $white;
+    box-shadow: 0 0 9px -7px $navy;
 
-    &--text-logo {
-        font-size: 1.5rem;
-        color: $white;
-    }
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 75rem;
+        margin: 0 auto;
 
-    // list reset
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    // <ul> mobile
-    &--main-menu {
-        position: absolute;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        overflow: hidden;
-        z-index: 99;
-        padding: 15rem 1.75rem 0 4rem !important;
-        transition: 0.6s ease-out;
-
-        li { margin-bottom: 1.5rem; }
-
-        li a {
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.85rem;
-            font-weight: 700;
+        .text-logo {
+            display: inline-block;
+            margin: 0;
+            padding: 1rem 0;
             font-family: $secondary-font;
-            color: $white;
-            padding: 0.25rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $navy;
         }
 
-        // green triangles
-        .menu-accent {
-            position: absolute;
-            width: 30rem;
-            height: 18rem;
-            transform: rotateZ(-45deg);
-            background-color: $green;
-
-            &--top,
-            &--bottom {
-                @extend .menu-accent;
-            }
-
-            // top-left corner
-            &--top {
-                top: -6.5rem;
-                left: -14rem;
-            }
-
-            // bottom-right corner
-            &--bottom {
-                right: -14rem;
-                bottom: -6.5rem;
-            }
+        // base list reset
+        ul {
+            margin: 0;
+            padding: 1.75rem 0;
+            list-style: none;
         }
 
-        &.primary-menu-active {
-            right: 0;
-            width: 20rem;
-            background-color: $secondary-background;
-            transition: 0.3s ease-out;
-        }
-    }
-
-    .main-button { display: none; }
-
-    // <ul> desktop
-    @include mq(980px) {
-        &--main-menu {
+        .nav-menu {
+            display: none;
             position: relative;
-            right: unset;
-            display: flex;
-            max-width: 32rem;
-            width: 100%;
-            height: unset;
-            padding: 0 !important;
             justify-content: space-between;
+            align-items: center;
+            width: 30rem;
+            @include mq(md) { display: flex; }
 
-            li { margin-bottom: 0; }
+            li {
+                a { padding: 1.75rem 0.2rem; }
 
-            li a {
-                position: relative;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                font-size: 0.875rem;
-                font-weight: 700;
-                font-family: $secondary-font;
-                padding: 0.25rem;
+                // setup top level styles when hovered / active
+                .top-level-item {
+                    position: relative;
 
-                &:after {
-                    content: '';
-                    position: absolute;
-                    top: 1.35rem;
-                    left: 50%;
-                    height: 2px;
-                    width: 0;
-                    background: transparent;
-                    transition: all 0.2s ease-out;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 1rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        transition: 0.2s ease-out;
+                    }
                 }
 
+                // keep styles active when sub-menu is hovered
+                &:hover .top-level-item {
+                    .fa-chevron-down {
+                        transform: rotateX(180deg);
+                        transition: 0.2s ease-out;
+                    }
+
+                    &:before {
+                        background-color: $magenta;
+                        transition: 0.2s ease-out;
+                    }
+                }
+
+                a.active:before { background-color: $magenta; }
+            }
+
+            .fa-chevron-down {
+                padding-left: 0.25rem;
+                font-size: 0.85rem;
+                color: $navy;
+                transition: 0.2s ease-out;
+            }
+
+            .sub-menu-wrap {
                 &:hover {
-                    &:after {
-                        transition: all 0.2s ease-out;
-                        width: 100%;
-                        left: 0;
-                        background: $green;
+                    .sub-menu {
+                        top: 5rem;
+                        visibility: visible;
+                        opacity: 1;
+                        transition: 0.2s ease-out;
                     }
                 }
             }
 
-            .menu-accent { display: none; }
-        }
+            .sub-menu {
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                top: 4rem;
+                padding: 1rem 1.25rem;
+                border-top: 4px solid $teal;
+                transition: 0.2s 0.15s ease-out;
+                background-color: $navy;
+                z-index: 20;
 
-        .main-button { display: inline; }
-    }
+                li {
+                    margin-top: 0.65rem;
+                    margin-bottom: 0.65rem;
+                    &:first-of-type { margin-top: 0; }
+                    &:last-of-type { margin-bottom: 0; }
+                }
+
+                li a {
+                    display: inline-block;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0.2rem;
+                    color: $white;
+
+                    &:hover {
+                        color: $teal;
+
+                        span {
+                            transition: 0.2s ease-out;
+                            color: $teal;
+                        }
+                    }
+                }
+
+                .sub-active {
+                    color: $teal;
+                    span { color: $teal; }
+                }
+
+                span {
+                    display: inline-block;
+                    margin-right: 0.75rem;
+                    transition: 0.2s ease-out;
+                }
+            }
+        } // .nav-menu
+    } // &__wrap
 }

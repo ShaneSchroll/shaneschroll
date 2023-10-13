@@ -1,28 +1,40 @@
-<nav class="site-nav">
-    <a class="site-nav--text-logo" {% if not is_front_page %}href="/"{% endif %}><strong>Shane Schroll</strong></a>
+<nav class="site-nav" aria-label="Main site navigation">
+    <div class="site-nav__wrap">
+        {% if not is_front_page %}
+            <a class="text-logo" href="/">ShaneSchroll</a>
+        {% else %}
+            <p class="text-logo">ShaneSchroll</p>
+        {% endif %}
 
-    <ul class="site-nav--main-menu">
-        <div class="menu-accent menu-accent--top"></div> {# Top Slant #}
+        <ul class="nav-menu">
+            <li><a class="top-level-item" href="/about">About</a></li>
+            <li><a class="top-level-item" href="/portfolio">Portfolio</a></li>
 
-        <li><a href="/about">About</a></li>
-        <li><a href="/about/#portfolio">Portfolio</a></li>
-        <li><a href="/about/#tech-stack">Tech Stack</a></li>
-        {# <li><a href="/services">Services</a></li> #}
+            <li class="sub-menu-wrap">
+                <a class="top-level-item" href="/mockups">
+                    Mockups <span class="fa-solid fa-chevron-down"></span>
+                </a>
 
-        <div class="menu-accent menu-accent--bottom"></div> {# Bottom Slant #}
+                <ul class="sub-menu">
+                    {% for mockup in mockups %}
+                        <li>
+                            <a class="sub-level-item" href="{{ mockup.link }}">
+                                <span class="fa-solid {{ mockup.icon_name }}" aria-hidden="true"></span>{{ mockup.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
 
-        <a class="mobile-contact-button" href="/#contact">
-            Get In Touch <span class="fa-solid fa-mug-hot icon-right"></span>
-        </a>
-    </ul>
+            <li><a class="top-level-item" href="/contact">Get in Touch</a></li>
+        </ul>
 
-    <a class="main-button main-button--outlined" href="/#contact">
-        Get In Touch <span class="fa-solid fa-mug-hot icon-right"></span>
-    </a>
+        <a class="cta-button--teal nav-button" href="/community">Community</a>
 
-    <div id="menu-toggle">
-        <span class="x-bar"></span>
-        <span class="x-bar"></span>
-        <span class="x-bar"></span>
+        <div id="menu-toggle">
+            <span class="x-bar"></span>
+            <span class="x-bar"></span>
+            <span class="x-bar"></span>
+        </div>
     </div>
 </nav>

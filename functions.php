@@ -8,20 +8,24 @@ class ShaneSchrollSite extends TimberSite {
 	function __construct() {
 		// Action Hooks //
 		add_action( 'init', [ $this, 'register_post_types' ] );
+		add_action( 'acf/init', array( $this, 'render_custom_acf_blocks' ) );
 		add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_head', [ $this, 'admin_head_css' ] );
 		add_action( 'admin_menu', [ $this, 'admin_menu_cleanup'] );
 		add_action( 'login_enqueue_scripts', [ $this, 'style_login' ] );
+		add_action( 'wp_default_scripts', [ $this, 'remove_jqmigrate' ] );
 
 		// Filter Hooks //
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
+		add_filter( 'block_categories', [ $this, 'srs_block_category' ], 10, 2 );
+		add_filter( 'admin_footer_text', [ $this, 'admin_footer_white_label' ] );
 
 		parent::__construct();
 	}
 
-	// hide nags and unused items
+	// hide nags and cleanup admin bar
 	function admin_head_css() {
 		?>
 		<style type="text/css">
@@ -33,19 +37,9 @@ class ShaneSchrollSite extends TimberSite {
 			#wp-admin-bar-new-content,
 			#wp-admin-bar-rank-math,
 			#adminmenu #collapse-menu,
-			.hide-if-no-customize { display: none !important; }
-
-			.edit-post-fullscreen-mode-close.components-button {
-				background-color: #fff;
-				border-bottom: 1px solid #e0e0e0;
-				border-right: 1px solid #e0e0e0;
-			}
-
-			.edit-post-fullscreen-mode-close.components-button:before {
-				box-shadow: unset !important;
-			}
-
-			#adminmenu .update-plugins { display: none !important; }
+			#adminmenu .update-plugins,
+			.hide-if-no-customize,
+			.wrap .frash-notice.notice { display: none !important; }
 		</style>
 		<?php
 	}
@@ -61,7 +55,7 @@ class ShaneSchrollSite extends TimberSite {
 			}
 
 			#login h1 a, .login h1 a {
-				background-image: url('<?= get_stylesheet_directory_uri() . '/media/ss-logo.webp' ?>') !important;
+				background-image: url('<?= get_stylesheet_directory_uri() . '/screenshot.png' ?>') !important;
 				background-position: center;
 				width: 20rem;
 				height: 10rem;
@@ -70,23 +64,38 @@ class ShaneSchrollSite extends TimberSite {
 
 			#login-message.message { border-color: #F6BE00 !important; }
 
-			#backtoblog { display: none !important; }
-			.privacy-policy-page-link { display: none !important; }
+			#backtoblog,
+			.privacy-policy-page-link,
 			p#nav { display: none !important; }
 		</style>
 		<?php
 	}
 
+	// admin footer white label
+	function admin_footer_white_label() {
+		echo '
+		<span id="footer-thankyou">Developed by
+			<a href="https://github.com/shaneschroll" target="_blank" rel="noreferrer">Shane Schroll</a>.
+		</span>';
+	}
+
 	// enqueue styles & scripts
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
-		wp_enqueue_style( 'rscr-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-		wp_enqueue_script( 'rscr-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'jquery-ui-tabs'], $version );
+		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
+		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery'], $version );
 
-		// sphere functions
-		if( is_page('about') ) {
-			wp_enqueue_script( 'tagcanvas-js', get_template_directory_uri() . '/assets/js/packages/tagcanvas.js', [], '2.11' );
-			wp_enqueue_script( 'sphere-js', get_template_directory_uri() . '/assets/js/packages/sphere-dist.js', ['tagcanvas-js'], $version );
+		include( 'conditional-enqueues.php' );
+	}
+
+	// remove jqmigrate from frontend
+	function remove_jqmigrate( $scripts ) {
+		if( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+			$script = $scripts->registered['jquery'];
+
+			if( $script->deps ) {
+				$script->deps = array_diff( $script->deps, ['jquery-migrate'] );
+			}
 		}
 	}
 
@@ -97,24 +106,81 @@ class ShaneSchrollSite extends TimberSite {
 		$context['date_year']      	= date('Y');
 		$context['is_front_page']	= is_front_page();
 		$context['is_404'] 	    	= is_404();
+
+		$context['mockups'] = Timber::get_posts([
+			'post_type' => 'mockup',
+			'posts_per_page' => -1,
+			'orderby' => 'title',
+			'order' => 'ASC'
+		]);
+
 		return $context;
 	}
 
 	// theme support and options page
 	function after_setup_theme() {
+		add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'disable-custom-colors' );
+
+		// add options for sitewide settings
+		if( function_exists( 'acf_add_options_page' ) ) {
+			$parent = acf_add_options_page([
+				'page_title'  => __('Theme Options'),
+				'menu_title'  => __('Theme Options'),
+				'capability'  => 'edit_posts',
+				'redirect'    => false,
+				'icon_url' 	  => 'dashicons-database-add'
+			]);
+
+			// Footer Settings
+			$child = acf_add_options_sub_page([
+				'page_title'  => __('Footer Settings'),
+				'menu_title'  => __('Footer Settings'),
+				'parent_slug' => $parent['menu_slug'],
+			]);
+		} 
 	}
 
+	// creates a custom category for our custom blocks
+	function srs_block_category( $categories, $post ) {
+		return array_merge(
+			$categories,
+			[
+				[
+					'slug'  => 'srs-blocks',
+					'title' => 'Custom Blocks',
+				],
+			]
+		);
+	}
+
+	// registers and renders our custom acf blocks
+	function render_custom_acf_blocks() {
+		require 'custom-blocks-loader.php';
+	}
+
+	// add custom post types
 	function register_post_types() {
-		include_once( 'custom-post-types/post-type-portfolio.php');
-		include_once( 'custom-post-types/post-type-service.php');
+		include_once( 'custom-post-types/post-type-mockup.php' );
+		include_once( 'custom-post-types/post-type-portfolio.php' );
 	}
 
 	// remove unused items from admin menu
 	function admin_menu_cleanup() {
-		remove_menu_page( 'edit.php' ); // Default Posts
-		remove_menu_page( 'edit-comments.php' ); // Comments
+		remove_menu_page( 'edit.php' );
+		remove_menu_page( 'edit-comments.php' );
+
+		if( ! current_user_can( 'administrator' ) ) {
+			remove_menu_page( 'tools.php' );
+			remove_menu_page( 'plugins.php' );
+			remove_menu_page( 'themes.php' );
+			remove_menu_page( 'options-general.php' );
+			remove_menu_page( 'users.php' );
+			remove_menu_page( 'wppusher' );
+			remove_menu_page( 'smush' );
+			remove_menu_page( 'edit.php?post_type=acf-field-group' );
+		}
 	}
 
 	// removed comment column from posts pages
@@ -124,4 +190,24 @@ class ShaneSchrollSite extends TimberSite {
 	}
 }
 
+// create a new instance of our site class
 new ShaneSchrollSite();
+
+// move our ACF Options Page below the Dashboard tab
+function custom_menu_order( $menu_ord ) {
+	if( ! $menu_ord ) {
+		return true;
+	}
+
+	$menu = 'acf-options-theme-options';
+
+	// remove from current menu
+	$menu_ord = array_diff( $menu_ord, [$menu] );
+
+	// append after index [0]
+	array_splice( $menu_ord, 1, 0, [$menu] );
+
+	return $menu_ord;
+}
+add_filter( 'custom_menu_order', 'custom_menu_order' );
+add_filter( 'menu_order', 'custom_menu_order' );

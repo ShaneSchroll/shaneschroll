@@ -4,7 +4,7 @@ small, time, ol, ul, li, button {
 	font-family: $primary-font;
 	font-size: 1rem;
 	font-weight: 400;
-	color: $dark-grey;
+	color: $navy;
 }
 
 small, time { font-size: 0.875rem; }
@@ -12,6 +12,7 @@ small, time { font-size: 0.875rem; }
 a {
 	text-decoration: none;
 	transition: 0.2s ease-in;
+	font-weight: 500;
 	&:hover { transition: 0.2s ease-out; }
 }
 
@@ -40,20 +41,12 @@ h4, h5, h6 {
 	font-family: $secondary-font;
 	font-weight: 700;
 	line-height: 1.2;
-	color: $white;
+	color: $navy;
 }
 
-h1 { font-size: fluid-text(480px, 35px, 800px, 65px); }
+h1 { font-size: fluid-text(480px, 35px, 800px, 60px); }
 h2 { font-size: fluid-text(480px, 28px, 1200px, 45px); }
 h3 { font-size: fluid-text(480px, 20px, 1200px, 35px); }
 h4 { font-size: fluid-text(480px, 18px, 1200px, 25px); }
 h5 { font-size: 16px; }
 h6 { font-size: 14px; }
-
-.small-title {
-	font-size: 1.125rem;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	margin-bottom: 0.5rem;
-	color: $green;
-}

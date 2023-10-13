@@ -1,75 +1,87 @@
-// header, primary nav, title
-.main-site-header {
+// Import packages
+@import 'packages/xbar';
+@import 'navigation';
+
+.home-header {
+    padding: 2rem 1rem 0 1rem;
     max-width: 100%;
-    margin: 0 auto;
+
+    &__inner-wrap {
+        display: flex;
+        max-width: 75rem;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include mq(sm) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .text-content {
+            max-width: 34rem;
+            margin-right: 1.5rem;
+
+            h1 { font-weight: 600; }
+        }
+
+        .image-content {
+            position: relative;
+            max-width: 38.5rem;
+
+            svg {
+                display: block;
+                position: absolute;
+                max-width: 100%;
+                top: 1.25rem;
+                height: auto;
+                z-index: 1;
+            }
+
+            img {
+                position: relative;
+                max-width: 35rem;
+                z-index: 5;
+            }
+        }
+    }
 }
 
-// homepage intro header
-.title-container {
-    background-color: $secondary-background;
+// home page skill bar below header
+.sub-header {
+    padding: 4.25rem 1rem;
+    background-color: $purple;
 
-    &__home-inner-wrap {
+    &__wrap {
         display: flex;
+        max-width: 75rem;
+        margin: 0 auto;
         justify-content: space-between;
         align-items: center;
-        max-width: 77rem;
-        margin: 0 auto;
-        padding: 2.25rem 1rem 4rem;
-        @include mq(620px) { padding: 4.25rem 1rem; }
-        @include mq(md) { padding: 6.25rem 1rem; }
+    }
 
-        &--title {
-            max-width: 45rem;
-            margin: 0 auto;
+    p {
+        max-width: 17rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: $white;
+    }
 
-            @include mq(920px) {
-                flex-shrink: 0;
-                margin: unset;
-            }
-
-            p { margin-bottom: 2.3rem; }
-        }
-
-        .split-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            h1, h2 {
-                line-height: 1;
-                font-weight: 700;
-                margin-bottom: 0;
-            }
-
-            h1 {
-                font-size: 120px;
-                margin-right: 2rem;
-                color: $green;
-                @include mq(500px) { font-size: 140px; }
-                @include mq(620px) { font-size: 150px; }
-            }
-
-            h2 {
-                font-size: 28px;
-                @include mq(xs) { font-size: 35px; }
-                @include mq(620px) { font-size: 45px; }
-            }
-        }
+    .logo-row {
+        display: flex;
+        max-width: 45rem;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
 
         img {
-            display: none;
-            max-width: 25rem;
-            width: 100%;
-            margin-left: 1.5rem;
-            @include mq(920px) { display: block; }
+            max-width: 9.25rem;
         }
     }
+}
 
-    &__default {
-        text-align: center;
-        margin: 0 auto;
-        padding: 4rem 1rem;
-
-        h1:not(.small-title) { margin-bottom: 0; }
-    }
+// Default site header for all other pages
+.site-header {
+    padding: 1rem;
 }

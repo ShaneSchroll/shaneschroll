@@ -1,24 +1,27 @@
-<header class="main-site-header">
-    {% if not is_404 %}
-        <section id="full-width" class="title-container">
-            {% if is_front_page %}
-                <div class="title-container__home-inner-wrap">
-                    <div class="title-container__home-inner-wrap--title">
-                        <div class="split-title">
-                            <h1>{{ post.large_title }}</h1>
-                            <h2>{{ post.small_title }}</h2>
-                        </div>
-                        <p>{{ post.intro_text }}</p>
-                        <a class="main-button main-button--outlined" href="{{ post.button_link_one }}">{{ post.button_text_one }}</a>
-                    </div>
-                    <img src="{{ TimberImage( post.thumbnail ).src }}" alt="{{ TimberImage( post.thumbnail ).alt }}" />
-                </div>
-            {% else %}
-                <div class="title-container__default">
-                    <h1 class="small-title">{{ post.small_header }}</h1>
-                    <h1>{{ post.header }}</h1>
-                </div>
-            {% endif %}
-        </section>
-    {% endif %}
-</header>
+{% if is_front_page %}
+    <header class="home-header">
+        <div class="home-header__inner-wrap">
+            <div class="text-content">
+                <h1>{{ post.large_header_text }}</h1>
+                <p class="no-mb">{{ post.paragraph_text }}</p>
+            </div>
+            <div class="image-content">
+                {% include '/assets/media/paint-splash.svg' %}
+                <img src="{{ TimberImage( post.thumbnail ).src }}" alt="{{ TimberImage( post.thumbnail ).alt }}" />
+            </div>
+        </div>
+    </header>
+
+    <section class="sub-header">
+        <div class="sub-header__wrap">
+            <p class="no-mt no-mb">A few of my favorite technologies to work with.</p>
+            <div class="logo-row">
+                {% for logo in post.meta('logo_row') %}
+                    <img src="{{ TimberImage( logo.logo ).src }}" alt="{{ TimberImage( logo.logo ).alt }}" />
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% else %}
+    <header class="site-header"></header>
+{% endif %}
