@@ -14,7 +14,7 @@
 
     <section class="sub-header">
         <div class="sub-header__wrap">
-            <p class="no-mt no-mb">A few of my favorite technologies to work with.</p>
+            <p class="no-mt no-mb">{{ post.logo_row_text }}</p>
             <div class="logo-row">
                 {% for logo in post.meta('logo_row') %}
                     <img src="{{ TimberImage( logo.logo ).src }}" alt="{{ TimberImage( logo.logo ).alt }}" />

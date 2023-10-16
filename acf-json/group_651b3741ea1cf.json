@@ -3,6 +3,26 @@
     "title": "Home Page",
     "fields": [
         {
+            "key": "field_652d0dafec16b",
+            "label": "Logo Row Text",
+            "name": "logo_row_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_651b37420194c",
             "label": "Logo Row",
             "name": "logo_row",
@@ -71,5 +91,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696282501
+    "modified": 1697451486
 }

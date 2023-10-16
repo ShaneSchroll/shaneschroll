@@ -77,6 +77,8 @@
 
         img {
             max-width: 9.25rem;
+            &:nth-of-type(4n+3) { max-width: 7rem; }
+            &:nth-of-type(4n+4) { max-width: 6.4rem; }
         }
     }
 }
