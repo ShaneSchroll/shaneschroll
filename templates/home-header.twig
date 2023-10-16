@@ -1,0 +1,24 @@
+<header class="home-header">
+    <div class="home-header__inner-wrap">
+        <div class="text-content">
+            <h1>{{ post.large_header_text }}</h1>
+            <p class="no-mb">{{ post.paragraph_text }}</p>
+        </div>
+
+        <div class="image-content">
+            {% include '/assets/media/paint-splash.svg' %}
+            <img src="{{ TimberImage( post.thumbnail ).src }}" alt="{{ TimberImage( post.thumbnail ).alt }}" />
+        </div>
+    </div>
+</header>
+
+<section class="tech-bar-wrapper">
+    <div class="tech-bar-wrapper__container">
+        <p class="no-mt no-mb">{{ post.logo_row_text }}</p>
+        <div class="tech-row">
+            {% for tech in post.meta('logo_row') %}
+                <img src="{{ TimberImage( tech.logo ).src }}" alt="{{ TimberImage( tech.logo ).alt }}" />
+            {% endfor %}
+        </div>
+    </div>
+</section>

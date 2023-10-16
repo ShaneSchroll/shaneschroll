@@ -13,13 +13,7 @@
         border-radius: 2px;
         margin-right: 0;
         margin-left: auto;
-
-        // adjust the widths to make them staggered
-        &:nth-child(3n+1) { width: 1.8rem; }
-        &:nth-child(3n+2) { width: 1.4rem; }
-        &:nth-child(3n+3) { width: 1rem; }
-
-        // make them all the same so the X looks correct
+        &:nth-child(3n) { width: 1.8rem; }
         &.x-bar-active { width: 1.6rem; }
     }
 

@@ -1,0 +1,35 @@
+/// Sitewide helper classes
+
+// Font Awesome base color
+.fa-solid { color: $white; }
+
+// no top margin
+.no-mb { margin-bottom: 0; }
+
+// no bottom margin
+.no-mt { margin-top: 0; }
+
+// post content wrapper
+.main-post-wrapper {
+	position: relative;
+	max-width: 77rem;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+// default post content container
+.content-block {
+	padding: 3rem 0;
+	margin: 0 auto;
+}
+
+// full width container
+#full-width {
+	position: relative;
+	width: 100vw;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
