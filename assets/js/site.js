@@ -11,6 +11,7 @@
         // set active link based on URL
         if( path[1] !== '' ) {
             $('.top-level-item[href^="/' + path[1] + '"]').addClass('active');
+            $('.grid-item--link[href^="/' + path[1] + '"]').addClass('active');
         }
 
         // set active link based on URL for sub menu items
