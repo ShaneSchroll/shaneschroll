@@ -15,19 +15,20 @@
 	</head>
 
 	<body data-template="base.twig" class="{{ body_class }}">
-		{% include 'navigation.twig' %}
+		{% include 'components/navigation.twig' %}
 
 		{% if not is_front_page %}
-			{% include 'default-header.twig' %}
+			{% include 'components/default-header.twig' %}
 		{% else %}
-			{% include 'home-header.twig' %}
+			{% include 'components/home-header.twig' %}
 		{% endif %}
 
 		<section id="main-section" class="main-post-wrapper" role="main" aria-label="Main page content">
 			{% block content %}{% endblock %}
 		</section>
 
-		{% include 'footer.twig' %}
+		{% include 'components/footer.twig' %}
+		{% include 'components/mobile-nav.twig' %}
 
 		{{ fn('wp_footer') }}
 	</body>
