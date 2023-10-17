@@ -16,6 +16,7 @@
                 </a>
 
                 <ul class="sub-menu">
+                    {# grab mockup post type pages #}
                     {% for mockup in mockups %}
                         <li>
                             <a class="sub-level-item" href="{{ mockup.link }}">
@@ -30,11 +31,5 @@
         </ul>
 
         <a class="cta-button--teal nav-button" href="/community">Community</a>
-
-        <div id="menu-toggle">
-            <span class="x-bar"></span>
-            <span class="x-bar"></span>
-            <span class="x-bar"></span>
-        </div>
     </div>
 </nav>

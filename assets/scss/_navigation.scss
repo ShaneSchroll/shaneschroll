@@ -13,13 +13,20 @@
         margin: 0 auto;
 
         .text-logo {
-            display: inline-block;
-            margin: 0;
-            padding: 1rem 0;
+            display: block;
+            margin: 0 auto;
+            padding: 0.65rem 0;
             font-family: $secondary-font;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: $navy;
+
+            @include mq(xs) {
+                display: inline-block;
+                margin: 0;
+                padding: 1rem 0;
+                font-size: 1.25rem;
+            }
         }
 
         // base list reset

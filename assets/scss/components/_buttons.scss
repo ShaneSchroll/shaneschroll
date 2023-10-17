@@ -29,5 +29,5 @@
 
 .nav-button {
     display: none;
-    @include mq(865px) { display: inline-block; }
+    @include mq(xs) { display: inline-block; }
 }
