@@ -44,24 +44,40 @@
     }
 }
 
-// Logo bar below home header
+// Logo/Tech bar below home header
 .tech-bar-wrapper {
-    padding: 4.25rem 1rem;
+    padding: 2.25rem 1rem;
     background-color: $purple;
+    @include mq(lg) { padding: 3.5rem 1rem; }
 
     &__container {
         display: flex;
         max-width: 75rem;
         margin: 0 auto;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        text-align: center;
+
+        @include mq(lg) {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
     }
 
     p {
-        max-width: 17rem;
-        font-size: 1.125rem;
+        max-width: 100%;
+        margin: 0 auto 1.65rem;
+        font-size: 1.65rem;
         font-weight: 500;
         color: $white;
+
+        @include mq(lg) {
+            max-width: 17rem;
+            font-size: 1.125rem;
+            margin: 0;
+        }
     }
 
     .tech-row {
