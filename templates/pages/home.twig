@@ -1,5 +1,15 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<section class="home-content"></section>
+<section class="home-content">
+    <div class="card-container">
+        {% for card in post.get_field('expertise_cards') %}
+            <div class="card-container__item">
+                <img src="{{ TimberImage( card.card_image ).src }}" alt="{{ TimberImage( card.card_image ).alt }}" />
+                <h2 id="h4">{{ card.card_title }}</h2>
+                <p>{{ card.card_text_area }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

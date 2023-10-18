@@ -48,6 +48,7 @@
 .tech-bar-wrapper {
     padding: 2.25rem 1rem;
     background-color: $purple;
+    margin-bottom: 7rem;
     @include mq(lg) { padding: 3.5rem 1rem; }
 
     &__container {
