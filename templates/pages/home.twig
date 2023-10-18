@@ -1,15 +1,33 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<section class="home-content">
+{% set expertise = post.meta('expertise') %}
+
+<section class="expertise-section">
+    {% if expertise %}
+        <div class="exp-header">
+            <div class="exp-header__title">
+                <h3 id="h5" class="no-mt">{{ expertise.small_header }}</h3>
+                <h2 class="no-mb">{{ expertise.large_header }}</h2>
+            </div>
+
+            <div class="exp-header__paragraph">
+                <p class="no-mt">{{ expertise.paragraph_content }}</p>
+                <a class="cta-button--purple" href="/portfolio">View Portfolio</a>
+            </div>
+        </div>
+    {% endif %}
+
     <div class="card-container">
-        {% for card in post.get_field('expertise_cards') %}
+        {% for card in post.meta('expertise_cards') %}
             <div class="card-container__item">
                 <img src="{{ TimberImage( card.card_image ).src }}" alt="{{ TimberImage( card.card_image ).alt }}" />
                 <h2 id="h4">{{ card.card_title }}</h2>
-                <p>{{ card.card_text_area }}</p>
+                <p class="no-mb no-mt">{{ card.card_text_area }}</p>
             </div>
         {% endfor %}
     </div>
 </section>
+
+<section class="about-section"></section>
 {% endblock %}

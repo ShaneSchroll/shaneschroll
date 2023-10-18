@@ -1,9 +1,10 @@
 .site-nav {
+    position: relative;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
     background-color: $white;
-    box-shadow: 0 0 9px -7px $navy;
+    box-shadow: $shadow;
 
     &__wrap {
         display: flex;

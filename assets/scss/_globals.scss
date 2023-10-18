@@ -7,11 +7,17 @@ html, body {
 	overflow-x: hidden;
 	font-variant-numeric: lining-nums;
 	font-feature-settings: "lnum" 1;
-	background-color: $primary-background;
 }
 
 img {
 	display: block; // preserve aspect ratio (scale instead of smush)
 	max-width: 100%;
 	height: auto;
+}
+
+// post content wrapper
+.main-post-wrapper {
+	position: relative;
+	max-width: 100%;
+	margin: 0 auto;
 }

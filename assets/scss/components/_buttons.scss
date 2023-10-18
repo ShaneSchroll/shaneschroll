@@ -3,31 +3,40 @@
     right: 0;
     left: auto;
     display: inline-block;
-    padding: 0.5rem 1.2rem;
+    padding: 0.6rem 1.2rem;
 
     &--teal,
-    &--purple { @extend .cta-button; }
+    &--purple {
+        @extend .cta-button;
+        border: 2px solid;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
 
     &--teal {
         background-color: $teal;
         color: $white;
+        border-color: $teal;
 
-        &:hover {
-            background-color: $purple;
-        }
+        &:hover { color: $teal; }
     }
 
     &--purple {
         background-color: $purple;
         color: $white;
+        border-color: $purple;
 
-        &:hover {
-            background-color: $navy;
-        }
+        &:hover { color: $purple; }
     }
 }
 
 .nav-button {
     display: none;
-    @include mq(xs) { display: inline-block; }
+
+    @include mq(xs) {
+        display: inline-block;
+        padding: 0.5rem 1.2rem;
+    }
 }
