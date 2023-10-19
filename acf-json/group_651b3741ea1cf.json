@@ -74,7 +74,7 @@
         },
         {
             "key": "field_652faf19db89d",
-            "label": "Expertise Header",
+            "label": "Expertise",
             "name": "expertise",
             "aria-label": "",
             "type": "group",
@@ -147,15 +147,107 @@
                     "rows": 3,
                     "placeholder": "",
                     "new_lines": ""
+                },
+                {
+                    "key": "field_652f8cebd1d86",
+                    "label": "Expertise Cards",
+                    "name": "expertise_cards",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_652f8d4ad1d87",
+                            "label": "Card Image",
+                            "name": "card_image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_652f8cebd1d86"
+                        },
+                        {
+                            "key": "field_652f8d5fd1d88",
+                            "label": "Card Title",
+                            "name": "card_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_652f8cebd1d86"
+                        },
+                        {
+                            "key": "field_652f8d66d1d89",
+                            "label": "Card Text Area",
+                            "name": "card_text_area",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 6,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_repeater": "field_652f8cebd1d86"
+                        }
+                    ]
                 }
             ]
         },
         {
-            "key": "field_652f8cebd1d86",
-            "label": "Expertise Cards",
-            "name": "expertise_cards",
+            "key": "field_65308565b6f72",
+            "label": "About",
+            "name": "about",
             "aria-label": "",
-            "type": "repeater",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -165,24 +257,18 @@
                 "id": ""
             },
             "layout": "block",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_652f8d4ad1d87",
-                    "label": "Card Image",
-                    "name": "card_image",
+                    "key": "field_653085d1b6f73",
+                    "label": "About Image",
+                    "name": "about_image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "30",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -195,20 +281,19 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "preview_size": "medium",
-                    "parent_repeater": "field_652f8cebd1d86"
+                    "preview_size": "medium"
                 },
                 {
-                    "key": "field_652f8d5fd1d88",
-                    "label": "Card Title",
-                    "name": "card_title",
+                    "key": "field_653085e2b6f74",
+                    "label": "Small Header",
+                    "name": "small_header",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "30",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -216,29 +301,113 @@
                     "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_652f8cebd1d86"
+                    "append": ""
                 },
                 {
-                    "key": "field_652f8d66d1d89",
-                    "label": "Card Text Area",
-                    "name": "card_text_area",
+                    "key": "field_65308687b6f75",
+                    "label": "Large Header",
+                    "name": "large_header",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6530868eb6f76",
+                    "label": "Paragraph Text",
+                    "name": "paragraph_text",
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "30",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "maxlength": "",
-                    "rows": 6,
+                    "rows": 4,
                     "placeholder": "",
-                    "new_lines": "",
-                    "parent_repeater": "field_652f8cebd1d86"
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_653092c9e7f2c",
+                    "label": "Stats",
+                    "name": "stats",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_653092dae7f2d",
+                            "label": "Number",
+                            "name": "number",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_653092c9e7f2c"
+                        },
+                        {
+                            "key": "field_653092fce7f2e",
+                            "label": "Metric",
+                            "name": "metric",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_653092c9e7f2c"
+                        }
+                    ]
                 }
             ]
         }
@@ -261,5 +430,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697624580
+    "modified": 1697682192
 }

@@ -7,7 +7,10 @@
 
         <div class="image-content">
             {% include '/assets/media/paint-splash.svg' %}
-            <img src="{{ TimberImage( post.thumbnail ).src }}" alt="{{ TimberImage( post.thumbnail ).alt }}" />
+            <img
+                src="{{ TimberImage( post.thumbnail ).src }}"
+                alt="{{ TimberImage( post.thumbnail ).alt }}"
+            />
         </div>
     </div>
 </header>
@@ -17,7 +20,10 @@
         <p class="no-mt no-mb">{{ post.logo_row_text }}</p>
         <div class="tech-row">
             {% for tech in post.meta('logo_row') %}
-                <img src="{{ TimberImage( tech.logo ).src }}" alt="{{ TimberImage( tech.logo ).alt }}" />
+                <img
+                    src="{{ TimberImage( tech.logo ).src }}"
+                    alt="{{ TimberImage( tech.logo ).alt }}"
+                />
             {% endfor %}
         </div>
     </div>

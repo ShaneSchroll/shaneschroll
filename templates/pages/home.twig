@@ -1,27 +1,30 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-{% set expertise = post.meta('expertise') %}
 
+{# Expertise/Skills section #}
 <section class="expertise-section">
-    {% if expertise %}
-        <div class="exp-header">
-            <div class="exp-header__title">
-                <h3 id="h5" class="no-mt">{{ expertise.small_header }}</h3>
-                <h2 class="no-mb">{{ expertise.large_header }}</h2>
-            </div>
 
-            <div class="exp-header__paragraph">
-                <p class="no-mt">{{ expertise.paragraph_content }}</p>
-                <a class="cta-button--purple" href="/portfolio">View Portfolio</a>
-            </div>
+    {% set expertise = post.meta('expertise') %}
+    <div class="exp-header">
+        <div class="exp-header__title">
+            <h3 class="small-header">{{ expertise.small_header }}</h3>
+            <h2 class="no-mb">{{ expertise.large_header }}</h2>
         </div>
-    {% endif %}
+
+        <div class="exp-header__paragraph">
+            <p class="no-mt">{{ expertise.paragraph_content }}</p>
+            <a class="cta-button--purple" href="/portfolio">View Portfolio</a>
+        </div>
+    </div>
 
     <div class="card-container">
-        {% for card in post.meta('expertise_cards') %}
+        {% for card in expertise.expertise_cards %}
             <div class="card-container__item">
-                <img src="{{ TimberImage( card.card_image ).src }}" alt="{{ TimberImage( card.card_image ).alt }}" />
+                <img
+                    src="{{ TimberImage( card.card_image ).src }}"
+                    alt="{{ TimberImage( card.card_image ).alt }}"
+                />
                 <h2 id="h4">{{ card.card_title }}</h2>
                 <p class="no-mb no-mt">{{ card.card_text_area }}</p>
             </div>
@@ -29,5 +32,30 @@
     </div>
 </section>
 
-<section class="about-section"></section>
+{# About section #}
+<section class="about-section">
+
+    {% set about = post.meta('about') %}
+    <div class="about-section__container">
+        <img
+            src="{{ TimberImage( about.about_image ).src }}"
+            alt="{{ TimberImage( about.about_image ).src }}"
+        />
+
+        <article class="text-content">
+            <h3 class="small-header">{{ about.small_header }}</h3>
+            <h2 class="no-mb">{{ about.large_header }}</h2>
+            <p>{{ about.paragraph_text }}</p>
+
+            <div class="stat-cards">
+                {% for stat in about.stats %}
+                    <div class="stat-cards__card">
+                        <h3>{{ stat.number }}</h3>
+                        <p class="no-mt no-mb">{{ stat.metric }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </article>
+    </div>
+</section>
 {% endblock %}

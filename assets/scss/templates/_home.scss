@@ -13,11 +13,6 @@
 
     &__title {
         max-width: 31rem;
-
-        h3 {
-            font-weight: 600;
-            margin-bottom: 1.65rem;
-        }
     }
 
     &__paragraph {
@@ -41,7 +36,7 @@
         width: 100%;
         background-color: $white;
         box-shadow: $shadow;
-        border-radius: $radius-large;
+        border-radius: $radius-medium;
 
         h2 {
             margin: 1.5rem 0 1.2rem;
@@ -49,7 +44,6 @@
             font-weight: 500;
         }
     }
-
 }
 
 .about-section {
@@ -57,4 +51,49 @@
     margin: 0 auto;
     padding: 3.75rem 1rem;
     background-color: $white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+
+    &__container {
+        display: flex;
+        max-width: 75rem;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include mq(md) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        img {
+            max-width: 25rem;
+            border-radius: $radius-large;
+        }
+
+        .text-content {
+            max-width: 38rem;
+        }
+
+        // inside text-content
+        .stat-cards {
+            display: flex;
+            max-width: 100%;
+            margin: 3.75rem auto 0;
+            justify-content: space-between;
+
+            &__card {
+                max-width: 11rem;
+                width: 100%;
+                padding: 1.25rem 1rem;
+                box-shadow: $shadow;
+                border-radius: $radius-medium;
+
+                h3 { font-weight: 600; }
+
+                &:hover { box-shadow: 0 3px 9px -7px $teal; }
+            }
+        }
+    }
 }
