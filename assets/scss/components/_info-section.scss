@@ -1,0 +1,73 @@
+.info-section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 3.75rem 1rem;
+
+    &__container {
+        display: flex;
+        max-width: 75rem;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include mq(md) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        img {
+            max-width: 25rem;
+            border-radius: $radius-large;
+        }
+
+        .text-content {
+            max-width: 38rem;
+        }
+    }
+}
+
+// inside text-content
+.stat-cards {
+    display: flex;
+    max-width: 100%;
+    margin: 3.75rem auto 0;
+    justify-content: space-between;
+
+    &__card {
+        max-width: 11rem;
+        width: 100%;
+        padding: 1.25rem 1rem;
+        box-shadow: $shadow;
+        border-radius: $radius-medium;
+
+        h3 { font-weight: 600; }
+
+        &:hover { box-shadow: 0 3px 9px -7px $teal; }
+    }
+}
+
+.grid-cards {
+    display: grid;
+    max-width: 100%;
+    margin: 3.75rem auto 0;
+    grid-template-columns: repeat(auto-fit, 17.5rem);
+    column-gap: 2.75rem;
+    row-gap: 2rem;
+
+    &__card {
+        position: relative;
+        top: 0;
+        max-width: 17.5rem;
+        width: 100%;
+        padding: 1.25rem 1rem;
+        box-shadow: $shadow;
+        border-radius: $radius-medium;
+    }
+
+    a:hover {
+        top: -10px;
+        box-shadow: 0 3px 9px -7px $teal;
+    }
+}

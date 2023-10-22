@@ -3,7 +3,7 @@
 {% block content %}
 
 {# Expertise/Skills section #}
-<section class="expertise-section">
+<section class="expertise-section bottom-angle-right">
 
     {% set expertise = post.meta('expertise') %}
     <div class="exp-header">
@@ -32,30 +32,59 @@
     </div>
 </section>
 
-{# About section #}
-<section class="about-section">
+<div class="bg-primary">
+    {# About section #}
+    <section class="info-section bottom-angle-right bg-white">
 
-    {% set about = post.meta('about') %}
-    <div class="about-section__container">
-        <img
-            src="{{ TimberImage( about.about_image ).src }}"
-            alt="{{ TimberImage( about.about_image ).src }}"
-        />
+        {% set about = post.meta('about') %}
+        <div class="info-section__container">
+            <img
+                src="{{ TimberImage( about.about_image ).src }}"
+                alt="{{ TimberImage( about.about_image ).src }}"
+            />
 
-        <article class="text-content">
-            <h3 class="small-header">{{ about.small_header }}</h3>
-            <h2 class="no-mb">{{ about.large_header }}</h2>
-            <p>{{ about.paragraph_text }}</p>
+            <article class="text-content">
+                <h3 class="small-header">{{ about.small_header }}</h3>
+                <h2 class="no-mb">{{ about.large_header }}</h2>
+                <p>{{ about.paragraph_text }}</p>
 
-            <div class="stat-cards">
-                {% for stat in about.stats %}
-                    <div class="stat-cards__card">
-                        <h3>{{ stat.number }}</h3>
-                        <p class="no-mt no-mb">{{ stat.metric }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </article>
-    </div>
-</section>
+                <div class="stat-cards">
+                    {% for stat in about.stats %}
+                        <div class="stat-cards__card">
+                            <h3>{{ stat.number }}</h3>
+                            <p class="no-mt no-mb">{{ stat.metric }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+        </div>
+    </section>
+
+    {# Portfolio section #}
+    <section class="info-section bg-primary">
+
+        {% set portfolio_section = post.meta('portfolio') %}
+        <div class="info-section__container">
+            <article class="text-content">
+                <h3 class="small-header">{{ portfolio_section.small_header }}</h3>
+                <h2 class="no-mb">{{ portfolio_section.large_header }}</h2>
+                <p>{{ portfolio_section.paragraph_text }}</p>
+
+                <div class="grid-cards">
+                    {% for project in portfolio %}
+                        <a class="grid-cards__card bg-white" href="{{ project.link }}">
+                            <h3 id="h5" class="no-mb">{{ project.title }}</h3>
+                            <p class="no-mb">{{ project.portfolio_description|slice(0, 120) }}...</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <img
+                src="{{ TimberImage( portfolio_section.section_image ).src }}"
+                alt="{{ TimberImage( portfolio_section.about_image ).src }}"
+            />
+        </div>
+    </section>
+</div>
 {% endblock %}
