@@ -72,9 +72,13 @@
 
                 <div class="grid-cards">
                     {% for project in portfolio %}
-                        <a class="grid-cards__card bg-white" href="{{ project.link }}">
-                            <h3 id="h5" class="no-mb">{{ project.title }}</h3>
-                            <p class="no-mb">{{ project.portfolio_description|slice(0, 120) }}...</p>
+                        <a class="grid-cards__card" href="{{ project.link }}">
+                            {# <h3 id="h5" class="no-mb">{{ project.title }}</h3>
+                            <p class="no-mb">{{ project.portfolio_description|slice(0, 120) }}...</p> #}
+                            <img
+                                src="{{ TimberImage( project.thumbnail ).src }}"
+                                alt="{{ TimberImage( project.thumbnail ).alt }}"
+                            />
                         </a>
                     {% endfor %}
                 </div>

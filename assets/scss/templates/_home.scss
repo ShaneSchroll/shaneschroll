@@ -8,15 +8,15 @@
         margin: 0 auto 5rem;
         justify-content: space-between;
         align-items: flex-start;
-    
+
         &__title {
             max-width: 31rem;
         }
-    
+
         &__paragraph {
             max-width: 37rem;
             margin-left: 3rem;
-    
+
             // increase bottom margin
             p { margin-bottom: 1.75rem; }
         }

@@ -7,7 +7,7 @@ $context['post'] = $post;
 $context['portfolio'] = Timber::get_posts([
     'post_type' => 'portfolio',
     'posts_per_page' => 4,
-    'orderby' => 'title',
+    'orderby' => 'date',
     'order' => 'ASC'
 ]);
 

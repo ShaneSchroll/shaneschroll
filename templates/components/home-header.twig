@@ -18,13 +18,15 @@
 <section class="tech-bar-wrapper">
     <div class="tech-bar-wrapper__container">
         <p class="no-mt no-mb">{{ post.logo_row_text }}</p>
-        <div class="tech-row">
+        <section class="tech-row">
             {% for tech in post.meta('logo_row') %}
-                <img
-                    src="{{ TimberImage( tech.logo ).src }}"
-                    alt="{{ TimberImage( tech.logo ).alt }}"
-                />
+                <div class="tech-row__image-wrap">
+                    <img
+                        src="{{ TimberImage( tech.logo ).src }}"
+                        alt="{{ TimberImage( tech.logo ).alt }}"
+                    />
+                </div>
             {% endfor %}
-        </div>
+        </section>
     </div>
 </section>

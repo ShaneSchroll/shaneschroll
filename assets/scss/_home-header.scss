@@ -69,10 +69,14 @@
 
     p {
         max-width: 100%;
-        margin: 0 auto 1.65rem;
-        font-size: 1.65rem;
+        margin: 0 auto 3rem;
+        font-size: 1.3rem;
         font-weight: 500;
         color: $white;
+
+        @include mq(sm) {
+            margin: 0 auto 1.65rem;
+        }
 
         @include mq(lg) {
             max-width: 17rem;
@@ -82,16 +86,35 @@
     }
 
     .tech-row {
-        display: flex;
+        display: grid;
         max-width: 45rem;
-        width: 100%;
-        justify-content: space-between;
+        grid-template-columns: repeat(2, 10rem);
+        gap: 4rem 10rem;
         align-items: center;
 
-        img {
+        @include mq(sm) {
+            display: flex;
+            width: 100%;
+            grid-template-columns: unset;
+            row-gap: unset;
+            column-gap: unset;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &__image-wrap {
             max-width: 9.25rem;
+            text-align: center;
             &:nth-of-type(4n+3) { max-width: 7rem; }
             &:nth-of-type(4n+4) { max-width: 6.4rem; }
+
+            // center the items when display is grid
+            &:nth-of-type(4n+3),
+            &:nth-of-type(4n+4),
+            img {
+                margin: 0 auto;
+                @include mq(sm) { margin: unset; }
+            }
         }
     }
 }
