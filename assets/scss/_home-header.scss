@@ -20,7 +20,7 @@
             max-width: 34rem;
             margin-right: 1.5rem;
 
-            h1 { font-weight: 600; }
+            h1 { font-weight: $medium; }
         }
 
         .image-content {
@@ -71,7 +71,7 @@
         max-width: 100%;
         margin: 0 auto 3rem;
         font-size: 1.3rem;
-        font-weight: 500;
+        font-weight: $normal;
         color: $white;
 
         @include mq(sm) {

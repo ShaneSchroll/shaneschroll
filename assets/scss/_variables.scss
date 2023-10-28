@@ -1,4 +1,4 @@
-// Primary Brand Colors
+// Background Colors
 $primary-background: #F6F8FF;
 
 // Theme Colors
@@ -19,6 +19,13 @@ $shadow: 0 3px 9px -7px $navy;
 // Fonts
 $primary-font: 'Montserrat', sans-serif; // weights (+i): 400, 500, 600, 700
 $secondary-font: 'Poppins', sans-serif; // weights: 600, 700, 900
+
+// Weights
+$light: 400;
+$normal: 500;
+$medium: 600;
+$heavy: 700;
+$x-heavy: 900;
 
 // Consistency Utilities
 $radius-small: 5px;

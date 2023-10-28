@@ -193,6 +193,13 @@ class ShaneSchrollSite extends TimberSite {
 // create a new instance of our site class
 new ShaneSchrollSite();
 
+// display my time (CST)
+function display_cst_time() {
+    $timezone = new DateTimeZone('America/Chicago');
+    $date = new DateTime('now', $timezone);
+    echo $date->format('g:i A');
+}
+
 // move our ACF Options Page below the Dashboard tab
 function custom_menu_order( $menu_ord ) {
 	if( ! $menu_ord ) {
@@ -204,7 +211,7 @@ function custom_menu_order( $menu_ord ) {
 	// remove from current menu
 	$menu_ord = array_diff( $menu_ord, [$menu] );
 
-	// append after index [0]
+	// append after index[0]
 	array_splice( $menu_ord, 1, 0, [$menu] );
 
 	return $menu_ord;

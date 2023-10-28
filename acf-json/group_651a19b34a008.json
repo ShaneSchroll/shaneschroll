@@ -4,8 +4,28 @@
     "fields": [
         {
             "key": "field_651a19b304a1b",
-            "label": "Font Awesome Icon",
-            "name": "icon_name",
+            "label": "Navigation Icon",
+            "name": "navigation_icon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_653d4fa4191a1",
+            "label": "Title",
+            "name": "mockup_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -48,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696209465
+    "modified": 1698517119
 }

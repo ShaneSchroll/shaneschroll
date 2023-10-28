@@ -3,7 +3,7 @@ a, p, span, address, table, td, th, tr,
 small, time, ol, ul, li, button {
 	font-family: $primary-font;
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: $light;
 	color: $navy;
 }
 
@@ -12,7 +12,7 @@ small, time { font-size: 0.875rem; }
 a {
 	text-decoration: none;
 	transition: 0.2s ease-in;
-	font-weight: 500;
+	font-weight: $normal;
 	&:hover { transition: 0.2s ease-out; }
 }
 
@@ -39,7 +39,7 @@ h4, h5, h6 {
 	margin-top: 0;
 	margin-bottom: 1.25rem;
 	font-family: $secondary-font;
-	font-weight: 700;
+	font-weight: $heavy;
 	line-height: 1.2;
 	color: $navy;
 }
