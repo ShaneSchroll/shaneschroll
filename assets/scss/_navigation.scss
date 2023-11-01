@@ -13,8 +13,6 @@
         max-width: 75rem;
         margin: 0 auto;
 
-        // text logo styles in utilities
-
         // base list reset
         ul {
             margin: 0;
@@ -71,7 +69,7 @@
                 padding-left: 0.25rem;
                 font-size: 0.85rem;
                 color: $navy;
-                transition: 0.2s ease-out;
+                transition: 0.35s ease-in;
             }
 
             .sub-menu-wrap {

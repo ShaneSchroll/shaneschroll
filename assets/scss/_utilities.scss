@@ -50,6 +50,7 @@
 
     &--footer {
         @extend .text-logo;
+        padding-top: 0;
         color: $white;
     }
 }

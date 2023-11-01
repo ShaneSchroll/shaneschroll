@@ -24,14 +24,25 @@
         a {
             font-weight: $light;
             padding: 0.25rem;
-            margin-right: 1.25rem;
+            margin-right: 1.8rem;
             color: $white;
 
             &:last-of-type { margin-right: 0; }
 
             &:hover {
-                text-decoration: 1px underline;
-                text-underline-offset: 3px;
+                color: $teal;
+
+                span {
+                    color: $teal;
+                    transition: 0.2s ease-out;
+                }
+            }
+
+            span {
+                display: inline-block;
+                padding-right: 0.25rem;
+                color: $white;
+                transition: 0.2s ease-in;
             }
         }
     }
