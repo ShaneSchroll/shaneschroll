@@ -1,0 +1,26 @@
+<nav class="footer-menu">
+
+    {% for menu in options.footer_menus %}
+        <div class="footer-menu__menu">
+            <p class="no-mt menu-heading">{{ menu.menu_header }}</p>
+
+            {% for link in menu.link_list %}
+                <a class="footer-menu-item" href="{{ link.link_item.url }}">
+                    {{ link.link_item.title }}
+                </a>
+            {% endfor %}
+
+        </div>
+    {% endfor %}
+
+    <div class="footer-menu__menu">
+        <p class="no-mt menu-heading">Mockups</p>
+
+        {% for mockup_item in mockups %}
+            <a class="footer-menu-item" href="{{ mockup_item.link }}">
+                {{ mockup_item.title }}
+            </a>
+        {% endfor %}
+
+    </div>
+</nav>

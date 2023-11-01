@@ -18,9 +18,9 @@
         </div>
     </div>
 
-    <div class="card-container">
+    <div class="card-row">
         {% for card in expertise.expertise_cards %}
-            <div class="card-container__item">
+            <div class="card-row__item">
                 <img
                     src="{{ TimberImage( card.card_image ).src }}"
                     alt="{{ TimberImage( card.card_image ).alt }}"

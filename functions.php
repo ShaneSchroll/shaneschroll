@@ -106,6 +106,7 @@ class ShaneSchrollSite extends TimberSite {
 		$context['date_year']      	= date('Y');
 		$context['is_front_page']	= is_front_page();
 		$context['is_404'] 	    	= is_404();
+        $context['options']         = get_fields('option');
 
 		$context['mockups'] = Timber::get_posts([
 			'post_type' => 'mockup',

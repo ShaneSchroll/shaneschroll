@@ -1,7 +1,8 @@
 /// Sitewide helper classes
 
-// Font Awesome base color
-.fa-solid { color: $white; }
+// Font Awesome colors
+.fa-solid,
+.fa-brands { color: $white; }
 
 // no top margin
 .no-mb { margin-bottom: 0; }
@@ -21,8 +22,8 @@
 	width: 100vw;
 	left: 50%;
 	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
+    margin: 5rem -50vw;
+    padding: 0 1rem;
 }
 
 .small-header {

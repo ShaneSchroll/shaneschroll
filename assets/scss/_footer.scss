@@ -3,12 +3,16 @@
     padding: 2rem 1rem 1rem;
     background-color: $navy;
 
+    a, p { color: $white; }
+
     @include mq(md) { margin: 0 auto; }
 
     &__top-container {
         display: flex;
+        justify-content: space-between;
         max-width: 75rem;
         margin: 0 auto;
+        padding-bottom: 1.75rem;
         border-bottom: 1px solid $white;
     }
 
@@ -19,15 +23,15 @@
         justify-content: space-between;
         align-items: center;
 
-        p { color: $white; }
-
         a {
             font-weight: $light;
             padding: 0.25rem;
-            margin-right: 1.8rem;
-            color: $white;
 
-            &:last-of-type { margin-right: 0; }
+            span {
+                display: inline-block;
+                padding-right: 0.25rem;
+                transition: 0.2s ease-in;
+            }
 
             &:hover {
                 color: $teal;
@@ -37,12 +41,54 @@
                     transition: 0.2s ease-out;
                 }
             }
+        }
+    }
+}
 
-            span {
-                display: inline-block;
-                padding-right: 0.25rem;
-                color: $white;
-                transition: 0.2s ease-in;
+// inside top-container
+.text-container {
+    max-width: 23rem;
+}
+
+// inside top-container
+.menu-container {
+    max-width: 35rem;
+    width: 100%;
+
+    .footer-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 35rem;
+    }
+
+    .footer-menu__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+
+        .menu-heading {
+            position: relative;
+            font-weight: $medium;
+
+            &:after {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: -0.25rem;
+                background-color: $white;
+                width: 1.15rem;
+                height: 1px;
+            }
+        }
+
+        .footer-menu-item {
+            font-weight: $light;
+            margin-bottom: 0.25rem;
+
+            &:hover {
+                color: $teal;
             }
         }
     }
