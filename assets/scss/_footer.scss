@@ -5,14 +5,14 @@
 
     @include mq(md) { margin: 0 auto; }
 
-    &__container {
+    &__top-container {
         display: flex;
         max-width: 75rem;
         margin: 0 auto;
         border-bottom: 1px solid $white;
     }
 
-    &__copyright {
+    &__bottom-container {
         display: flex;
         max-width: 75rem;
         margin: 0.75rem auto 0;

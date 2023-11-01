@@ -32,6 +32,28 @@
     margin-bottom: 1.65rem;
 }
 
+.text-logo {
+    display: block;
+    margin: 0 auto;
+    padding: 0.65rem 0;
+    font-family: $secondary-font;
+    font-size: 1.35rem;
+    font-weight: $heavy;
+    color: $navy;
+
+    @include mq(xs) {
+        display: inline-block;
+        margin: 0;
+        padding: 1rem 0;
+        font-size: 1.25rem;
+    }
+
+    &--footer {
+        @extend .text-logo;
+        color: $white;
+    }
+}
+
 // to-bottom-left
 .bottom-angle-left {
 	clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
