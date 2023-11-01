@@ -83,27 +83,6 @@
                             },
                             "return_format": "array",
                             "parent_repeater": "field_6542a84e0a044"
-                        },
-                        {
-                            "key": "field_6542bb9b8233f",
-                            "label": "Icon Slug",
-                            "name": "icon_slug",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "'fa-' not needed",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "parent_repeater": "field_6542a84e0a044"
                         }
                     ],
                     "parent_repeater": "field_651a0c455e753"
@@ -149,5 +128,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698873919
+    "modified": 1698875273
 }
