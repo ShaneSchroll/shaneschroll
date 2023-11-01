@@ -1,11 +1,16 @@
 .site-footer {
     margin: 0 auto 4.625rem; // 74px - height of mobile nav bar
-    padding: 2rem 1rem 1rem;
+    padding: 5rem 1rem 1rem;
     background-color: $navy;
+    clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
 
-    a, p { color: $white; }
+    @include mq(sm) {
+        clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
 
     @include mq(md) { margin: 0 auto; }
+
+    a, p { color: $white; }
 
     &__top-container {
         display: flex;

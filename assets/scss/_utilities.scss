@@ -1,5 +1,3 @@
-/// Sitewide helper classes
-
 // Font Awesome colors
 .fa-solid,
 .fa-brands { color: $white; }
@@ -9,6 +7,9 @@
 
 // no bottom margin
 .no-mt { margin-top: 0; }
+
+// add 48px of top padding for clipped elements
+.clip-padding { padding-top: 3rem; }
 
 // default post content container
 .content-block {

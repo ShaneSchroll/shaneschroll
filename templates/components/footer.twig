@@ -1,27 +1,34 @@
-<footer class="site-footer">
-    <section class="site-footer__top-container">
-        <div class="text-container">
-            {% if not is_front_page %}
-                <a class="text-logo--footer" href="/">ShaneSchroll</a>
-            {% else %}
-                <p class="text-logo--footer">ShaneSchroll</p>
-            {% endif %}
+{% if not is_front_page %}
+<div class="clip-padding">
+{% else %}
+<div class="bg-primary clip-padding">
+{% endif %}
 
-            <p class="no-mt">{{ options.footer_info }}</p>
-        </div>
+    <footer class="site-footer">
+        <section class="site-footer__top-container">
+            <div class="text-container">
+                {% if not is_front_page %}
+                    <a class="text-logo--footer" href="/">ShaneSchroll</a>
+                {% else %}
+                    <p class="text-logo--footer">ShaneSchroll</p>
+                {% endif %}
 
-        <div class="menu-container">
-            {% include 'components/footer-nav.twig' %}
-        </div>
-    </section>
+                <p class="no-mt">{{ options.footer_info }}</p>
+            </div>
 
-    <section class="site-footer__bottom-container">
-        <p class="no-mt no-mb">&copy; {{ date_year }} Shane Schroll</p>
-        <div class="external-links">
-            <a href="https://github.com/shaneschroll" target="_blank" rel="noopener">
-                <span class="fa-brands fa-github"></span>
-                GitHub
-            </a>
-        </div>
-    </section>
-</footer>
+            <div class="menu-container">
+                {% include 'components/footer-nav.twig' %}
+            </div>
+        </section>
+
+        <section class="site-footer__bottom-container">
+            <p class="no-mt no-mb">&copy; {{ date_year }} Shane Schroll</p>
+            <div class="external-links">
+                <a href="https://github.com/shaneschroll" target="_blank" rel="noopener">
+                    <span class="fa-brands fa-github"></span>
+                    GitHub
+                </a>
+            </div>
+        </section>
+    </footer>
+</div>
