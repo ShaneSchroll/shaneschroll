@@ -1,14 +1,15 @@
 <?php
 
-// Load Timber
+// load timber
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Initialize timber
+// initialize timber
 Timber\Timber::init();
 
-// Change 'views' directory to 'templates'
+// change 'views' directory to 'templates'
 Timber::$locations = __DIR__ . '/templates';
 
+// create a new site class and extend the Core Site class from Timber
 class ShaneSchrollSite extends Timber\Site {
 
 	function __construct() {
