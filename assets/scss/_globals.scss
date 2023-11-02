@@ -15,9 +15,23 @@ img {
 	height: auto;
 }
 
+// page setup for parallax footer
+.site-nav,
+header,
+.tech-bar-wrapper,
+.main-post-wrapper,
+.footer-drawer {
+    position: relative;
+    z-index: 5;
+}
+
+.footer-drawer {
+    margin-bottom: 18.625rem; // 298px footer height
+}
+
 // post content wrapper
 .main-post-wrapper {
-	position: relative;
 	max-width: 100%;
 	margin: 0 auto;
+    background-color: $white; // needed for clipped elements
 }

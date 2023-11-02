@@ -11,6 +11,11 @@
 // add 48px of top padding for clipped elements
 .clip-padding { padding-top: 3rem; }
 
+// bottom padding override for elements just before the footer
+.add-pb {
+    padding-bottom: 10rem !important;
+}
+
 // default post content container
 .content-block {
 	padding: 3rem 0;
