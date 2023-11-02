@@ -25,8 +25,15 @@ header,
     z-index: 5;
 }
 
+/*
+    last element before the footer to create a
+    fixed control point for the parallax effect
+*/
 .footer-drawer {
-    margin-bottom: 18.625rem; // 298px footer height
+    margin-bottom: 32.5rem;
+
+    // responsive adjustments for spacing
+    @include mq(lg) { margin-bottom: 18.625rem; }
 }
 
 // post content wrapper
