@@ -1,12 +1,15 @@
 <?php
-// setup new Timber Version 2.0 using composer
-require_once(__DIR__ . '/vendor/autoload.php');
-$timber = new \Timber\Timber();
 
-// change 'views' directory to 'templates'
+// Load Timber
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Initialize timber
+Timber\Timber::init();
+
+// Change 'views' directory to 'templates'
 Timber::$locations = __DIR__ . '/templates';
 
-class ShaneSchrollSite extends TimberSite {
+class ShaneSchrollSite extends Timber\Site {
 
 	function __construct() {
 		// Action Hooks //
