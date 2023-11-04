@@ -52,6 +52,13 @@
 // inside top-container
 .text-container {
     max-width: 23rem;
+
+    .time, time { font-size: 0.875rem; }
+
+    time {
+        color: $white;
+        letter-spacing: 1px;
+    }
 }
 
 // inside top-container

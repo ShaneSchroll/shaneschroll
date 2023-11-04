@@ -1,6 +1,6 @@
 {
     "key": "group_6517276d2025b",
-    "title": "Site Header",
+    "title": "Page Header",
     "fields": [
         {
             "key": "field_6517276ef5528",
@@ -50,6 +50,20 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mockup"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
         ]
     ],
     "menu_order": 0,
@@ -63,5 +77,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696276361
+    "modified": 1699035988
 }

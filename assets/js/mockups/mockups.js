@@ -1,0 +1,3 @@
+/**
+ * Loading for all mockups
+*/

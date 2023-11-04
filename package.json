@@ -1,0 +1,19 @@
+{
+  "name": "ssportfolio",
+  "version": "1.0.0",
+  "description": "Vue tooling for interactive components and state management options.",
+  "main": "mockups.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shane Schroll",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-plugin-vue": "^9.18.1"
+  },
+  "dependencies": {
+    "vite": "^4.5.0",
+    "vue": "^3.3.7"
+  }
+}

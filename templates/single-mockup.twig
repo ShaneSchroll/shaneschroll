@@ -1,5 +1,15 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<section class="content-block"></section>
+<section class="content-block">
+    {% if 'animations' in get_url %}
+        {% include 'mockups/animations.twig' %}
+    {% elseif 'forms' in get_url %}
+        {% include 'mockups/forms.twig' %}
+    {% elseif 'docs' in get_url %}
+        {% include 'mockups/docs.twig' %}
+    {% elseif 'tables' in get_url %}
+        {% include 'mockups/tables.twig' %}
+    {% endif %}
+</section>
 {% endblock %}

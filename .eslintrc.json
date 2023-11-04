@@ -10,11 +10,14 @@
         "SharedArrayBuffer": "readonly"
     },
 
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/vue3-recommended"
+    ],
 
     "parserOptions": {
         "ecmaVersion": "latest",
-        // "sourceType": "module",
+        "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
         }
@@ -23,6 +26,10 @@
     "rules": {
         "semi": [2, "always"],
         "no-inner-declarations": "off",
-        "no-undef": "off"
+        "no-undef": "off",
+        "vue/html-indent": "off",
+        "vue/singleline-html-element-content-newline": "off",
+        "vue/max-attributes-per-line": "off",
+        "vue/html-self-closing": "off"
     }
 }
