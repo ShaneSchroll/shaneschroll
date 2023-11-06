@@ -1,12 +1,10 @@
-.cta-button {
+.cta-button, .pill-button {
     position: relative;
-    right: 0;
-    left: auto;
     display: inline-block;
     padding: 0.6rem 1.2rem;
 
-    &--teal,
-    &--purple {
+    &--cta-teal,
+    &--cta-purple {
         @extend .cta-button;
         border: 2px solid;
 
@@ -15,7 +13,18 @@
         }
     }
 
-    &--teal {
+    &--pill-teal,
+    &--pill-purple {
+        @extend .pill-button;
+        border: 2px solid;
+        border-radius: 25px;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &--cta-teal, &--pill-teal {
         background-color: $teal;
         color: $white;
         border-color: $teal;
@@ -23,7 +32,7 @@
         &:hover { color: $teal; }
     }
 
-    &--purple {
+    &--cta-purple, &--pill-purple {
         background-color: $purple;
         color: $white;
         border-color: $purple;
@@ -31,6 +40,13 @@
         &:hover { color: $purple; }
     }
 }
+
+.cta-button {
+    right: 0;
+    left: auto;
+}
+
+.pill-button { padding: 0.75rem 1.5rem; }
 
 .nav-button {
     display: none;
@@ -40,3 +56,13 @@
         padding: 0.5rem 1.2rem;
     }
 }
+
+// form previous and next button placement
+.prev-button,
+.next-button {
+    position: absolute;
+    width: 8rem;
+}
+
+.prev-button { left: 0; }
+.next-button { right: 0; }

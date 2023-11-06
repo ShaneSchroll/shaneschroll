@@ -1,1 +1,8 @@
-<header class="site-header"></header>
+<header class="site-header">
+    <div class="site-header__title">
+        <h1>{{ post.large_header_text }}</h1>
+        {% if post.paragraph_text %}
+            <p>{{ post.paragraph_text }}</p>
+        {% endif %}
+    </div>
+</header>

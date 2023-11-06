@@ -1,4 +1,40 @@
+.form-header {
+    max-width: 35rem;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
 #multi-step-form {
+    position: relative;
     max-width: 43.75rem;
     margin: 0 auto;
+    padding: 2rem 2.875rem;
+    height: 35rem;
+    border: 1px solid $grey;
+    box-shadow: 0 0 6px -4px;
+    border-radius: $radius-large;
+
+    .button-container {
+        position: relative;
+        bottom: 0;
+        max-width: 100%;
+        margin: 0 auto;
+        padding-top: 1rem;
+        border-top: 1px solid rgba($purple, 0.2);
+    }
+}
+
+// Vue will look for these to apply animations to the <transition> elements
+.slide-fade-enter-active {
+    transition: all 0.15s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateX(-200px);
+    opacity: 0;
 }

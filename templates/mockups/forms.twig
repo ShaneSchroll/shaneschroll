@@ -1,3 +1,41 @@
-<form id="multi-step-form" action="" method="">
-    <p>${ message }</p>
+<div class="form-header">
+    <h3>Get a project quote</h3>
+    <p>Fill out the form below to receive a quote for your project.</p>
+</div>
+
+{#
+    -- https://vuejs.org/guide/built-ins/transition.html
+    -- https://vuejs.org/guide/essentials/forms.html
+    -- https://vuejs.org/guide/essentials/event-handling.html
+#}
+
+<form id="multi-step-form" action="/" method="POST">
+    <div class="step-bar"></div>
+
+
+    {# Step 1 -- load this initially #}
+    <transition name="slide"></transition>
+
+
+    {# Step 2 #}
+    <transition name="slide"></transition>
+
+
+    {# Step 3 #}
+    <transition name="slide"></transition>
+
+
+    {# Step 4 #}
+    <transition name="slide"></transition>
+
+    <div class="button-container">
+        {# onclick move the step backward 1 --(not shown on first step) #}
+        <button class="pill-button--pill-purple prev-button">Previous</button>
+
+        {# onclick move the step forward 1 --(not shown on last step) #}
+        <button class="pill-button--pill-purple next-button">Next</button>
+
+        {# Final Step - Submit form. Clear form data from LocalStorage #}
+        {# <button type="submit" class="pill-button--pill-purple">Submit</button> #}
+    </div>
 </form>

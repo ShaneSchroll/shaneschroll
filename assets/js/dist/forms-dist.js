@@ -1,1 +1,1 @@
-window.onload=function(){const{createApp:e}=Vue;e({data:()=>({message:"Hello Vue!"}),delimiters:["${","}"]}).mount("#mockup-entry")};
+window.onload=function(){const{createApp:e}=Vue;e({data:()=>({full_name:"",email:"",company_name:"",company_website:"",project_type:"",project_budget:"",additional_details:""}),delimiters:["${","}"]}).mount("#multi-step-form")};
