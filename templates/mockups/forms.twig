@@ -10,8 +10,26 @@
 #}
 
 <form id="multi-step-form" action="/" method="POST">
-    <div class="step-bar"></div>
+    <div class="step-bar">
 
+        <div class="step-bar__step active-step">
+            <p class="step-number">1</p>
+        </div>
+
+        <div class="step-bar__step">
+            <p class="step-number">2</p>
+        </div>
+
+        <div class="step-bar__step">
+            <p class="step-number">3</p>
+        </div>
+
+        <div class="step-bar__step">
+            <p class="step-number">4</p>
+        </div>
+    </div>
+
+    <div style="height:30rem;"></div>
 
     {# Step 1 -- load this initially #}
     <transition name="slide"></transition>
@@ -28,14 +46,16 @@
     {# Step 4 #}
     <transition name="slide"></transition>
 
+
+    {# hide/show buttons based on step #}
     <div class="button-container">
         {# onclick move the step backward 1 --(not shown on first step) #}
-        <button class="pill-button--pill-purple prev-button">Previous</button>
+        <button v-if="show" class="pill-button--pill-purple prev-button">Previous</button>
 
         {# onclick move the step forward 1 --(not shown on last step) #}
-        <button class="pill-button--pill-purple next-button">Next</button>
+        <button v-if="show" class="pill-button--pill-purple next-button">Next</button>
 
         {# Final Step - Submit form. Clear form data from LocalStorage #}
-        {# <button type="submit" class="pill-button--pill-purple">Submit</button> #}
+        <button v-if="submit_show" type="submit" class="pill-button--pill-purple">Submit</button>
     </div>
 </form>

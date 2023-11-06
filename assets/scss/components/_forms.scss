@@ -9,32 +9,86 @@
     max-width: 43.75rem;
     margin: 0 auto;
     padding: 2rem 2.875rem;
-    height: 35rem;
     border: 1px solid $grey;
     box-shadow: 0 0 6px -4px;
     border-radius: $radius-large;
+
+    .step-bar {
+        display: flex;
+        width: 100%;
+        margin: 0 auto 1.25rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        &__step {
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+            border-radius: 50%;
+            background-color: $white;
+            border: 2px solid $purple;
+
+            // add bar between steps
+            &:after {
+                content: '';
+                display: block;
+                position: relative;
+                left: 4.25rem;
+                top: -0.65rem;
+                width: 6rem;
+                height: 7px;
+                border-radius: $radius-small;
+                background-color: $purple;
+            }
+
+            // no bar on last step
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &.active-step {
+                background-color: $purple;
+                .step-number { color: $white; }
+            }
+
+            .step-number {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+                color: $purple;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+        }
+    }
 
     .button-container {
         position: relative;
         bottom: 0;
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 2.875rem;
         padding-top: 1rem;
         border-top: 1px solid rgba($purple, 0.2);
     }
 }
+/* End form */
 
 // Vue will look for these to apply animations to the <transition> elements
-.slide-fade-enter-active {
+.slide-enter-active {
     transition: all 0.15s ease-out;
 }
 
-.slide-fade-leave-active {
+.slide-leave-active {
     transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
+.slide-enter-from,
+.slide-leave-to {
     transform: translateX(-200px);
     opacity: 0;
 }

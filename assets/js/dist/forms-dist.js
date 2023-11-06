@@ -1,1 +1,1 @@
-window.onload=function(){const{createApp:e}=Vue;e({data:()=>({full_name:"",email:"",company_name:"",company_website:"",project_type:"",project_budget:"",additional_details:""}),delimiters:["${","}"]}).mount("#multi-step-form")};
+window.onload=function(){const{createApp:e}=Vue;e({data:()=>({show:!0,submit_show:!1,step_number:"",full_name:"",email:"",company_name:"",company_website:"",project_type:"",project_budget:"",additional_details:""}),mounted(){},delimiters:["${","}"]}).mount("#multi-step-form")};

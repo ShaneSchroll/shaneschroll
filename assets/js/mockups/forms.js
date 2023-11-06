@@ -13,6 +13,9 @@ window.onload = function() {
     createApp({
         data() {
             return {
+                show: true,
+                submit_show: false,
+                step_number: '',
                 full_name: '',
                 email: '',
                 company_name: '',
@@ -22,6 +25,8 @@ window.onload = function() {
                 additional_details: '',
             };
         },
+
+        mounted() {},
 
         delimiters: ['${', '}']
     }).mount('#multi-step-form');
