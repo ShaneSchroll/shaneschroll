@@ -93,13 +93,13 @@ class ShaneSchrollSite extends Timber\Site {
 		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/dist/site-dist.js', ['jquery'], $version );
 
         // load for all mockup pages
-        if( str_contains( $current_url, 'mockup' ) ) {
+        if( str_contains( $current_url, 'form' ) ) {
             wp_enqueue_script( 'vuejs', get_template_directory_uri() . '/assets/js/packages/vue.js', [], '3.3.7' );
             wp_enqueue_script( 'srs-vue', get_template_directory_uri() . '/assets/js/dist/forms-dist.js', ['vuejs'], $version );
-
-            // conditional loading for tables and docs
-		    include( 'conditional-enqueues.php' );
         }
+
+        // conditional loading for tables and docs
+		include( 'conditional-enqueues.php' );
 	}
 
 	// remove jqmigrate from frontend

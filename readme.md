@@ -12,8 +12,16 @@
 
 #### ⚡ I have some experience with
 - **Amazon**: S3 Buckets, CloudFront
-- **Build Tools**: Webpack, Laravel Mix
+- **Build Tools**: Vite, Webpack, Laravel Mix
+- **Store Libraries**: Pinia
 
 #### 🍵 I'm Learning
-- Laravel + Eloquent ORM
-- VueJS + Vite
+- VueJS + Vite + Pinia
+- HTMX
+
+#### :wrench: Personal Development Goals
+- Build and Ship a minimalist:
+    - ~~[WordPress Theme](https://github.com/ShaneSchroll/modular-theme)~~
+    - Component library
+    - HR App
+    - CRM App
