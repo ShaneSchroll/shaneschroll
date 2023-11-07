@@ -10,8 +10,9 @@
 #}
 
 <form id="multi-step-form" action="/" method="POST">
-    <div class="step-bar">
 
+    {# step counter - visually show the user what step they are on #}
+    <div class="step-bar">
         <div class="step-bar__step active-step">
             <p class="step-number">1</p>
         </div>
@@ -29,7 +30,7 @@
         </div>
     </div>
 
-    <div style="height:30rem;"></div>
+
 
     {# Step 1 -- load this initially #}
     <transition name="slide"></transition>
@@ -45,6 +46,8 @@
 
     {# Step 4 #}
     <transition name="slide"></transition>
+
+
 
 
     {# hide/show buttons based on step #}
