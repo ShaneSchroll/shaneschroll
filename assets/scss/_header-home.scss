@@ -11,14 +11,17 @@
         justify-content: center;
         align-items: center;
 
-        @include mq(sm) {
+        @include mq(730px) {
             flex-direction: row;
             justify-content: space-between;
         }
 
         .text-content {
             max-width: 34rem;
-            margin-right: 1.5rem;
+
+            @include mq(md) {
+                margin-right: 1.5rem;
+            }
 
             h1 { font-weight: $medium; }
         }
@@ -28,18 +31,33 @@
             max-width: 38.5rem;
 
             svg {
-                display: block;
+                display: none;
                 position: absolute;
-                max-width: 100%;
+                max-width: 20rem;
                 top: 1.25rem;
                 height: auto;
                 z-index: 1;
+
+                @include mq(md) {
+                    display: block;
+                    max-width: 27rem;
+                }
+
+                @include mq(lg) {
+                    max-width: 100%;
+                }
             }
 
             img {
                 position: relative;
-                max-width: 35rem;
+                max-width: 22rem;
                 z-index: 5;
+
+                @include mq(md) { max-width: 25rem; }
+
+                @include mq(lg) {
+                    max-width: 35rem;
+                }
             }
         }
     }
