@@ -105,10 +105,19 @@
 
     .tech-row {
         display: grid;
-        max-width: 45rem;
+        max-width: 25rem;
         grid-template-columns: repeat(2, 10rem);
-        gap: 4rem 10rem;
+        gap: 2rem;
         align-items: center;
+
+        @include mq(xs) {
+            gap: 4rem;
+        }
+
+        @include mq(580px) {
+            max-width: 45rem;
+            gap: 4rem 10rem;
+        }
 
         @include mq(sm) {
             display: flex;
