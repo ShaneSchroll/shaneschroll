@@ -1,4 +1,12 @@
-// import all components
+// Import nav
+@import 'navigation';
+
+// Import main site chunks
+@import 'header-default';
+@import 'header-home';
+@import 'footer';
+
+// Import standalone components
 @import 'buttons';
 @import 'info-section';
 @import 'forms';

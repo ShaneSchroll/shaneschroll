@@ -58,3 +58,23 @@ $radius-large: 20px;
 	$return: clamp(#{$min-font-size}, #{$y-intersect} + #{$slope} * 100vw, #{$max-font-size});
 	@return $return;
 }
+
+// background color changes
+$colors:
+(primary, $primary-background),
+(white, $white),
+(black, $black),
+(blue, $blue),
+(grey, $grey),
+(teal, $teal),
+(mint, $mint),
+(pale-blue, $pale-blue),
+(purple, $purple),
+(magenta, $magenta),
+(navy, $navy);
+
+@each $name, $color in $colors {
+	.bg-#{$name} {
+		background-color: $color;
+	}
+}

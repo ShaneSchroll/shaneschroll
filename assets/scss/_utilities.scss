@@ -70,28 +70,12 @@
 
 // to-bottom-right
 .bottom-angle-right {
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
 	padding-bottom: 12rem !important;
-}
 
-// background color changes
-$colors:
-(primary, $primary-background),
-(white, $white),
-(black, $black),
-(blue, $blue),
-(grey, $grey),
-(teal, $teal),
-(mint, $mint),
-(pale-blue, $pale-blue),
-(purple, $purple),
-(magenta, $magenta),
-(navy, $navy);
-
-@each $name, $color in $colors {
-	.bg-#{$name} {
-		background-color: $color;
-	}
+    @include mq(sm) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    }
 }
 
 // screen reader only text (hidden visually)

@@ -25,8 +25,13 @@
         display: flex;
         max-width: 75rem;
         margin: 0 auto;
-        justify-content: space-between;
-    
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        @include mq(925px) {
+            justify-content: space-between;
+        }
+
         &__item {
             max-width: 16.5rem;
             padding: 1rem 1.25rem 1.75rem;
@@ -34,11 +39,38 @@
             background-color: $white;
             box-shadow: $shadow;
             border-radius: $radius-medium;
-    
+            margin-bottom: 2rem;
+
+            img { height: 3.8rem; }
+
             h2 {
                 margin: 1.5rem 0 1.2rem;
                 font-family: $primary-font;
                 font-weight: $normal;
+            }
+
+            /* responsive adjustments */
+            @include mq(925px) {
+                max-width: 13.25rem;
+                padding: 1rem;
+                margin-bottom: 0;
+
+                img { height: 3rem; }
+            }
+
+            @include mq(lg) {
+                max-width: 14.5rem;
+                padding: 1rem 1rem 1.2rem;
+
+                img { height: 3.4rem; }
+            }
+
+            @include mq(1140px) {
+                max-width: 16.5rem;
+                padding: 1rem 1.25rem 1.75rem;
+
+                img { height: 3.8rem; }
+                h2 { margin: 1.5rem 0 1.2rem; }
             }
         }
     }
