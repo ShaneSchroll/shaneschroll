@@ -1,0 +1,47 @@
+{# Contact Details #}
+<div class="input-wrap">
+    <label for="full-name" class="input-wrap__input">
+        Name<br/>
+        <input
+            v-model="form.fullName"
+            type="text"
+            name="full-name"
+            placeholder="John Doe"
+            required
+        />
+    </label>
+
+    <label for="email" class="input-wrap__input">
+        Email<br/>
+        <input
+            v-model="form.email"
+            type="email"
+            name="email"
+            placeholder="Email address"
+            required
+        />
+    </label>
+</div>
+
+<div class="input-wrap">
+    <label for="company-name" class="input-wrap__input">
+        Company Name<br/>
+        <input
+            v-model="form.companyName"
+            type="text"
+            name="company-name"
+            placeholder="Company Name"
+        />
+    </label>
+
+    <label for="company-website" class="input-wrap__input">
+        Company Website<br/>
+        <input
+            v-model="form.companyWebsite"
+            type="url"
+            name="company-website"
+            pattern="https://.*"
+            placeholder="Company Website"
+        />
+    </label>
+</div>

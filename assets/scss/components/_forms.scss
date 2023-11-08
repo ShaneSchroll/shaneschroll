@@ -16,6 +16,7 @@
     // inner-transition headers
     h4 {
         font-weight: 600;
+        margin-bottom: 2rem;
     }
 
     // step bar
@@ -42,13 +43,18 @@
     flex-wrap: nowrap;
 
     &__step {
-        width: 3rem;
-        height: 3rem;
+        width: 2.25rem;
+        height: 2.25rem;
         text-align: center;
         border-radius: 50%;
         background-color: $white;
         border: 2px solid $purple;
         flex-shrink: 0;
+
+        @include mq(sm) {
+            width: 3rem;
+            height: 3rem;
+        }
 
         &.active-step {
             background-color: $purple;
@@ -61,8 +67,12 @@
             transform: translateY(-50%);
             margin: 0;
             color: $purple;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
+
+            @include mq(sm) {
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -70,12 +80,16 @@
         max-width: 100%;
         width: 6rem;
         min-width: 7px;
-        height: 7px;
+        height: 5px;
         margin-left: 0.5rem;
         margin-right: 0.5rem;
         flex-shrink: 1;
         border-radius: $radius-small;
         background-color: $purple;
+
+        @include mq(sm) {
+            height: 7px;
+        }
     }
 
     .complete {
@@ -88,7 +102,29 @@
 
 // first div inside the transition elements
 .form-wrapper {
-    min-height: 25rem;
+    min-height: 23.75rem;
+
+    label, input { color: $navy; }
+
+    .input-wrap {
+        display: flex;
+        max-width: 100%;
+        margin: 0 auto 4rem;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__input {
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            input {
+                margin-top: 0.5rem;
+                padding: 0.85rem 1.25rem;
+                border-color: $navy;
+                border-radius: $radius-medium;
+            }
+        }
+    }
 }
 /* End form */
 

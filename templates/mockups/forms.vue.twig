@@ -9,76 +9,52 @@
     -- https://vuejs.org/guide/essentials/event-handling.html
 #}
 
-<div id="multi-step-form" action="/" method="POST">
+<div id="multi-step-form">
 
-    {# step counter - visually show the user what step they are on #}
-    {% include 'components/step-bar.vue.twig' %}
+    {# step counter #}
+    {% include 'components/form/step-bar.vue.twig' %}
 
     {# Step 1 #}
     <transition name="slide-fade">
-        <div v-if="stepNumber === 1" class="form-wrapper">
+        <div v-if="stepNumber == 1" class="form-wrapper">
             <h4>Contact Details</h4>
+            {% include 'components/form/step-1.vue.twig' %}
         </div>
     </transition>
-
-
-
-    
 
     {# Step 2 #}
     <transition name="slide-fade">
-        <div v-if="stepNumber === 2" class="form-wrapper">
+        <div v-if="stepNumber == 2" class="form-wrapper">
             <h4>Project Type</h4>
+            {% include 'components/form/step-2.vue.twig' %}
         </div>
     </transition>
-
-
-
-
 
     {# Step 3 #}
     <transition name="slide-fade">
-        <div v-if="stepNumber === 3" class="form-wrapper">
+        <div v-if="stepNumber == 3" class="form-wrapper">
             <h4>Project Details</h4>
-
-            {# Full Website #}
-            <div v-if="form.projectType == fullWebsite"></div>
-
-            {# Landing Page #}
-            <div v-if="form.projectType == landingPage"></div>
-
-            {# Theme Development #}
-            <div v-if="form.projectType == themeDev"></div>
-
-            {# SPA Development #}
-            <div v-if="form.projectType == spaDev"></div>
-
+            {% include 'components/form/step-3.vue.twig' %}
         </div>
     </transition>
-
-
-
-
 
     {# Step 4 #}
     <transition name="slide-fade">
-        <div v-if="stepNumber === 4" class="form-wrapper">
+        <div v-if="stepNumber == 4" class="form-wrapper">
             <h4>Project Budget</h4>
+            {% include 'components/form/step-4.vue.twig' %}
         </div>
     </transition>
 
-
-
-
-
-    {# step 5 - output form info for user to check #}
+    {# step 5 #}
     <transition name="slide-fade">
-        <div v-if="stepNumber === 5" class="form-wrapper">
-            <h4>Double Check your information!</h4>
+        <div v-if="stepNumber == 5" class="form-wrapper">
+            <h4>Review Information</h4>
+            {% include 'components/form/step-5.vue.twig' %}
         </div>
     </transition>
 
-
+    {# prev, next, submit - buttons + events #}
     <div class="button-container">
         <button
             @click="prevStep()"
@@ -93,7 +69,8 @@
         >Next</button>
 
         <button
-            v-if="stepNumber === 5"
+            @click="handleSubmit()"
+            v-if="stepNumber == 5"
             type="submit"
             class="pill-button--pill-purple next-button"
         >Submit</button>

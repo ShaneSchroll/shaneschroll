@@ -35,7 +35,19 @@ window.onload = function() {
         },
 
         methods: {
-            nextStep: function() {
+            prevStep() {
+                this.stepNumber--;
+
+                if(this.stepNumber === 1) {
+                    this.isComplete1 = false;
+                } else if(this.stepNumber === 2) {
+                    this.isComplete2 = false;
+                } else if(this.stepNumber === 3) {
+                    this.isComplete3 = false;
+                }
+            },
+
+            nextStep() {
                 this.stepNumber++;
 
                 if(this.stepNumber === 2) {
@@ -47,17 +59,7 @@ window.onload = function() {
                 }
             },
 
-            prevStep: function() {
-                this.stepNumber--;
-
-                if(this.stepNumber === 2) {
-                    this.isComplete2 = false;
-                } else if(this.stepNumber === 3) {
-                    this.isComplete3 = false;
-                } else if(this.stepNumber === 1) {
-                    this.isComplete1 = false;
-                }
-            },
+            handleSubmit() {}
         },
 
         mounted() {

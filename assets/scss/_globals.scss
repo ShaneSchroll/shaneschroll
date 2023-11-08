@@ -9,6 +9,10 @@ html, body {
 	font-feature-settings: "lnum" 1;
 }
 
+::placeholder {
+    color: rgba($navy, 0.6);
+}
+
 img {
 	display: block; // preserve aspect ratio (scale instead of smush)
 	max-width: 100%;
