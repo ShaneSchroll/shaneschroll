@@ -9,56 +9,93 @@
     -- https://vuejs.org/guide/essentials/event-handling.html
 #}
 
-<form id="multi-step-form" action="/" method="POST">
+<div id="multi-step-form" action="/" method="POST">
 
     {# step counter - visually show the user what step they are on #}
-    <div class="step-bar">
-        <div class="step-bar__step active-step">
-            <p class="step-number">1</p>
+    {% include 'components/step-bar.vue.twig' %}
+
+    {# Step 1 #}
+    <transition name="slide-fade">
+        <div v-if="stepNumber === 1" class="form-wrapper">
+            <h4>Contact Details</h4>
         </div>
-
-        <div class="step-bar__step">
-            <p class="step-number">2</p>
-        </div>
-
-        <div class="step-bar__step">
-            <p class="step-number">3</p>
-        </div>
-
-        <div class="step-bar__step">
-            <p class="step-number">4</p>
-        </div>
-    </div>
+    </transition>
 
 
 
-    {# Step 1 -- load this initially #}
-    <transition name="slide"></transition>
-
+    
 
     {# Step 2 #}
-    <transition name="slide"></transition>
+    <transition name="slide-fade">
+        <div v-if="stepNumber === 2" class="form-wrapper">
+            <h4>Project Type</h4>
+        </div>
+    </transition>
+
+
+
 
 
     {# Step 3 #}
-    <transition name="slide"></transition>
+    <transition name="slide-fade">
+        <div v-if="stepNumber === 3" class="form-wrapper">
+            <h4>Project Details</h4>
+
+            {# Full Website #}
+            <div v-if="form.projectType == fullWebsite"></div>
+
+            {# Landing Page #}
+            <div v-if="form.projectType == landingPage"></div>
+
+            {# Theme Development #}
+            <div v-if="form.projectType == themeDev"></div>
+
+            {# SPA Development #}
+            <div v-if="form.projectType == spaDev"></div>
+
+        </div>
+    </transition>
+
+
+
 
 
     {# Step 4 #}
-    <transition name="slide"></transition>
+    <transition name="slide-fade">
+        <div v-if="stepNumber === 4" class="form-wrapper">
+            <h4>Project Budget</h4>
+        </div>
+    </transition>
 
 
 
 
-    {# hide/show buttons based on step #}
+
+    {# step 5 - output form info for user to check #}
+    <transition name="slide-fade">
+        <div v-if="stepNumber === 5" class="form-wrapper">
+            <h4>Double Check your information!</h4>
+        </div>
+    </transition>
+
+
     <div class="button-container">
-        {# onclick move the step backward 1 --(not shown on first step) #}
-        <button v-if="show" class="pill-button--pill-purple prev-button">Previous</button>
+        <button
+            @click="prevStep()"
+            v-if="stepNumber != 1"
+            class="pill-button--pill-purple prev-button"
+        >Previous</button>
 
-        {# onclick move the step forward 1 --(not shown on last step) #}
-        <button v-if="show" class="pill-button--pill-purple next-button">Next</button>
+        <button
+            @click="nextStep()"
+            v-if="stepNumber != 5"
+            class="pill-button--pill-purple next-button"
+        >Next</button>
 
-        {# Final Step - Submit form. Clear form data from LocalStorage #}
-        <button v-if="submit_show" type="submit" class="pill-button--pill-purple">Submit</button>
+        <button
+            v-if="stepNumber === 5"
+            type="submit"
+            class="pill-button--pill-purple next-button"
+        >Submit</button>
     </div>
-</form>
+</div>

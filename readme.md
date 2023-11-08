@@ -18,6 +18,7 @@
 #### 🍵 I'm Learning
 - VueJS + Vite + Pinia
 - HTMX
+- Turso
 
 #### :wrench: Personal Development Goals
 - Build and Ship a minimalist:

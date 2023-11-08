@@ -13,59 +13,13 @@
     box-shadow: 0 0 6px -4px;
     border-radius: $radius-large;
 
-    .step-bar {
-        display: flex;
-        width: 100%;
-        margin: 0 auto 1.25rem;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
-
-        &__step {
-            width: 3rem;
-            height: 3rem;
-            text-align: center;
-            border-radius: 50%;
-            background-color: $white;
-            border: 2px solid $purple;
-
-            // add bar between steps
-            &:after {
-                content: '';
-                display: block;
-                position: relative;
-                left: 4.25rem;
-                top: -0.65rem;
-                width: 6rem;
-                height: 7px;
-                border-radius: $radius-small;
-                background-color: $purple;
-            }
-
-            // no bar on last step
-            &:last-of-type {
-                &:after {
-                    display: none;
-                }
-            }
-
-            &.active-step {
-                background-color: $purple;
-                .step-number { color: $white; }
-            }
-
-            .step-number {
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-                margin: 0;
-                color: $purple;
-                font-size: 1.2rem;
-                font-weight: 600;
-            }
-        }
+    // inner-transition headers
+    h4 {
+        font-weight: 600;
     }
+
+    // step bar
+    // transition form wrappers
 
     .button-container {
         position: relative;
@@ -76,19 +30,79 @@
         border-top: 1px solid rgba($purple, 0.2);
     }
 }
+
+// step bar tracker and counter
+.step-bar {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 3.25rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    &__step {
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        border-radius: 50%;
+        background-color: $white;
+        border: 2px solid $purple;
+        flex-shrink: 0;
+
+        &.active-step {
+            background-color: $purple;
+            .step-number { color: $white; }
+        }
+
+        .step-number {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            color: $purple;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    }
+
+    .divider {
+        max-width: 100%;
+        width: 6rem;
+        min-width: 7px;
+        height: 7px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        flex-shrink: 1;
+        border-radius: $radius-small;
+        background-color: $purple;
+    }
+
+    .complete {
+        background-color: $teal;
+        border-color: $teal;
+
+        .step-number { color: $white; }
+    }
+}
+
+// first div inside the transition elements
+.form-wrapper {
+    min-height: 25rem;
+}
 /* End form */
 
 // Vue will look for these to apply animations to the <transition> elements
-.slide-enter-active {
-    transition: all 0.15s ease-out;
+.slide-fade-enter-active {
+    transition: all 0.5s ease-out;
 }
 
-.slide-leave-active {
-    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+.slide-fade-leave-active {
+    transition: all 0s cubic-bezier(1, 0.5, 0.3, 1);
 }
 
-.slide-enter-from,
-.slide-leave-to {
-    transform: translateX(-200px);
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateX(32px);
     opacity: 0;
 }
