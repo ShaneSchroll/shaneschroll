@@ -58,6 +58,7 @@
 
         &.active-step {
             background-color: $purple;
+
             .step-number { color: $white; }
         }
 
@@ -104,7 +105,7 @@
 .form-wrapper {
     min-height: 23.75rem;
 
-    label, input { color: $navy; }
+    label, input, textarea { color: $navy; }
 
     .input-wrap {
         display: flex;
@@ -118,11 +119,18 @@
             font-weight: 600;
 
             input {
+                max-width: 16.25rem;
+                width: 100%;
                 margin-top: 0.5rem;
                 padding: 0.85rem 1.25rem;
                 border-color: $navy;
                 border-radius: $radius-medium;
             }
+        }
+
+        .error {
+            border-color: $magenta;
+            color: $magenta;
         }
     }
 }

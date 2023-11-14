@@ -2,24 +2,24 @@ window.onload = function() {
     const { createApp } = Vue;
 
     /**
-     * Need:
-     *      Step 1 - Contact Details: Name, Email, Company Name, Company Website
-     *      Step 2 - Select Project Type: Full Website, Landing Page, Theme Development, SPA Development
-     *      Step 3 - Project Details: Changes based on Project Type
-     *      Step 4 - Project Budget: $1,000 - $5,000, $5,000 - $10,000, $10,000 - $20,000, $20,000+
-     *      Step 5 - Additional Details (400 char limit)
+        * Need:
+        *      Step 1 - Contact Details: Name, Email, Company Name, Company Website
+        *      Step 2 - Select Project Type: Full Website, Landing Page, Theme Development, SPA Development
+        *      Step 3 - Project Details: Changes based on Project Type
+        *      Step 4 - Project Budget: $1,000 - $5,000, $5,000 - $10,000, $10,000 - $20,000, $20,000+
+        *      Step 5 - Additional Details (400 char limit)
     */
 
     createApp({
         data() {
             return {
-                showError: false,
                 submitting: false,
                 isComplete1: false,
                 isComplete2: false,
                 isComplete3: false,
 
                 stepNumber: 1,
+                errorMsg: '',
 
                 form: {
                     fullName: '',
@@ -38,6 +38,7 @@ window.onload = function() {
             prevStep() {
                 this.stepNumber--;
 
+                // check what step we are on to style the progress bar
                 if(this.stepNumber === 1) {
                     this.isComplete1 = false;
                 } else if(this.stepNumber === 2) {
@@ -50,6 +51,7 @@ window.onload = function() {
             nextStep() {
                 this.stepNumber++;
 
+                // check what step we are on to style the progress bar
                 if(this.stepNumber === 2) {
                     this.isComplete1 = true;
                 } else if(this.stepNumber === 3) {
@@ -57,6 +59,8 @@ window.onload = function() {
                 } else if(this.stepNumber === 4) {
                     this.isComplete3 = true;
                 }
+
+                // check for errors before continuing
             },
 
             handleSubmit() {}
@@ -71,4 +75,4 @@ window.onload = function() {
 
         delimiters: ['${', '}']
     }).mount('#multi-step-form');
-}
+};
