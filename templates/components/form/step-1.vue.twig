@@ -1,9 +1,11 @@
 {# Contact Details #}
+
 <div class="input-wrap">
     <label for="full-name" class="input-wrap__input">
         Name<br/>
+        <span v-if="hasError" class="error">Please enter your name</span>
         <input
-            v-model="form.fullName"
+            v-model="fullName"
             type="text"
             name="full-name"
             placeholder="John Doe"
@@ -13,8 +15,9 @@
 
     <label for="email" class="input-wrap__input">
         Email<br/>
+        <span v-if="hasError" class="error">Please enter your email</span>
         <input
-            v-model="form.email"
+            v-model="email"
             type="email"
             name="email"
             placeholder="Email address"
@@ -27,7 +30,7 @@
     <label for="company-name" class="input-wrap__input">
         Company Name<br/>
         <input
-            v-model="form.companyName"
+            v-model="companyName"
             type="text"
             name="company-name"
             placeholder="Company Name"
@@ -37,7 +40,7 @@
     <label for="company-website" class="input-wrap__input">
         Company Website<br/>
         <input
-            v-model="form.companyWebsite"
+            v-model="companyWebsite"
             type="url"
             name="company-website"
             pattern="https://.*"

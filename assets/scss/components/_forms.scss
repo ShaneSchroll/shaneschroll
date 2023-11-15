@@ -127,11 +127,16 @@
                 border-radius: $radius-medium;
             }
         }
+    }
 
-        .error {
-            border-color: $magenta;
-            color: $magenta;
-        }
+    .error {
+        border-color: $magenta !important;
+        color: $magenta !important;
+    }
+    
+    .valid {
+        border-color: $teal !important;
+    color: $teal !important;
     }
 }
 /* End form */
