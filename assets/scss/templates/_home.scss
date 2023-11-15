@@ -55,14 +55,12 @@
                 padding: 1rem;
                 margin-bottom: 0;
 
-                img { height: 3rem; }
+                img { height: 3.4rem; }
             }
 
             @include mq(lg) {
                 max-width: 14.5rem;
                 padding: 1rem 1rem 1.2rem;
-
-                img { height: 3.4rem; }
             }
 
             @include mq(1140px) {

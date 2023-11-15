@@ -15,19 +15,21 @@
 	</head>
 
 	<body data-template="base.twig" class="{{ body_class }}">
-		{% include 'components/navigation.twig' %}
+        <div class="parallax-wrap">
+            {% include 'components/navigation.twig' %}
 
-		{% if not is_front_page %}
-			{% include 'components/header-default.twig' %}
-		{% else %}
-			{% include 'components/header-home.twig' %}
-		{% endif %}
+            {% if not is_front_page %}
+                {% include 'components/header-default.twig' %}
+            {% else %}
+                {% include 'components/header-home.twig' %}
+            {% endif %}
 
-		<section class="main-post-wrapper" role="main" aria-label="Main page content">
-			{% block content %}{% endblock %}
-		</section>
+            <section class="main-post-wrapper" role="main" aria-label="Main page content">
+                {% block content %}{% endblock %}
+            </section>
 
-        <div class="footer-drawer"></div>
+            <div class="footer-drawer"></div>
+        </div>
 		{% include 'components/footer.twig' %}
 		{% include 'components/mobile-nav.twig' %}
 

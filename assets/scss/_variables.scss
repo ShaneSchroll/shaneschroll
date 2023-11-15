@@ -51,7 +51,7 @@ $radius-large: 20px;
 	}
 }
 
-// Fluid text function - dynamic font scaling
+// Fluid text function - dynamic font scaling - needs `text-rendering: geometricPrecision` on the html or body element for ideal results
 @function fluid-text($min-screen-width, $min-font-size, $max-screen-width, $max-font-size) {
 	$slope: ($max-font-size - $min-font-size) / ($max-screen-width - $min-screen-width);
 	$y-intersect: -1 * $min-screen-width * $slope + $min-font-size;

@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 
 html, body {
-	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision; // works better than optimizeLegibility for our fluid-text() function
 	font-size: 16px;
 	line-height: 1.5;
 	overflow-x: hidden;
@@ -19,25 +19,21 @@ img {
 	height: auto;
 }
 
-// page setup for parallax footer
-.site-nav,
-header,
-.tech-bar-wrapper,
-.main-post-wrapper,
-.footer-drawer {
+// page wrapper for parallax footer
+.parallax-wrap {
     position: relative;
     z-index: 5;
-}
 
-/*
-    last element before the footer to create a
-    fixed control point for the parallax effect
-*/
-.footer-drawer {
-    margin-bottom: 32.5rem;
+    /*
+        last element before the footer to create a
+        fixed control point and spacer for the parallax effect
+    */
+    .footer-drawer {
+        margin-bottom: 32.5rem;
 
-    // responsive adjustments for spacing
-    @include mq(lg) { margin-bottom: 18.625rem; }
+        // responsive adjustments for spacing
+        @include mq(lg) { margin-bottom: 18.625rem; }
+    }
 }
 
 // post content wrapper
