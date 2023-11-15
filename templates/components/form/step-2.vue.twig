@@ -1,1 +1,45 @@
 {# Project Type #}
+
+<div class="input-wrap">
+    <label for="full-website" class="input-wrap__input">
+        Full Website<br/>
+        <input
+            v-model="projectType"
+            type="checkbox"
+            name="full-website"
+            value="Full Website"
+        />
+    </label>
+
+    <label for="theme-dev" class="input-wrap__input">
+        Theme Development<br/>
+        <input
+            v-model="projectType"
+            type="checkbox"
+            name="theme-dev"
+            value="Theme Development"
+        />
+    </label>
+</div>
+
+<div class="input-wrap">
+    <label for="landing" class="input-wrap__input">
+        Landing Page<br/>
+        <input
+            v-model="projectType"
+            type="checkbox"
+            name="landing"
+            value="Landing Page"
+        />
+    </label>
+
+    <label for="dashboard" class="input-wrap__input">
+        Dashboard Application<br/>
+        <input
+            v-model="projectType"
+            type="checkbox"
+            name="dashboard"
+            value="Dashboard Application"
+        />
+    </label>
+</div>

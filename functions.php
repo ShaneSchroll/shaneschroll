@@ -92,13 +92,6 @@ class ShaneSchrollSite extends Timber\Site {
 		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
 		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/dist/site-dist.js', ['jquery'], $version );
 
-        // load for all mockup pages
-        if( str_contains( $current_url, 'form' ) ) {
-            // wp_enqueue_script( 'vuejs', 'https://unpkg.com/vue@3.3.8/dist/vue.global.prod.js', [], '3.3.8' );
-            wp_enqueue_script( 'vuejs', 'https://unpkg.com/vue@v3.3.8', [], '3.3.8' );
-            wp_enqueue_script( 'srs-vue-form', get_template_directory_uri() . '/assets/js/dist/forms-dist.js', ['vuejs', 'jquery'], $version );
-        }
-
         // conditional loading for tables and docs
 		include( 'conditional-enqueues.php' );
 	}
