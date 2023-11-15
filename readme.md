@@ -12,7 +12,7 @@
 
 #### ⚡ I have some experience with
 - **Amazon**: S3 Buckets, CloudFront
-- **Build Tools**: Vite, Webpack, Laravel Mix
+- **Build Tools**: Vite, Webpack
 - **Store Libraries**: Pinia
 
 #### 🍵 I'm Learning
