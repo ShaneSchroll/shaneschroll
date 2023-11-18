@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: center;
 
-        @include mq(sm) {
+        @include mq(md) {
             flex-direction: row;
             align-items: flex-start;
             justify-content: space-between
@@ -18,8 +18,8 @@
 
         &__title {
             max-width: 100%;
-            @include mq(xs) { max-width: 34rem; }
-            @include mq(md) { max-width: 31rem; }
+            flex-shrink: 0;
+            @include mq(md) { max-width: 22rem; }
         }
 
         &__paragraph {
