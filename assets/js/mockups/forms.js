@@ -70,6 +70,8 @@ createApp({
             } else if(this.stepNumber === 4) {
                 this.isComplete3 = true;
             }
+
+            // check for projectType length to check if we need to add the error class
         },
 
         handleSubmit() {}

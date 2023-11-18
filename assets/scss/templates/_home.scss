@@ -1,23 +1,41 @@
 .expertise-section {
-    padding: 8rem 1rem;
+    padding: 5.5rem 1rem;
     background-color: $primary-background;
+    @include mq(md) { padding: 8rem 1rem; }
 
     .exp-header {
         display: flex;
         max-width: 75rem;
         margin: 0 auto 5rem;
-        justify-content: space-between;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+
+        @include mq(sm) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between
+        }
 
         &__title {
-            max-width: 31rem;
+            max-width: 100%;
+            @include mq(xs) { max-width: 34rem; }
+            @include mq(md) { max-width: 31rem; }
         }
 
         &__paragraph {
-            max-width: 37rem;
-            margin-left: 3rem;
+            max-width: 100%;
 
-            p { margin-bottom: 1.75rem; }
+            @include mq(md) {
+                margin-left: 3rem;
+                max-width: 37rem;
+            }
+
+            p {
+                margin-top: 1.75rem;
+                margin-bottom: 1.75rem;
+
+                @include mq(md) { margin-top: 0; }
+            }
         }
     }
 
@@ -33,13 +51,15 @@
         }
 
         &__item {
-            max-width: 16.5rem;
+            max-width: 100%;
             padding: 1rem 1.25rem 1.75rem;
             width: 100%;
             background-color: $white;
             box-shadow: $shadow;
             border-radius: $radius-medium;
             margin-bottom: 2rem;
+
+            &:hover { box-shadow: 0 3px 9px -7px $teal; }
 
             img { height: 3.8rem; }
 
@@ -50,6 +70,10 @@
             }
 
             /* responsive adjustments */
+            @include mq(560px) {
+                max-width: 16.5rem;
+            }
+
             @include mq(925px) {
                 max-width: 13.25rem;
                 padding: 1rem;

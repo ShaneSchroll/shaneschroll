@@ -92,6 +92,11 @@ class ShaneSchrollSite extends Timber\Site {
 		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
 		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/dist/site-dist.js', ['jquery'], $version );
 
+        // remove inline wp styles from frontend
+        if ( ! is_admin() ) {
+            wp_dequeue_style( 'global-styles' );
+        }
+
         // conditional loading for tables and docs
 		include( 'conditional-enqueues.php' );
 	}

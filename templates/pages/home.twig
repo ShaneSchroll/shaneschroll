@@ -13,7 +13,7 @@
         </div>
 
         <div class="exp-header__paragraph">
-            <p class="no-mt">{{ expertise.paragraph_content }}</p>
+            <p>{{ expertise.paragraph_content }}</p>
             <a class="cta-button--cta-purple" href="/portfolio">View Portfolio</a>
         </div>
     </div>
@@ -33,7 +33,8 @@
 </section>
 
 <div class="bg-primary">
-    {# About section #}
+
+    {# About Section #}
     <section class="info-section bottom-angle-right bg-white">
 
         {% set about = post.meta('about') %}
@@ -72,7 +73,7 @@
 
                 <div class="grid-cards">
                     {% for project in portfolio %}
-                        <a class="grid-cards__card" href="{{ project.link }}">
+                        <a class="grid-cards__card" href="{{ project.project_link }}" target="_blank" rel="noreferrer">
                             <img
                                 src="{{ TimberImage( project.thumbnail ).src }}"
                                 alt="{{ TimberImage( project.thumbnail ).alt }}"

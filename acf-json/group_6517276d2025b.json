@@ -57,13 +57,6 @@
                 "operator": "==",
                 "value": "mockup"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "portfolio"
-            }
         ]
     ],
     "menu_order": 0,
@@ -77,5 +70,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699035988
+    "modified": 1700272692
 }

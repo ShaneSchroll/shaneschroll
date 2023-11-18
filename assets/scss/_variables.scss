@@ -59,7 +59,7 @@ $radius-large: 20px;
 	@return $return;
 }
 
-// background color changes
+// color palette array
 $colors:
 (primary, $primary-background),
 (white, $white),
@@ -73,8 +73,23 @@ $colors:
 (magenta, $magenta),
 (navy, $navy);
 
+// background color changes
 @each $name, $color in $colors {
 	.bg-#{$name} {
 		background-color: $color;
 	}
+}
+
+// text color changes
+@each $name, $text-color in $colors {
+    .#{$name} {
+        color: $text-color !important;
+    }
+}
+
+// text color hover changes
+@each $name, $text-color-hover in $colors {
+    .#{$name}-hover {
+        &:hover { color: $text-color-hover !important; }
+    }
 }

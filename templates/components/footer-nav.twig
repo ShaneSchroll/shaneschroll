@@ -1,5 +1,4 @@
 <nav class="footer-menu">
-
     {% for menu in options.footer_menus %}
         <div class="footer-menu__menu">
             <p class="no-mt menu-heading">{{ menu.menu_header }}</p>
@@ -12,15 +11,4 @@
 
         </div>
     {% endfor %}
-
-    <div class="footer-menu__menu">
-        <p class="no-mt menu-heading">Mockups</p>
-
-        {% for mockup_item in mockups %}
-            <a class="footer-menu-item" href="{{ mockup_item.link }}">
-                {{ mockup_item.title }}
-            </a>
-        {% endfor %}
-
-    </div>
 </nav>
