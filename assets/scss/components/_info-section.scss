@@ -1,7 +1,11 @@
 .info-section {
     max-width: 100%;
     margin: 0 auto;
-    padding: 3.75rem 1rem;
+    padding: 1.75rem 1rem 3.75rem;
+
+    @include mq(md) {
+        padding: 3.75rem 1rem 3.75rem;
+    }
 
     &__container {
         display: flex;
@@ -20,6 +24,11 @@
         img {
             max-width: 25rem;
             border-radius: $radius-large;
+        }
+
+        .aside-image {
+            display: none;
+            @include mq(md) { display: block; }
         }
 
         .text-content {
@@ -43,9 +52,9 @@
         box-shadow: $shadow;
         border-radius: $radius-medium;
 
-        h3 { font-weight: $medium; }
-
         &:hover { box-shadow: 0 3px 9px -7px $teal; }
+
+        h3 { font-weight: $medium; }
     }
 }
 
@@ -66,11 +75,33 @@
         top: 0;
         margin: 0 auto;
 
-        img { max-width: 17.5rem; }
-    }
+        &:hover {
+            top: -10px;
 
-    // card may not always be an anchor element
-    a:hover {
-        top: -10px;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                z-index: 9;
+                width: 100%;
+                height: 100%;
+                transition: 0.2s ease-in;
+                background-color: rgba($primary-background, 0.85)
+            }
+
+            &:before {
+                content: '\f08e';
+                position: absolute;
+                z-index: 10;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: FontAwesome;
+                font-size: 2.25rem;
+                color: $teal;
+            }
+        }
+
+        img { max-width: 17.5rem; }
     }
 }
