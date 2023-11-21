@@ -90,7 +90,7 @@ class ShaneSchrollSite extends Timber\Site {
         $current_url = $_SERVER['REQUEST_URI'];
 
 		wp_enqueue_style( 'srs-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/dist/site-dist.js', ['jquery'], $version );
+		wp_enqueue_script( 'srs-js', get_template_directory_uri() . '/assets/js/dist/site-dist.js', ['jquery', 'jquery-ui-tabs'], $version );
 
         // remove inline wp styles from frontend
         if ( ! is_admin() ) {

@@ -1,0 +1,37 @@
+<section class="docs-container">
+    <aside class="doc-navigation">
+        <nav aria-label="Documentation jump links">
+            <ul>
+                {% for anchor in post.meta('documentation_links') %}
+                    <li>
+                        <a class="doc-link" href="#{{ anchor.name }}">{{ anchor.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="project-tabs" class="project-selector" aria-label="Select a project">
+        <div class="project-selector__tab-wrapper">
+            {% set count = 0 %}
+            {% for project in post.meta('project_selector_tabs') %}
+                <div class="tab">
+                    <div class="icon-box">
+                        <span class="{{ project.tab_icon }}"></span>
+                    </div>
+
+                    <p>{{ project.tab_name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        {# tab pages #}
+        <div id="tabs-{{ count }}" class="">
+            {# {% include '../components/docs/theme-docs.twig' %} #}
+            {# {% include '../components/docs/uikit-docs.twig' %} #}
+            {# {% include '../components/docs/ims-docs.twig' %} #}
+            {# {% include '../components/docs/crm-docs.twig' %} #}
+            {# {% include '../components/docs/hrm-docs.twig' %} #}
+        </div>
+    </div>
+</section>

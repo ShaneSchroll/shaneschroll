@@ -1,0 +1,85 @@
+.docs-container {
+    max-width: 75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+// main body area and project tabs
+.project-selector {
+    max-width: 53rem;
+    width: 100%;
+    padding: 2rem 1rem;
+    border: 2px solid $purple;
+
+    &__tab-wrapper {
+        display: flex;
+        max-width: 50rem;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .tab {
+        width: 7.125rem;
+        text-align: center;
+
+        .icon-box {
+            padding: 1.25rem;
+            background-color: $teal;
+            transition: 0.2s ease-out;
+
+            &:hover {
+                background-color: $purple;
+                transition: 0.2s ease-out;
+                cursor: pointer;
+            }
+
+            span {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            font-family: $secondary-font;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// left side navigation for all docs (list is same for all docs)
+.doc-navigation {
+    max-width: 18rem;
+    width: 100%;
+    border: 2px solid $purple;
+    padding: 2rem 1rem;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            padding: 0;
+            margin: 0.65rem 0;
+
+            &:first-of-type { margin-top: 0; }
+            &:last-of-type { margin-bottom: 0; }
+        }
+
+        .doc-link {
+            display: block;
+            width: 10rem;
+            padding: 4px;
+
+            &:hover,
+            .active {
+                color: $teal;
+                text-decoration: underline 2px;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+}
