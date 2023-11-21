@@ -31,26 +31,41 @@
             @include mq(md) { display: block; }
         }
 
-        .text-content {
+        .aside-content {
             max-width: 38rem;
-            // stat cards & grid cards below
         }
     }
 }
 
-// inside text-content
+// inside aside-content
 .stat-cards {
     display: flex;
     max-width: 100%;
     margin: 3.75rem auto 0;
-    justify-content: space-between;
+    flex-wrap: wrap;
+
+    // responsive adjustments for spacing and alignment
+    justify-content: space-around;
+    @include mq(xs) { justify-content: space-between; }
+    @include mq(md) { justify-content: space-around; }
+    @include mq(lg) { justify-content: space-between; }
 
     &__card {
-        max-width: 11rem;
+        max-width: 9rem;
         width: 100%;
-        padding: 1.25rem 1rem;
+        padding: 1rem;
+        margin-bottom: 2rem;
         box-shadow: $shadow;
         border-radius: $radius-medium;
+
+        @include mq(xs) {
+            max-width: 10rem;
+        }
+
+        @include mq(lg) {
+            max-width: 11rem;
+            padding: 1.25rem 1rem;
+        }
 
         &:hover { box-shadow: 0 3px 9px -7px $teal; }
 
@@ -58,7 +73,7 @@
     }
 }
 
-// inside text-content
+// inside aside-content
 .grid-cards {
     display: grid;
     max-width: 100%;
