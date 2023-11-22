@@ -15,9 +15,12 @@
     &__tab-wrapper {
         display: flex;
         max-width: 50rem;
-        margin: 0 auto;
+        margin: 0 auto 3rem;
+        padding: 0 0 2rem 0;
+        list-style: none;
         align-items: center;
         justify-content: space-between;
+        border-bottom: 1px solid $teal;
     }
 
     .tab {
@@ -28,6 +31,7 @@
             padding: 1.25rem;
             background-color: $teal;
             transition: 0.2s ease-out;
+            border-radius: $radius-medium;
 
             &:hover {
                 background-color: $purple;
@@ -36,7 +40,11 @@
             }
 
             span {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
+            }
+
+            &.tab-active {
+                background-color: $purple !important;
             }
         }
 
@@ -47,11 +55,14 @@
             margin-bottom: 0;
         }
     }
+
+    .content-wrapper {
+    }
 }
 
 // left side navigation for all docs (list is same for all docs)
 .doc-navigation {
-    max-width: 18rem;
+    max-width: 14rem;
     width: 100%;
     border: 2px solid $purple;
     padding: 2rem 1rem;
