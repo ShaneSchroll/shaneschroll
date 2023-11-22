@@ -1,1 +1,6 @@
-<h3>UI Kit Docs</h3>
+{% for anchor in post.meta('documentation_links') %}
+    {% set anchor_slug = anchor.name|lower|replace({' ': '-'}) %}
+    <h3 id="{{ anchor_slug }}" class="">{{ anchor.name }}</h3>
+
+    <div class="content-wrapper__section"></div>
+{% endfor %}

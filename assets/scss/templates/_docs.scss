@@ -10,7 +10,6 @@
     max-width: 53rem;
     width: 100%;
     padding: 2rem 1rem;
-    border: 2px solid $purple;
 
     &__tab-wrapper {
         display: flex;
@@ -20,7 +19,7 @@
         list-style: none;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid $teal;
+        border-bottom: 1px solid $purple;
     }
 
     .tab {
@@ -29,12 +28,12 @@
 
         .icon-box {
             padding: 1.25rem;
-            background-color: $teal;
+            background-color: $purple;
             transition: 0.2s ease-out;
             border-radius: $radius-medium;
 
             &:hover {
-                background-color: $purple;
+                background-color: $teal;
                 transition: 0.2s ease-out;
                 cursor: pointer;
             }
@@ -44,7 +43,7 @@
             }
 
             &.tab-active {
-                background-color: $purple !important;
+                background-color: $teal !important;
             }
         }
 
@@ -55,8 +54,15 @@
             margin-bottom: 0;
         }
     }
+}
 
-    .content-wrapper {
+.content-wrapper {
+    
+    
+    &__section {
+        margin: 1.5rem auto 5rem;
+        border: 2px solid $purple;
+        height: 10rem;
     }
 }
 
@@ -64,7 +70,6 @@
 .doc-navigation {
     max-width: 14rem;
     width: 100%;
-    border: 2px solid $purple;
     padding: 2rem 1rem;
 
     ul {
@@ -84,12 +89,13 @@
             display: block;
             width: 10rem;
             padding: 4px;
+            font-size: 1.15rem;
 
             &:hover,
             .active {
                 color: $teal;
                 text-decoration: underline 2px;
-                text-underline-offset: 4px;
+                text-underline-offset: 5px;
             }
         }
     }

@@ -3,8 +3,9 @@
         <nav aria-label="Documentation jump links">
             <ul>
                 {% for anchor in post.meta('documentation_links') %}
+                    {% set anchor_slug = anchor.name|lower|replace({' ': '-'}) %}
                     <li>
-                        <a class="doc-link" href="#{{ anchor.name }}">{{ anchor.name }}</a>
+                        <a class="doc-link" href="#{{ anchor_slug }}">{{ anchor.name }}</a>
                     </li>
                 {% endfor %}
             </ul>
