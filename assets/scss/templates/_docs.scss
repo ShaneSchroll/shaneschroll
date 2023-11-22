@@ -1,19 +1,18 @@
 .docs-container {
     max-width: 75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    margin: 0 auto;
 }
 
 // main body area and project tabs
 .project-selector {
-    max-width: 53rem;
+    max-width: 60rem;
     width: 100%;
+    margin: 0 auto;
     padding: 2rem 1rem;
 
     &__tab-wrapper {
         display: flex;
-        max-width: 50rem;
+        max-width: 60rem;
         margin: 0 auto 3rem;
         padding: 0 0 2rem 0;
         list-style: none;
@@ -57,46 +56,5 @@
 }
 
 .content-wrapper {
-    
-    
-    &__section {
-        margin: 1.5rem auto 5rem;
-        border: 2px solid $purple;
-        height: 10rem;
-    }
-}
-
-// left side navigation for all docs (list is same for all docs)
-.doc-navigation {
-    max-width: 14rem;
-    width: 100%;
-    padding: 2rem 1rem;
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
-            padding: 0;
-            margin: 0.65rem 0;
-
-            &:first-of-type { margin-top: 0; }
-            &:last-of-type { margin-bottom: 0; }
-        }
-
-        .doc-link {
-            display: block;
-            width: 10rem;
-            padding: 4px;
-            font-size: 1.15rem;
-
-            &:hover,
-            .active {
-                color: $teal;
-                text-decoration: underline 2px;
-                text-underline-offset: 5px;
-            }
-        }
-    }
+    .doc-title { text-align: center; }
 }

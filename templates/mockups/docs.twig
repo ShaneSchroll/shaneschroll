@@ -1,17 +1,4 @@
 <section class="docs-container">
-    <aside class="doc-navigation">
-        <nav aria-label="Documentation jump links">
-            <ul>
-                {% for anchor in post.meta('documentation_links') %}
-                    {% set anchor_slug = anchor.name|lower|replace({' ': '-'}) %}
-                    <li>
-                        <a class="doc-link" href="#{{ anchor_slug }}">{{ anchor.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </aside>
-
     <div class="project-selector" aria-label="Select a project">
         <section class="project-selector__tab-wrapper">
             {% set count = 1 %}
