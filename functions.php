@@ -148,6 +148,13 @@ class ShaneSchrollSite extends Timber\Site {
 				'icon_url' 	  => 'dashicons-database-add'
 			]);
 
+            // Mockup Settings
+			$child = acf_add_options_sub_page([
+				'page_title'  => __('Mockup Settings'),
+				'menu_title'  => __('Mockup Settings'),
+				'parent_slug' => $parent['menu_slug'],
+			]);
+
 			// Footer Settings
 			$child = acf_add_options_sub_page([
 				'page_title'  => __('Footer Settings'),
