@@ -32,8 +32,21 @@
         display: flex;
         max-width: 75rem;
         margin: 0.75rem auto 0;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        text-align: center;
+
+        @include mq(xxs) {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            @include mq(xxs) { margin-bottom: 0; }
+        }
 
         a {
             font-weight: $light;
