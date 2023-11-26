@@ -1,9 +1,9 @@
 <nav class="site-nav" aria-label="Main site navigation">
     <div class="site-nav__wrap">
         {% if not is_front_page %}
-            <a class="text-logo" href="/">ShaneSchroll</a>
+            <a class="text-logo" href="/">{% include '/assets/media/logo.svg' %} ShaneSchroll</a>
         {% else %}
-            <p class="text-logo">ShaneSchroll</p>
+            <p class="text-logo">{% include '/assets/media/logo.svg' %} ShaneSchroll</p>
         {% endif %}
 
         <ul class="nav-menu">

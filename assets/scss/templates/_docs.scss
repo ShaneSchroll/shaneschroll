@@ -66,14 +66,14 @@
         &:hover { color: $teal; }
     }
 
-    .quick-links {
-        margin-bottom: 2.75rem;
-    }
-
     .doc-section {
         max-width: 100%;
         margin: 0 auto;
         padding: 0.5rem;
+    }
+
+    .quick-links {
+        margin-bottom: 2.75rem;
     }
 
     .single-line-token {

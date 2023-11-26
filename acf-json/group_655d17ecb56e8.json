@@ -1,52 +1,7 @@
 {
     "key": "group_655d17ecb56e8",
-    "title": "Doc Links",
+    "title": "Documentation - Project Selector",
     "fields": [
-        {
-            "key": "field_655d17ed0bfd4",
-            "label": "Documentation Links",
-            "name": "documentation_links",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_655d183f0bfd5",
-                    "label": "Link Name",
-                    "name": "name",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_655d17ed0bfd4"
-                }
-            ]
-        },
         {
             "key": "field_655d200a368e5",
             "label": "Project Selector Tabs",
@@ -134,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700620193
+    "modified": 1701033299
 }

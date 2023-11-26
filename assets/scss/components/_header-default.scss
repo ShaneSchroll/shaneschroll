@@ -1,12 +1,15 @@
-
 .site-header {
     max-width: 77rem;
-    margin: 2rem auto 5rem;
-    padding: 1rem;
+    margin: 2rem auto 0;
+    padding: 1rem 1rem 0;
 
     &__title {
         max-width: 35rem;
         margin: 0 auto;
         text-align: center;
+    }
+
+    p {
+        margin-bottom: 0;
     }
 }

@@ -13,11 +13,19 @@
 
     &__top-container {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         max-width: 75rem;
         margin: 0 auto;
-        padding-bottom: 1.75rem;
+        padding-bottom: 2.25rem;
         border-bottom: 1px solid $white;
+
+        @include mq(990px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
     }
 
     &__bottom-container {
@@ -51,7 +59,15 @@
 
 // inside top-container
 .text-container {
-    max-width: 23rem;
+    max-width: 26rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+    @include mq(990px) {
+        max-width: 23rem;
+        text-align: left;
+        margin-bottom: 0;
+    }
 
     .time, time { font-size: 0.875rem; }
 
@@ -69,17 +85,33 @@
     .footer-menu {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+        justify-content: space-around;
+        align-items: center;
         max-width: 35rem;
+        text-align: center;
+        flex-wrap: wrap;
+
+        @include mq(464px) {
+            flex-direction: row;
+            text-align: left;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
     }
 
     .footer-menu__menu {
         display: flex;
-        max-width: 11rem;
+        max-width: 9rem;
         width: 100%;
         flex-direction: column;
         justify-content: left;
+        margin-bottom: 3rem;
+        &:last-of-type { margin-bottom: 0; }
+
+        @include mq(560px) {
+            margin-bottom: 0;
+            &:last-of-type { margin-bottom: 0; }
+        }
 
         .menu-heading {
             position: relative;
@@ -89,11 +121,17 @@
             &:after {
                 position: absolute;
                 content: '';
-                left: 0;
-                bottom: -0.25rem;
-                background-color: $white;
                 width: 1.15rem;
                 height: 1px;
+                left: 50%;
+                bottom: -0.25rem;
+                transform: translateX(-50%);
+                background-color: $white;
+
+                @include mq(464px) {
+                    left: 0;
+                    transform: translateX(0);
+                }
             }
         }
 

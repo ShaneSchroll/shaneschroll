@@ -1,13 +1,13 @@
 {
     "key": "group_655feb38b73fd",
-    "title": "Mockup Settings - Documentation",
+    "title": "Documentation - Doc Links",
     "fields": [
         {
-            "key": "field_655feb396c3d8",
-            "label": "Download Links",
-            "name": "download_links",
+            "key": "field_6563b4ea176ea",
+            "label": "Doc Link",
+            "name": "doc_link",
             "aria-label": "",
-            "type": "repeater",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,54 +16,8 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_655febee3d021",
-                    "label": "Name",
-                    "name": "name",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_655feb396c3d8"
-                },
-                {
-                    "key": "field_655feb6c28882",
-                    "label": "Link",
-                    "name": "link",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_655feb396c3d8"
-                }
-            ]
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -84,5 +38,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700785147
+    "modified": 1701033312
 }

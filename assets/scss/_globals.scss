@@ -22,23 +22,26 @@ img {
 // page wrapper for parallax footer
 .parallax-wrap {
     position: relative;
-    z-index: 5;
+    z-index: 10;
+
+    // post content wrapper
+    .main-post-wrapper, .home-post-wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+        background-color: $white; // needed for clipped elements
+    }
+
+    .main-post-wrapper {
+        padding-top: 7rem;
+    }
 
     /*
         last element before the footer to create a
         fixed control point and spacer for the parallax effect
     */
     .footer-drawer {
-        margin-bottom: 32.5rem;
-
-        // responsive adjustments for spacing
-        @include mq(lg) { margin-bottom: 18.625rem; }
+        margin-bottom: 36.25rem;
+        @include mq(860px) { margin-bottom: 32rem; }
+        @include mq(990px) { margin-bottom: 19.75rem; }
     }
-}
-
-// post content wrapper
-.main-post-wrapper {
-	max-width: 100%;
-	margin: 0 auto;
-    background-color: $white; // needed for clipped elements
 }

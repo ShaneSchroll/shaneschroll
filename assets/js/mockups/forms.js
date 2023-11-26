@@ -7,28 +7,33 @@
     *      Step 5 - Additional Details (400 char limit)
 */
 
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 
 createApp({
     data() {
         return {
-            hasError: false,
             isComplete1: false,
             isComplete2: false,
             isComplete3: false,
 
-            errorClass: 'error',
-            validClass: 'valid',
+            is_submitting: false,
+            name_error: false,
+            email_error: false,
 
             stepNumber: 1,
-            // error: [],
+            error: [],
 
             fullName: '',
             email: '',
             companyName: '',
             companyWebsite: '',
 
-            projectType: [],
+            projectType: [
+                { id: 1, project_name: 'Full Website' },
+                { id: 2, project_name: 'Landing Page' },
+                { id: 3, project_name: 'Theme Development' },
+                { id: 4, project_name: 'SPA Development' },
+            ],
             projectBudget: '',
             additionalInformation: '',
         };
@@ -37,12 +42,22 @@ createApp({
     watch: {
         // working but need a way to trigger for each input separately
         email(value) {
-            if(value === '') {
-                this.hasError = true;
+            if (value === '') {
+                this.email_error = true;
             } else {
-                this.hasError = false;
+                this.email_error = false;
             }
-        }
+        },
+
+        fullName(value) {
+            if (value === '') {
+                this.name_error = true;
+            } else {
+                this.name_error = false;
+            }
+        },
+
+        // check for projectType length to check if we need to add the error class
     },
 
     methods: {
@@ -50,11 +65,11 @@ createApp({
             this.stepNumber--;
 
             // check what step we are on to style the progress bar accordingly
-            if(this.stepNumber === 1) {
+            if (this.stepNumber === 1) {
                 this.isComplete1 = false;
-            } else if(this.stepNumber === 2) {
+            } else if (this.stepNumber === 2) {
                 this.isComplete2 = false;
-            } else if(this.stepNumber === 3) {
+            } else if (this.stepNumber === 3) {
                 this.isComplete3 = false;
             }
         },
@@ -63,15 +78,13 @@ createApp({
             this.stepNumber++;
 
             // check what step we are on to style the progress bar accordingly
-            if(this.stepNumber === 2) {
+            if (this.stepNumber === 2) {
                 this.isComplete1 = true;
-            } else if(this.stepNumber === 3) {
+            } else if (this.stepNumber === 3) {
                 this.isComplete2 = true;
-            } else if(this.stepNumber === 4) {
+            } else if (this.stepNumber === 4) {
                 this.isComplete3 = true;
             }
-
-            // check for projectType length to check if we need to add the error class
         },
 
         handleSubmit() {}
@@ -80,4 +93,4 @@ createApp({
     mounted() {},
 
     delimiters: ['${', '}']
-  }).mount('#multi-step-form');
+}).mount('#multi-step-form');
