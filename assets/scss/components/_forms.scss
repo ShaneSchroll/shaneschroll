@@ -15,7 +15,7 @@
 
     // inner-transition headers
     h4 {
-        font-weight: 600;
+        font-weight: $medium;
         margin-bottom: 2rem;
     }
 
@@ -69,7 +69,7 @@
             margin: 0;
             color: $purple;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: $medium;
 
             @include mq(sm) {
                 font-size: 1.2rem;
@@ -116,7 +116,7 @@
 
         &__input {
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: $medium;
 
             input {
                 max-width: 16.25rem;

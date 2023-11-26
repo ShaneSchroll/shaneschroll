@@ -48,7 +48,7 @@
 
         p {
             font-family: $secondary-font;
-            font-weight: 600;
+            font-weight: $medium;
             font-size: 0.875rem;
             margin-bottom: 0;
         }
@@ -60,7 +60,7 @@
     max-width: 100%;
 
     a:not(.docs-button) {
-        font-weight: 600;
+        font-weight: $medium;
         text-decoration: underline;
         text-underline-offset: 3px;
         &:hover { color: $teal; }

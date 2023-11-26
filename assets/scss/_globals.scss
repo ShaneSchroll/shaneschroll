@@ -42,7 +42,7 @@ img {
     .footer-drawer {
         margin-bottom: 51.5rem;
         @include mq(464px) { margin-bottom: 38.5rem; }
-        @include mq(860px) { margin-bottom: 33.5rem; }
+        @include mq(md) { margin-bottom: 33.5rem; }
         @include mq(990px) { margin-bottom: 21.75rem; }
     }
 }

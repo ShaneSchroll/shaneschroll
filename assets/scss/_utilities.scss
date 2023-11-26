@@ -79,6 +79,11 @@
     @include mq(md) { margin-right: 2rem; }
 }
 
+.mr-4 {
+    margin-right: 0;
+    @include mq(md) { margin-right: 4rem; }
+}
+
 // add 48px of top padding for clipped elements
 .clip-padding { padding-top: 3rem; }
 
@@ -124,6 +129,11 @@
     @include mq(sm) {
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     }
+}
+
+.align-flex-end {
+    align-items: center;
+    @include mq(md) { align-items: flex-end !important; }
 }
 
 // screen reader only text (hidden visually)
