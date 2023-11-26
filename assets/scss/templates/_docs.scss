@@ -17,13 +17,21 @@
         padding: 0 0 2rem 0;
         list-style: none;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         border-bottom: 1px solid $purple;
+        flex-wrap: wrap;
+
+        @include mq(sm) {
+            justify-content: space-between;
+        }
     }
 
     .tab {
-        width: 7.125rem;
+        width: 6.125rem;
         text-align: center;
+        margin-bottom: 2rem;
+        @include mq(xxs) { width: 7.125rem; }
+        @include mq(sm) { margin-bottom: 0; }
 
         .icon-box {
             padding: 1.25rem;

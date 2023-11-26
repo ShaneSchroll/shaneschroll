@@ -40,7 +40,8 @@ img {
         fixed control point and spacer for the parallax effect
     */
     .footer-drawer {
-        margin-bottom: 51.5rem;
+        margin-bottom: 55rem;
+        @include mq(xxs) { margin-bottom: 51.5rem; }
         @include mq(464px) { margin-bottom: 38.5rem; }
         @include mq(md) { margin-bottom: 33.5rem; }
         @include mq(990px) { margin-bottom: 21.75rem; }
