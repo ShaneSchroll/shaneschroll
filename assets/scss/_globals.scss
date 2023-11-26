@@ -45,5 +45,6 @@ img {
         @include mq(464px) { margin-bottom: 38.5rem; }
         @include mq(md) { margin-bottom: 33.5rem; }
         @include mq(990px) { margin-bottom: 21.75rem; }
+        @include mq(xl) { margin-bottom: 20rem; }
     }
 }
