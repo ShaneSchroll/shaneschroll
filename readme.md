@@ -8,17 +8,15 @@
 - **SEO**: Google Search Console, Google Analytics, and user journeys with HotJar
 - **Accessibility**: WCAG (AA or AAA) standards using Google Lighthouse for accessibility testing
 - **Servers**: DNS, hosting setup, cloud environment setup
-- **Tools**: VSCode, Prepros, Local, Git, ESLint, Terminal/Shell
-
-#### ⚡ I have some experience with
-- **Amazon**: S3 Buckets, CloudFront
-- **Build Tools**: Vite, Webpack
-- **Store Libraries**: Pinia
+- **Tools**: VSCode, Prepros, Local, Git, ESLint, Terminal
 
 #### 🍵 I'm Learning
 - VueJS + Vite + Pinia
+- Kubernetes
 - HTMX
 - Turso
+- Filament
+- ChartJS
 
 #### :wrench: Personal Development Goals
 - Build and Ship a minimalist:

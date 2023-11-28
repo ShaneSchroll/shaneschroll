@@ -72,9 +72,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post",
                 "operator": "==",
-                "value": "mockup"
+                "value": "46"
             }
         ]
     ],
@@ -89,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701033299
+    "modified": 1701137285
 }
