@@ -1,44 +1,56 @@
 {# Project Type #}
 
 <div class="input-wrap">
-    <label for="full-website" class="input-wrap__input">
+    <label
+        class="input-wrap__input checkbox-input"
+        @click="e => e.target.classList.toggle('active')"
+        >
         Full Website<br/>
         <input
             v-model="projectType"
             type="checkbox"
-            name="full-website"
+            name="checkbox"
             value="Full Website"
         />
     </label>
 
-    <label for="theme-dev" class="input-wrap__input">
+    <label
+        class="input-wrap__input checkbox-input"
+        @click="e => e.target.classList.toggle('active')"
+        >
         Theme Development<br/>
         <input
             v-model="projectType"
             type="checkbox"
-            name="theme-dev"
+            name="checkbox"
             value="Theme Development"
         />
     </label>
 </div>
 
 <div class="input-wrap">
-    <label for="landing" class="input-wrap__input">
+    <label
+        class="input-wrap__input checkbox-input"
+        @click="e => e.target.classList.toggle('active')"
+        >
         Landing Page<br/>
         <input
             v-model="projectType"
             type="checkbox"
-            name="landing"
+            name="checkbox"
             value="Landing Page"
         />
     </label>
 
-    <label for="dashboard" class="input-wrap__input">
+    <label
+        class="input-wrap__input checkbox-input"
+        @click="e => e.target.classList.toggle('active')"
+        >
         Dashboard Application<br/>
         <input
             v-model="projectType"
             type="checkbox"
-            name="dashboard"
+            name="checkbox"
             value="Dashboard Application"
         />
     </label>

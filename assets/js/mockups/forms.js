@@ -12,28 +12,21 @@ import { createApp } from 'vue';
 createApp({
     data() {
         return {
+            stepNumber: 1,
+
             isComplete1: false,
             isComplete2: false,
             isComplete3: false,
 
-            is_submitting: false,
             name_error: false,
             email_error: false,
-
-            stepNumber: 1,
-            error: [],
+            projectType_error: false,
 
             fullName: '',
             email: '',
             companyName: '',
             companyWebsite: '',
-
-            projectType: [
-                { id: 1, project_name: 'Full Website' },
-                { id: 2, project_name: 'Landing Page' },
-                { id: 3, project_name: 'Theme Development' },
-                { id: 4, project_name: 'SPA Development' },
-            ],
+            projectType: [],
             projectBudget: '',
             additionalInformation: '',
         };
@@ -54,6 +47,12 @@ createApp({
                 this.name_error = true;
             } else {
                 this.name_error = false;
+            }
+        },
+
+        projectType(value) {
+            if (value.length === 0) {
+                this.projectType_error = true;
             }
         },
 
