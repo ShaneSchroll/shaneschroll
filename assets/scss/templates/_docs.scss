@@ -112,24 +112,3 @@ button.copy-to-clipboard-button span {
     font-size: 15px !important;
     color: $white !important;
 }
-
-.flex-row {
-    display: flex;
-    max-width: 75rem;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* multi row only */
- }
-
- /* default / single or multi row */
- avatar-card {
-    align-self: stretch;
-    margin-bottom: 3.75rem; /* multi row only */
- }
-
- /* default / single or multi row */
- avatar-card .avatar-card {
-    height: 100%;
- }
