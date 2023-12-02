@@ -3,9 +3,26 @@
     "title": "Documentation - Doc Links",
     "fields": [
         {
-            "key": "field_6563b4ea176ea",
-            "label": "Doc Link",
-            "name": "doc_link",
+            "key": "field_656a66c69bbaa",
+            "label": "Theme Download",
+            "name": "theme_download",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_656a6709590a1",
+            "label": "UI Library Download",
+            "name": "ui_library_download",
             "aria-label": "",
             "type": "url",
             "instructions": "",
@@ -23,9 +40,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "post",
                 "operator": "==",
-                "value": "acf-options-mockup-settings"
+                "value": "46"
             }
         ]
     ],
@@ -38,5 +55,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701033312
+    "modified": 1701472060
 }

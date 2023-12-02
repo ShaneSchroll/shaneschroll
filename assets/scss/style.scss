@@ -4,12 +4,13 @@
     Author URI: https://shaneschroll.dev
     Description: Personal portfolio site.
     Text Domain: srs
-    Version: 2.4.1
+    Version: 2.4.2
 */
 
 // Import required files (dependencies)
 @import 'packages/normalize';       // Soft reset + browser consistencies
 @import 'variables';                // Sitewide variables, custom mixins, custom functions
+@import 'mixins';                   // Sitewide mixins and helpers
 @import 'globals';                  // Base html/body setup, wrappers, containers
 @import 'utilities';                // Sitewide helper classes
 @import 'typography';               // Sitewide typography: sizing, spacing, initial colors

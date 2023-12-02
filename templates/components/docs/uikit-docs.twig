@@ -1,3 +1,117 @@
-<h3 class="doc-title">In Development - Nearing Completion</h3>
+<div class="doc-section">
+    <h3>Component Setup</h3>
+    <p>
+        These minimalistic web components are slightly opinionated but can be styled to your liking. Packages are included with the UI Library download with several options, such as standalone CSS, JS, and Single File Component versions. These packages are for those utilizing build tools or a specific directory structure and want to keep things consistent with your setup.
+    </p>
+    <p>
+        If you pick and choose components, the JS and CSS files that go together have identical names. You can also opt to use the SFCs. This library does not have a build step or process. Use JSX-style HTML to add components.
+    </p>
+    <p>
+        Wrappers/Examples are included for components that work in a grid or flex row.
+    </p>
+</div>
 
-<div id="" class="doc-section"></div>
+<div class="doc-section quick-links">
+    <h4 class="no-mt">Downloads</h4>
+    <p>Version - 0.0.1</p>
+    <a download class="pill-button--pill-purple docs-button" href="{{ post.ui_library_download }}">UI Library</a>
+</div>
+
+<div class="doc-section">
+    <h4>Avatar Card</h4>
+    <p>
+        The Avatar Card has 3 attributes:
+    </p>
+    <ul>
+        <li><code class="single-line-token language-css">name</code> : The persons name.</li>
+        <li><code class="single-line-token language-css">position</code> : The persons position at the company.</li>
+        <li><code class="single-line-token language-css">image</code> : The url or file path to the persons image.</li>
+    </ul>
+    <br/>
+    <p>
+        Example usage:
+        <pre class="line-numbers">
+            <code class="language-markup"><!--<avatar-card
+            name="Dwight Schrute"
+            position="Assistant to the Regional Manager"
+            image="/assets/images/dwight.png"
+        ></avatar-card>--></code>
+        </pre>
+    </p>
+    <br/>
+    <p>
+        If you want to use the Avatar Card in something like an employee listing, wrap the cards with<br/>
+        <code class="single-line-token language-markup"><!--<div class="flex-row"></div>--></code>
+        <p>Add the following CSS:</p>
+        <pre class="line-numbers">
+            <code class="language-css">.flex-row {
+            display: flex;
+            max-width: 75rem;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* multi row only */
+        }
+
+        /* default / single or multi row */
+        avatar-card {
+            align-self: stretch;
+            margin-bottom: 3.75rem; /* multi row only */
+        }
+
+        /* default / single or multi row */
+        avatar-card .avatar-card {
+            height: 100%;
+        }
+        </code>
+        </pre>
+        <br/>
+
+        <p>Your HTML should now look like this:</p>
+
+        <pre class="line-numbers">
+            <code class="language-markup"><!--<div class="flex-row">
+            <avatar-card
+                name="Michael Scott"
+                position="Regional Manager"
+                image="/assets/images/michael.png"
+            ></avatar-card>
+
+            <avatar-card
+                name="Dwight Schrute"
+                position="Assistant to the Regional Manager"
+                image="/assets/images/dwight.png"
+            ></avatar-card>
+
+            <avatar-card
+                name="Jim Halpert"
+                position="Sales Representative"
+                image="/assets/images/jim.png"
+            ></avatar-card>
+        </div>
+        --></code>
+        </pre>
+    </p>
+    <br/>
+    <p>
+        You can also use PHP to pass in the attributes instead of hard-coding them.
+        <pre class="line-numbers">
+            <code class="language-php language-markup"><!--<div class="flex-row">
+            <?php foreach($employees as $employee) : ?>
+                <avatar-card
+                    name="<?= $employee->name; ?>"
+                    position="<?= $employee->position; ?>"
+                    image="<?= $employee->image['url']; ?>"
+                ></avatar-card>
+            <?php endforeach; ?>
+        </div>--></code>
+        </pre>
+    </p>
+</div>
+
+{#
+    <pre class="line-numbers">
+        <code class="language-"></code>
+    </pre>
+#}

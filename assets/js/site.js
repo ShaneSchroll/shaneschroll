@@ -30,9 +30,9 @@
 
             // initial state
             $('#tab-1 .icon-box').addClass('tab-active');
-            $('#doc-tab-1').show();
+            $('#doc-tab-1').hide();
 
-            $('#doc-tab-2').hide();
+            $('#doc-tab-2').show();
             $('#doc-tab-3').hide();
             $('#doc-tab-4').hide();
             $('#doc-tab-5').hide();
