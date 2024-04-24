@@ -161,7 +161,7 @@ class ShaneSchrollSite extends Timber\Site {
 				'menu_title'  => __('Footer Settings'),
 				'parent_slug' => $parent['menu_slug'],
 			]);
-		} 
+		}
 	}
 
 	// add custom post types
