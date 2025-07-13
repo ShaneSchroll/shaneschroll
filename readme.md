@@ -1,4 +1,4 @@
-### Hi, I'm Shane 👋 A Full-Stack Web Developer with 8 years' experience
+### Hi, I'm Shane 👋 A Full-Stack Web Developer with 10 years' experience
 
 #### 🔥 I'm proficienct in
 - PHP, HTML, CSS, Javascript, Twig, Timber
@@ -8,9 +8,4 @@
 
 #### 🍵 I'm Learning
 - Laravel + Svelte
-- Sanity
-
-#### :wrench: Personal Development Goals
-- Build and Ship a minimalist:
-    - [WordPress Theme](https://github.com/ShaneSchroll/modular-theme)
-    - Component library
+- Statamic
