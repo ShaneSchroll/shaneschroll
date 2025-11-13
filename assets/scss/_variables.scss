@@ -1,32 +1,21 @@
-// Background Colors
-$primary-background: #F6F8FF;
-
-// Theme Colors
+// Theme colors
 $white: #FFF;
 $black: #000;
-$grey: #F4F4F4;
-$teal: #079D92;
-$mint: #F0F8F8;
-$pale-blue: #9DB5FC;
-$purple: #3E3E70;
-$magenta: #AB29A1;
-$navy: #1C1C57;
-
-// Shadows
-$shadow: 0 3px 9px -7px $navy;
+$blue: #032456;
+$smoke: #1D2125;
 
 // Fonts
-$primary-font: 'Montserrat', sans-serif; // weights (+i): 400, 500, 600, 700
-$secondary-font: 'Poppins', sans-serif; // weights: 600, 700, 900
+$primary: 'PT Sans', sans-serif;
+$secondary: 'Gentium Book Plus', serif;
 
 // Weights
-$light: 400;
-$normal: 500;
-$medium: 600;
-$heavy: 700;
-$x-heavy: 900;
+$regular: 400;
+$semibold: 500;
+$bold: 700;
+$xbold: 900;
 
-// Consistency Utilities
-$radius-small: 5px;
-$radius-medium: 10px;
-$radius-large: 20px;
+// Consistency utilities
+$radius: 6px;
+$circle: 50%;
+$transition: 0.15s ease-in-out;
+$global-width: 87.5rem; // 1400px

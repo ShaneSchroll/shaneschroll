@@ -1,0 +1,44 @@
+<nav class="mobile-nav-container">
+    <div class="logo-and-bar-wrap">
+        {% if is_front_page %}
+            <img class="mobile-logo" src="{{ options.site_logo_white.url }}" alt="The Round Table Group" />
+        {% else %}
+            <a class="mobile-logo" href="/">
+                <img src="{{ options.site_logo_white.url }}" alt="The Round Table Group" />
+            </a>
+        {% endif %}
+
+        <button id="mobile-menu-toggle" title="Open Menu">
+            <span class="fa-regular fa-bars"></span>
+        </button>
+    </div>
+
+    <ul class="mobile-nav-container__menu">
+        <li class="mobile-menu-logo">
+            {% if is_front_page %}
+                <img src="{{ options.site_logo_white.url }}" alt="The Round Table Group" />
+            {% else %}
+                <a href="/">
+                    <img src="{{ options.site_logo_white.url }}" alt="The Round Table Group" />
+                </a>
+            {% endif %}
+        </li>
+
+        {% set delay_count = 2 %}
+        {% for link in options.primary_navigation %}
+            <li class="mobile-link-wrapper">
+                <a
+                    class="mobile-menu-link"
+                    href="{{ link.primary_link.url }}"
+                    >
+                    {{ link.primary_link.title }}
+                </a>
+            </li>
+            {% set delay_count = delay_count + 2 %}
+        {% endfor %}
+
+        <li>
+            <button class="close-button" id="close-menu-button" title="Close Menu">&times;</button>
+        </li>
+    </ul>
+</nav>

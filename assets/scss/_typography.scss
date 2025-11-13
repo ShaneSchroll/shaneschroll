@@ -1,19 +1,20 @@
 // core font setup
 a, p, span, address, table, td, th, tr,
-small, time, ol, ul, li, button {
-	font-family: $primary-font;
-	font-size: 1rem;
-	font-weight: $light;
-	color: $navy;
+small, time, ol, ul, li, button, input,
+textarea, select, option {
+	font-family: $primary;
+	font-size: 17px;
+	font-weight: $regular;
+	color: $smoke;
 }
 
-small { font-size: 0.875rem; }
+small { font-size: 0.9375rem; }
 
 a {
 	text-decoration: none;
-	transition: 0.2s ease-in;
-	font-weight: $normal;
-	&:hover { transition: 0.2s ease-out; }
+	transition: $transition;
+	font-weight: $regular;
+	&:hover { transition: $transition; }
 }
 
 p {
@@ -26,27 +27,31 @@ button {
 	appearance: none;
 	background: unset;
 	border: unset;
-	transition: 0.2s ease-in;
+	transition: $transition;
 
 	&:hover {
 		cursor: pointer;
-		transition: 0.2s ease-out;
+		transition: $transition;
 	}
 }
 
-h1, h2, h3,
-h4, h5, h6 {
-	margin-top: 0;
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin-top: 2rem;
 	margin-bottom: 1.25rem;
-	font-family: $secondary-font;
-	font-weight: $heavy;
-	line-height: 1.2;
-	color: $navy;
+	font-family: $secondary;
+	font-weight: $bold;
+	line-height: 1.4;
+	color: $smoke;
 }
 
-h1, #h1 { font-size: fluid-text(414px, 40px, 860px, 56px); }
-h2, #h2 { font-size: fluid-text(414px, 30px, 980px, 40px); }
-h3, #h3 { font-size: fluid-text(414px, 24px, 980px, 36px); }
-h4, #h4 { font-size: fluid-text(414px, 20px, 1024px, 24px); }
-h5, #h5 { font-size: 16px; }
-h6, #h6 { font-size: 14px; }
+h1, .h1 { font-size: fluid-text(414px, 45px, 860px, 65px); }
+h2, .h2 { font-size: fluid-text(414px, 36px, 980px, 52px); }
+h3, .h3 { font-size: fluid-text(414px, 28px, 980px, 33px); }
+h4, .h4 { font-size: fluid-text(414px, 22px, 1024px, 30px); }
+h5, .h5 { font-size: 22px; }
+h6, .h6 { font-size: 16px; }

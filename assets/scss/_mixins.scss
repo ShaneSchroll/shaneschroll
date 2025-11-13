@@ -1,4 +1,4 @@
-// Breakpoint Mixin
+// Media Query Mixin
 @mixin mq($size) {
 	@if $size == xxs {
 		@media (min-width: 414px) { @content; }
@@ -7,7 +7,7 @@
 	} @else if $size == sm {
 		@media (min-width: 768px) { @content; }
 	} @else if $size == md {
-		@media (min-width: 860px) { @content; }
+		@media (min-width: 880px) { @content; }
 	} @else if $size == lg {
 		@media (min-width: 1024px) { @content; }
 	} @else if $size == xl {
@@ -17,44 +17,16 @@
 	}
 }
 
-// Fluid text function - dynamic font scaling - needs `text-rendering: geometricPrecision` on the html or body element for ideal results
+// Core container padding
+@mixin base-padding {
+    padding: 1.125rem;
+    @include mq(lg) { padding: 1.125rem 2.5rem; }
+}
+
+// Fluid text function for dynamic font scaling
 @function fluid-text($min-screen-width, $min-font-size, $max-screen-width, $max-font-size) {
-	$slope: ($max-font-size - $min-font-size) / ($max-screen-width - $min-screen-width);
+	$slope: calc(($max-font-size - $min-font-size) / ($max-screen-width - $min-screen-width));
 	$y-intersect: -1 * $min-screen-width * $slope + $min-font-size;
 	$return: clamp(#{$min-font-size}, #{$y-intersect} + #{$slope} * 100vw, #{$max-font-size});
 	@return $return;
-}
-
-// color palette array
-$colors:
-(primary, $primary-background),
-(white, $white),
-(black, $black),
-(grey, $grey),
-(teal, $teal),
-(mint, $mint),
-(pale-blue, $pale-blue),
-(purple, $purple),
-(magenta, $magenta),
-(navy, $navy);
-
-// background color changes
-@each $name, $color in $colors {
-	.bg-#{$name} {
-		background-color: $color;
-	}
-}
-
-// text color changes
-@each $name, $text-color in $colors {
-    .#{$name} {
-        color: $text-color !important;
-    }
-}
-
-// text color hover changes
-@each $name, $text-color-hover in $colors {
-    .#{$name}-hover {
-        &:hover { color: $text-color-hover !important; }
-    }
 }

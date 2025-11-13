@@ -1,50 +1,42 @@
 * { box-sizing: border-box; }
 
 html, body {
-	text-rendering: geometricPrecision; // works better than optimizeLegibility for our fluid-text() function
-	font-size: 16px;
-	line-height: 1.65;
-	overflow-x: hidden;
+    overflow-x: clip;
+    font-size: 16px;
+}
+
+body {
+	text-rendering: geometricPrecision; // for the fluid-text() function
+	line-height: 1.6;
 	font-variant-numeric: lining-nums;
 	font-feature-settings: "lnum" 1;
+
+    &.mobile-menu-active {
+        overflow: hidden;
+        height: 100vh;
+    }
 }
 
 ::placeholder {
-    color: rgba($navy, 0.6);
+    font-family: $primary;
+    font-size: 0.9375rem;
+    font-weight: $regular;
+    color: $blue;
+    opacity: 0.5;
 }
 
 img {
-	display: block; // preserve aspect ratio (scale instead of smush)
+	display: block;
 	max-width: 100%;
 	height: auto;
 }
 
-// page wrapper for parallax footer
-.parallax-wrap {
-    position: relative;
-    z-index: 10;
+.read-more {
+    display: none;
+}
 
-    // post content wrapper
-    .main-post-wrapper, .home-post-wrapper {
-        max-width: 100%;
-        margin: 0 auto;
-        background-color: $white; // needed for clipped elements
-    }
-
-    .main-post-wrapper {
-        padding-top: 7rem;
-    }
-
-    /*
-        last element before the footer to create a
-        fixed control point and spacer for the parallax effect
-    */
-    .footer-drawer {
-        margin-bottom: 55rem;
-        @include mq(xxs) { margin-bottom: 51.5rem; }
-        @include mq(464px) { margin-bottom: 38.5rem; }
-        @include mq(md) { margin-bottom: 33.5rem; }
-        @include mq(990px) { margin-bottom: 21.75rem; }
-        @include mq(xl) { margin-bottom: 20rem; }
-    }
+.main-post-content {
+    max-width: $global-width;
+    margin: 0 auto;
+    @include base-padding;
 }

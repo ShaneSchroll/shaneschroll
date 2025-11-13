@@ -1,0 +1,50 @@
+/**
+    404 Page
+*/
+.error404 {
+    .error-page-container {
+        max-width: 75rem;
+        margin: 5rem auto 2rem;
+        text-align: center;
+
+        @include mq(md) {
+            margin: 10rem auto 3rem;
+        }
+
+        h1 {
+            font-size: fluid-text(480px, 70px, 960px, 120px);
+            margin: 0 auto;
+            color: $blue;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 0.45rem 1.25rem;
+            margin-top: 1.5rem;
+            font-weight: $bold;
+            border: 1px solid $blue;
+            color: $white;
+            background-color: $blue;
+            border-radius: 4px;
+
+            .fa-house {
+                position: relative;
+                display: inline-block;
+                margin-right: 0.25rem;
+                width: 1.25rem;
+                height: 1.25rem;
+                color: $white;
+                transition: $transition;
+            }
+
+            &:hover {
+                background-color: #0048B4;
+                transition: $transition;
+
+                .fa-house {
+                    transition: $transition;
+                }
+            }
+        }
+    }
+}

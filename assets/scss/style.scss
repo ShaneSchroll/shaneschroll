@@ -1,22 +1,27 @@
 /*!
-    Theme Name: ShaneSchroll
+    Theme Name: SS Theme
     Author: Shane Schroll
     Author URI: https://shaneschroll.dev
-    Description: Personal portfolio site.
+    Description: Custom Portfolio theme.
     Text Domain: srs
-    Version: 2.4.2
+    Version: 2.0.0
 */
 
-// Import required files (dependencies)
-@import 'packages/normalize';       // Soft reset + browser consistencies
-@import 'variables';                // Sitewide variables, custom mixins, custom functions
-@import 'mixins';                   // Sitewide mixins and helpers
-@import 'globals';                  // Base html/body setup, wrappers, containers
-@import 'utilities';                // Sitewide helper classes
-@import 'typography';               // Sitewide typography: sizing, spacing, initial colors
+// Import dependencies
+@import 'packages/normalize';           // Soft reset + browser consistencies
+@import 'packages/aos';                 // Animate on Scroll library, timings, functions
+@import 'variables';                    // Sitewide variables
+@import 'mixins';                       // Sitewide mixins, functions, and helpers
+@import 'globals';                      // Base html/body setup, wrappers, containers
+@import 'typography';                   // Sitewide typography: sizing, spacing, initial colors
+
+// Import template partials
+@import 'partials/navigation';          // Site Navigation
+@import 'partials/header';              // Site header
+@import 'partials/footer';              // Site footer
 
 // Import components
-@import 'components/component-loader';
+@import 'components/component-loader';  // Load all components
 
 // Import templates
-@import 'templates/template-loader';
+@import 'templates/template-loader';    // Load all template layouts
