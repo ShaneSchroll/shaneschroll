@@ -14,7 +14,7 @@
         h1 {
             font-size: fluid-text(480px, 70px, 960px, 120px);
             margin: 0 auto;
-            color: $blue;
+            color: $smoke;
         }
 
         .home-button {
@@ -22,9 +22,9 @@
             padding: 0.45rem 1.25rem;
             margin-top: 1.5rem;
             font-weight: $bold;
-            border: 1px solid $blue;
-            color: $white;
-            background-color: $blue;
+            border: 1px solid $teal;
+            color: $teal;
+            background-color: $white;
             border-radius: 4px;
 
             .fa-house {
@@ -33,16 +33,18 @@
                 margin-right: 0.25rem;
                 width: 1.25rem;
                 height: 1.25rem;
-                color: $white;
+                color: $teal;
                 transition: $transition;
             }
 
             &:hover {
-                background-color: #0048B4;
+                background-color: lighten($teal, 10%);
                 transition: $transition;
+                color: $white;
 
                 .fa-house {
                     transition: $transition;
+                    color: $white;
                 }
             }
         }

@@ -1,25 +1,17 @@
-<nav class="nav-container desktop-nav">
-    <ul class="nav-container__menu">
+<nav class="desktop-nav-container">
+    {% if is_front_page %}
+        <img src="{{ options.site_logo.url }}" alt="{{ options.site_logo.alt }}" />
+    {% else %}
+        <a href="/">
+            <img src="{{ options.site_logo.url }}" alt="{{ options.site_logo.alt }}" />
+        </a>
+    {% endif %}
+
+    <ul class="desktop-nav-container__menu">
         {% for link in options.primary_navigation %}
             <li>
-                <a class="menu-link" href="{{ link.primary_link.url }}">{{ link.primary_link.title }}</a>
+                <a class="menu-link" href="{{ link.menu_link.url }}">{{ link.menu_link.title }}</a>
             </li>
-
-            {% if loop.index == 3 %}
-                <li class="desktop-li">
-                    {% if is_front_page %}
-                        <img src="{{ options.site_logo_white.url }}" alt="{{ options.site_logo_white.alt }}" />
-                    {% else %}
-                        <a href="/">
-                            {% if post.thumbnail.src %}
-                                <img src="{{ options.site_logo_white.url }}" alt="{{ options.site_logo_white.alt }}" />
-                            {% else %}
-                                <img src="{{ options.site_logo_blue.url }}" alt="{{ options.site_logo_blue.alt }}" />
-                            {% endif %}
-                        </a>
-                    {% endif %}
-                </li>
-            {% endif %}
         {% endfor %}
     </ul>
 </nav>

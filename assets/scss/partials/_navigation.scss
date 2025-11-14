@@ -1,3 +1,22 @@
+.nav-wrapper {
+    max-width: 87.5rem;
+    margin: 0 auto;
+    @include base-padding;
+
+    .mobile-nav-container {
+        display: block;
+        @include mq(lg) { display: none; }
+    }
+
+    .desktop-nav-container {
+        display: none;
+        @include mq(lg) { display: flex; }
+    }
+}
+
+/**
+  * Mobile Navigation Setup
+*/
 .mobile-nav-container {
     position: fixed;
     z-index: 100;
@@ -40,7 +59,7 @@
         padding: 1rem 1.25rem;
         list-style: none;
         text-align: center;
-        background-color: $blue;
+        background-color: $teal;
         transition: all 0.25s ease-in;
 
         &.mobile-menu-open {
@@ -107,5 +126,22 @@
             // menu close button animation - nth-child(8)
             &.close-button { transition-delay: 1.55s; }
         }
+    }
+}
+
+/**
+  * Desktop Navigation Setup
+*/
+.desktop-nav-container {
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        max-width: 4rem;
+        margin-right: 2rem;
+    }
+
+    &__menu {
+        max-width: 25rem;
     }
 }

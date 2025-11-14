@@ -8,7 +8,7 @@
         let menu_close = $('.close-button');
 
         $('#mobile-menu-toggle').on('click', function() {
-            $('.mobile-nav-menu').addClass('mobile-menu-open');
+            $('.mobile-nav-container__menu').addClass('mobile-menu-open');
             $('body').addClass('mobile-menu-active');
 
             // wait for menu to show before animating links in
@@ -27,7 +27,7 @@
 
             // fade links out before closing menu
             setTimeout( function() {
-                $('.mobile-nav-menu').removeClass('mobile-menu-open');
+                $('.mobile-nav-container__menu').removeClass('mobile-menu-open');
             }, 350);
         });
 
