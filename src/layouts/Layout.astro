@@ -1,0 +1,81 @@
+---
+import '../styles/styles.css';
+
+// standard meta data props
+interface Props {
+    title: string;
+    description: string;
+    image: string;
+    pubDate?: string | Date;
+    schemaType?: 'WebPage' | 'NewsArticle' | 'Article';
+}
+
+const { title, description, image, pubDate, schemaType = 'WebPage' } = Astro.props;
+const currentUrl = new URL(Astro.url.pathname, Astro.site || 'https://shaneschroll.dev').href;
+let isoDate = null; // format dates only if they were supplied
+
+// schema that applies to all pages
+const pageSchema: Record<string, any> = {
+  "@context": "https://schema.org",
+  "@type": schemaType,
+  "description": description,
+  "url": currentUrl,
+};
+
+// add published date only to news and articles
+if ((schemaType === 'NewsArticle' || schemaType === 'Article') && isoDate) {
+    pageSchema["headline"] = title; // used instead of "name" for NewsArticles
+    pageSchema["datePublished"] = isoDate;
+    if (image) pageSchema["image"] = image;
+} else {
+    pageSchema["name"] = title; // used instead of "headline" for regular pages
+}
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+        {/* Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        {/* Open Graph Data */}
+        <meta property="locale" content="en_US" />
+        <meta property="og:title" content={title} />
+        <meta property="twitter:title" content={title} />
+        <meta property="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta property="twitter:description" content={description} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="twitter:url" content={currentUrl} />
+        <meta property="og:image" content={image} />
+        <meta property="twitter:image" content={image} />
+        <meta property="og:type" content="website" />
+        <meta property="twitter:card" content="summary_large_image" />
+
+        {/* Only output article meta tags if there is a pubDate */}
+        {isoDate && <meta property="article:published_time" content={isoDate} />}
+
+        {/* Inject dynamically built Schema */}
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+        {/* Sitemap */}
+        <link rel="sitemap" href="/sitemap-index.xml" />
+	</head>
+
+	<body>
+        <slot name="header"/>
+
+        <main>
+            <slot />
+        </main>
+
+	</body>
+</html>

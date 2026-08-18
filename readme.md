@@ -2,23 +2,20 @@
 
 #### 🔥 I'm proficienct in
 - PHP, HTML, CSS, SCSS, JS, Twig, Timber, Astro, Tailwind
-- WordPress custom theme and block development with ACF
+- WordPress custom theme and block development
 - Astro custom site development
-- Composer and NPM proficiency (understanding of what to use and when while maintaining pinned version for security)
-- DNS - Namecheap, Cloudflare
-- Hosting - Netlify, Render
-- Google Analytics, Tag Manager, and Looker Studio Integrations (Engagement, Click Tracking, User Journeys)
-- Docker: Docker Compose, Docker Scout -- Custom Yaml Configs
-- Windows, MacOS -- Linux: Ubuntu/Server, Headless Debian
-- AI Platforms: Cursor, Google AI Studio, OpenAI, Claude, Ollama models (non-cloud)
+- Hosting: Netlify, Render
+- Google: Analytics, Tag Manager, and Looker Studio Integrations (Engagement, Click Tracking, User Journeys)
+- Docker: Docker Compose, Docker Scout, Custom Yaml Configs
+- OS: Linux, MacOS, Windows
+- AI Platforms: Cursor, Claude, Local Models
 
 #### 🍵 I'm Learning
 - Python + FastAPI + Uvicorn Stack (for custom web services architecture)
-- Strapi Headless CMS
 
 #### ⚒️ I'm Working On
-- MTG Rules Oracle - AI assisted rulings (Uses official rulebook, all 35k cards + oracle text, cached for speed, responses streamed).
-- Python Web Service architecture for the rules AI assistant (Python 3 Server, FastAPI, SQLite, Uvicorn)
+- [MTG Rules Oracle](https://arbitersgrimoire.com) - AI assisted game rulings (Uses official rulebook, all 35k cards + oracle text, cached for speed, responses streamed).
+- Python Web Service architecture for the rules AI assistant (Python + FastAPI + Uvicorn, SQLite)
 
 #### 🖥️ My Homelab
 Fleet of Raspberry Pi's and Mini PCs with open-source and dockerized services running through Tailscale and custom UFW setup. No port forwarding or exposed endpoints:

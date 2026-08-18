@@ -1,0 +1,20 @@
+{
+  "name": "Shane portfolio website.",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2"
+  },
+  "devDependencies": {
+    "astro": "^7.2.3"
+  }
+}

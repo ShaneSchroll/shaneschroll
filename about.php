@@ -1,7 +1,0 @@
-<?php
-// Template Name: About Template
-$context = Timber::context();
-$post = Timber::get_post();
-$context['post'] = $post;
-$templates = ['pages/about.twig'];
-Timber::render( $templates, $context );

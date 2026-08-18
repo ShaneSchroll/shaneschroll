@@ -1,0 +1,28 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: clip;
+    font-size: 16px;
+}
+
+html, body {
+    text-rendering: optimizeLegibility;
+}
+
+::placeholder {
+    font-family: $sans;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $onyx;
+    opacity: 0.4;
+}
+
+img {
+    display: block;
+	max-width: 100%;
+	height: auto;
+}
