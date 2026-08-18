@@ -5,16 +5,23 @@ import '../styles/styles.css';
 interface Props {
     title: string;
     description: string;
-    image: string;
-    pubDate?: string | Date;
+    image?: string;
+    pubDate?: string | Date; // input format: YYYY-MM-DD
     schemaType?: 'WebPage' | 'NewsArticle' | 'Article';
 }
 
 const { title, description, image, pubDate, schemaType = 'WebPage' } = Astro.props;
-const currentUrl = new URL(Astro.url.pathname, Astro.site || 'https://shaneschroll.dev').href;
-let isoDate = null; // format dates only if they were supplied
+
+// format dates only if they were supplied
+let isoDate = null;
+
+if (pubDate) {
+    isoDate = new Date(pubDate).toISOString();
+}
 
 // schema that applies to all pages
+const currentUrl = new URL(Astro.url.pathname, Astro.site || 'https://shaneschroll.dev').href;
+
 const pageSchema: Record<string, any> = {
   "@context": "https://schema.org",
   "@type": schemaType,
@@ -31,6 +38,7 @@ if ((schemaType === 'NewsArticle' || schemaType === 'Article') && isoDate) {
     pageSchema["name"] = title; // used instead of "headline" for regular pages
 }
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -40,11 +48,6 @@ if ((schemaType === 'NewsArticle' || schemaType === 'Article') && isoDate) {
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-
-        {/* Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
         {/* Open Graph Data */}
         <meta property="locale" content="en_US" />
@@ -60,7 +63,7 @@ if ((schemaType === 'NewsArticle' || schemaType === 'Article') && isoDate) {
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />
 
-        {/* Only output article meta tags if there is a pubDate */}
+        {/* Only output article meta if there is a pubDate set */}
         {isoDate && <meta property="article:published_time" content={isoDate} />}
 
         {/* Inject dynamically built Schema */}
@@ -71,7 +74,7 @@ if ((schemaType === 'NewsArticle' || schemaType === 'Article') && isoDate) {
 	</head>
 
 	<body>
-        <slot name="header"/>
+        <slot name="header" />
 
         <main>
             <slot />
