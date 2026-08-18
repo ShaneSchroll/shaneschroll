@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
     site: "https://shaneschroll.dev",
+    integrations: [sitemap()],
 
     // Generates page.html instead of /page/index.html - changes Astro.url
     // https://docs.astro.build/en/reference/configuration-reference/#buildformat
